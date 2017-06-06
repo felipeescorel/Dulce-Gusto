@@ -2,11 +2,12 @@ package br.ufrpe.dulceGusto.classesbasicas;
 
 
 public class Usuario {
-	public String nome;
-	public String email;
-	public String telefone;
-	public String endereco;
-	public String user;
+	private String nome;
+	private String email;
+	private String telefone;
+	private String endereco;
+	private String user;
+	private boolean adm;
 	
 	public Usuario(){
 		
@@ -60,8 +61,15 @@ public class Usuario {
 		this.user = user;
 		
 	}
+	public boolean getAdm(){
+		return adm;
+		
+	}
+	public void setAdm(boolean adm){
+		this.adm=adm;
+	}
 	
-	//EXCEÇOES
+	// TODO EXCEÇOES
 	/*
 	
 	

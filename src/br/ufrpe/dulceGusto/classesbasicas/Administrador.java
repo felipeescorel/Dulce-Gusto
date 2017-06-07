@@ -18,4 +18,5 @@ public class Administrador extends Usuario{
 	public void setCpf(String cpf){
 		this.cpf = cpf;
 	}
+	//TODO Cadastrar novo produto, Cadastrar novo usuario,gerenciar pedidos;
 }

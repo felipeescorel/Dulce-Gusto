@@ -5,23 +5,25 @@ public class Pedido  {
 	
 	
 	private Cliente cliente;
-	private double valor;
+	private double valorTotal;
 	private Calendar dataPedido;
-//	Tipo salgado, tipo doce.
-//	Armazenar os produtos entre os dois tipos.
-//  Enum??
-//	
-//	public enum Tipo{
-//		Doce, Salgado;
-//	}
-//	
+	private int quantidade;
+	private Produto[] produto;
 	
-	public Pedido(Cliente cliente, double valor, Calendar dataPedido){
+	public Pedido(Cliente cliente, double valor, Calendar dataPedido,int quantidade){
 		this.cliente = cliente;
-		this.valor = valor;
+		this.valorTotal = valor;
 		this.dataPedido = dataPedido;
+		setQuantidade(quantidade);
 	}
 	
+	
+	public int getQuantidade(){
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade){
+		this.quantidade = quantidade;
+	}
 	public Cliente getCliente(){
 		return cliente;
 	}
@@ -29,11 +31,11 @@ public class Pedido  {
 		this.cliente = cliente;
 				
 	}
-	public double getValor(){
-		return valor;
+	public double getValorTotal(){
+		return valorTotal;
 	}
-	public void setValor(double valor){
-		this.valor = valor;
+	public void setValorTotal(double valor){
+		this.valorTotal = valor*this.getQuantidade();
 	}
 	public Calendar getDataPedido(){
 		return dataPedido;
@@ -42,6 +44,14 @@ public class Pedido  {
 		dataPedido = Calendar.getInstance();
 		this.dataPedido = dataPedido;
 		// TODO CHECAR SE TÁ FUNCIONANDO.
+	}
+	public void cadastrarProduto(){
+		//TODO
+	}
+	public void listarProdutos(){
+		for(Produto produto : produto){
+			System.out.println(produto);
+		}
 	}
 }
 

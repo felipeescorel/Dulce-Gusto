@@ -15,11 +15,6 @@ public class RepositorioProduto implements IRepositorioProduto {
 	
 	public void adicionarProduto(Produto produt){
 		
-		if (produt == null) {
-			System.out.println("Produto invalido " + produt);
-			return;
-		}
-		
 		this.produt.add(produt);
 	}
 	
@@ -61,11 +56,6 @@ public class RepositorioProduto implements IRepositorioProduto {
 	}
 	
 	public void alterarProduto(Produto produt){
-		
-		if (produt == null) {
-			System.out.println("Produto invalido!");
-			return;
-		}
 		
 		
 		int indice = this.obterIndice(produt.getNome());

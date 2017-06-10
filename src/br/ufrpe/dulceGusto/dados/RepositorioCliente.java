@@ -6,11 +6,18 @@ public class RepositorioCliente {
 	private Cliente[] clientes;
 	private int proxima;
 	private int tamanho;
+	private static RepositorioCliente instancia;
 	
-	public RepositorioCliente(){
+	private RepositorioCliente(){
 		tamanho=100;
 		this.clientes = new Cliente[tamanho];
 		
+	}
+	public static RepositorioCliente getInstancia(){
+		if(instancia == null){
+			instancia = new RepositorioCliente();
+		}
+		return instancia;
 	}
 	public int getProxima(){
 		return proxima;

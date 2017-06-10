@@ -4,7 +4,7 @@ public class Administrador extends Usuario{
 
 	public String cpf;
 	public Administrador(){
-	this.setAdm(true);
+//	falta adicionar as senhas nos usuários.
 		
 	}
 	public Administrador(String nome, String email, String telefone,String endereco, String user, String cpf){
@@ -18,5 +18,8 @@ public class Administrador extends Usuario{
 	public void setCpf(String cpf){
 		this.cpf = cpf;
 	}
-	//TODO Cadastrar novo produto, Cadastrar novo usuario,gerenciar pedidos;
+@Override
+	public String toString(){
+		return "Nome: "+this.getNome()+"\nEmail: "+this.getEmail()+"\nTelefone: "+this.getTelefone()+"\nCpf: "+this.getCpf()+"\n\nEndereço: "+this.getEndereco();
+	}
 }

@@ -1,4 +1,6 @@
 package br.ufrpe.dulceGusto.dados;
+import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 
 public interface IRepositorioProduto {
@@ -8,7 +10,7 @@ public interface IRepositorioProduto {
 	void removerProduto(String nome);
 	void alterarProduto(Produto produt);
 	boolean existe(String nome);
-	void listarProdutos();
-	
+	List<Produto> listarProdutos();
+	RepositorioProduto getInstancia();
 
 }

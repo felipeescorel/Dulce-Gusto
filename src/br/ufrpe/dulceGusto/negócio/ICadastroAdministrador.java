@@ -1,5 +1,7 @@
 package br.ufrpe.dulceGusto.negócio;
 
+import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 
 public interface ICadastroAdministrador {
@@ -8,5 +10,5 @@ public interface ICadastroAdministrador {
 	Administrador buscarAdministrador(String cpf);
 	void removerAdministrador(Administrador adm);
 	void alterarAdministrador(Administrador adm);
-	public void mostrarAdms();
+	public List<Administrador> mostrarAdms();
 }

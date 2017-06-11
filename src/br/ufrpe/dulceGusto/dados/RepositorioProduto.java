@@ -10,14 +10,25 @@ public class RepositorioProduto implements IRepositorioProduto {
 	private RepositorioProduto(){
 		
 	}
-	
+	private static RepositorioProduto instancia;			 //SINGLETON instancia inicializa com valor null
 	private List<Produto> produt = new ArrayList<Produto>();
 	
+	
+	//Metodo SINGLETON
+	
+	@Override
+	public RepositorioProduto getInstancia(){
+		if(instancia == null){ 								//Checa se foi inicializado != de nulo
+			instancia = new RepositorioProduto();			//inicializa
+		}
+		return instancia;
+	}
+	@Override
 	public void adicionarProduto(Produto produt){
 		
 		this.produt.add(produt);
 	}
-	
+	@Override
 	public Produto buscarProduto(String nome){
 		Produto retorno = null;
 		int indice = this.obterIndice(nome);
@@ -26,7 +37,6 @@ public class RepositorioProduto implements IRepositorioProduto {
 		}
 		return retorno;
 	}
-
 	private int obterIndice(String nome) {
 		int indice = -1;
 		for(int i=0;i<produt.size();i++){
@@ -34,10 +44,9 @@ public class RepositorioProduto implements IRepositorioProduto {
 				indice = i;
 			}
 		}
-		return indice;
-	
+		return indice;	
 	}
-	
+	@Override
 	public boolean existe(String nome){
 		boolean existe = false;
 		int indice=this.obterIndice(nome);
@@ -46,7 +55,7 @@ public class RepositorioProduto implements IRepositorioProduto {
 		}
 		return existe;
 	}
-	
+	@Override
 	public void removerProduto(String nome){
 		
 		int indice = this.obterIndice(nome);
@@ -54,7 +63,7 @@ public class RepositorioProduto implements IRepositorioProduto {
 			this.produt.remove(nome);
 		}
 	}
-	
+	@Override
 	public void alterarProduto(Produto produt){
 		
 		
@@ -64,11 +73,9 @@ public class RepositorioProduto implements IRepositorioProduto {
 			this.produt.set(indice, produt);
 		}
 	}
-	
-	public void listarProdutos(){
-		for(Produto produt : produt){
-			System.out.println(produt);
-		}
+	@Override
+	public List<Produto> listarProdutos(){
+		return this.produt;
 	}
 
 	

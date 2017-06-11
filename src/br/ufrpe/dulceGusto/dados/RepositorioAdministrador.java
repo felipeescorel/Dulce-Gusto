@@ -56,7 +56,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 		}
 		return existe;
 	}
-	//Remove Usuário, tanto adm quanto cliente.
+	//Remove Usuário, tanto adm quanto cliente?
 	@Override
 	public void removerAdministrador(String cpf){
 		int indice = this.obterIndice(cpf);
@@ -73,9 +73,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 		}
 	}
 	@Override
-	public void mostrarAdms(){
-		for(Administrador adm : administrador){
-			System.out.println(adm);
-		}
+	public List<Administrador> mostrarAdms(){
+		return this.administrador;
 	}
 }

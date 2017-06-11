@@ -1,5 +1,7 @@
 package br.ufrpe.dulceGusto.dados;
 
+import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 
 public interface IRepositorioAdministrador {
@@ -9,6 +11,6 @@ public interface IRepositorioAdministrador {
 	void removerAdministrador(String cpf);
 	void alterarAdministrador(Administrador adm);
 	boolean existe(String cpf);
-	void mostrarAdms();
+	List<Administrador> mostrarAdms();
 	RepositorioAdministrador getInstancia();
 }

@@ -9,11 +9,13 @@ public class Pedido  {
 	private Calendar dataPedido;
 	private int quantidade;
 	private Produto[] produto;
+	private int numeroPedido;
 	
-	public Pedido(Cliente cliente, double valor, Calendar dataPedido,int quantidade){
+	public Pedido(Cliente cliente, double valor, Calendar dataPedido,int quantidade, int numeroPedido){
 		this.cliente = cliente;
 		this.valorTotal = valor;
 		this.dataPedido = dataPedido;
+		this.numeroPedido = numeroPedido;
 		setQuantidade(quantidade);
 	}
 	
@@ -45,6 +47,14 @@ public class Pedido  {
 		this.dataPedido = dataPedido;
 		// TODO CHECAR SE TÁ FUNCIONANDO.
 	}
+	public int getNumeroPedido() {
+		return numeroPedido;
+	}
+	public void setNumeroPedido(int numeroPedido) {
+		this.numeroPedido = numeroPedido;
+	}
+
+
 	public void cadastrarProduto(){
 		//TODO
 	}

@@ -1,23 +1,31 @@
 package br.ufrpe.dulceGusto.dados;
+import java.util.ArrayList;
+import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
-public class RepositorioCliente {
+public class RepositorioCliente implements IRepositorioCliente{
 	
 	private Cliente[] clientes;
 	private int proxima;
 	private int tamanho;
+	
+	
+private List<Cliente> cliente = new ArrayList<Cliente>();
+
+
 	private static RepositorioCliente instancia;
+	@Override
+	public RepositorioCliente getInstancia(){
+		if(instancia == null){
+			instancia = new RepositorioCliente();
+		}
+		return instancia;
+	}
 	
 	private RepositorioCliente(){
 		tamanho=100;
 		this.clientes = new Cliente[tamanho];
 		
-	}
-	public static RepositorioCliente getInstancia(){
-		if(instancia == null){
-			instancia = new RepositorioCliente();
-		}
-		return instancia;
 	}
 	public int getProxima(){
 		return proxima;
@@ -25,7 +33,7 @@ public class RepositorioCliente {
 	public int getTamanho(){
 		return tamanho;
 	}
-	public boolean novoCliente(Cliente cliente){
+	public void cadastrarCliente(Cliente cliente){
 		boolean retorno = false;
 		for(int i=0;i<tamanho;i++){
 			if(	cliente!=null 
@@ -45,7 +53,7 @@ public class RepositorioCliente {
 				}
 			}
 		}
-		return retorno;
+		return;
 	}
 	public int obterIndice(String cpf){
 		
@@ -84,6 +92,18 @@ public class RepositorioCliente {
 		if(indice != -1){
 			this.clientes[indice] = cliente;
 		}
+	}
+
+	@Override
+	public boolean existe(String cpf) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Cliente> mostrarAdms() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

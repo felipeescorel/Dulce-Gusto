@@ -8,10 +8,10 @@ public interface IRepositorioCliente {
 
 	void cadastrarCliente(Cliente client);
 	Cliente buscarCliente(String cpf);
-	boolean removerCliente(String cpf);
+	void removerCliente(String cpf);
 	void alterarCliente(Cliente client);
 	boolean existe(String cpf);
-	List<Cliente> mostrarAdms();
+	List<Cliente> listarClientes();
 	RepositorioCliente getInstancia();
 
 

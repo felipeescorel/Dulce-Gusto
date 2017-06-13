@@ -5,15 +5,13 @@ import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
 public class RepositorioCliente implements IRepositorioCliente{
 	
-	private Cliente[] clientes;
-	private int proxima;
-	private int tamanho;
 	
-	
-private List<Cliente> cliente = new ArrayList<Cliente>();
+	private List<Cliente> cliente = new ArrayList<Cliente>();
 
 
 	private static RepositorioCliente instancia;
+
+	
 	@Override
 	public RepositorioCliente getInstancia(){
 		if(instancia == null){
@@ -23,87 +21,56 @@ private List<Cliente> cliente = new ArrayList<Cliente>();
 	}
 	
 	private RepositorioCliente(){
-		tamanho=100;
-		this.clientes = new Cliente[tamanho];
+		
 		
 	}
-	public int getProxima(){
-		return proxima;
+	@Override
+	public void cadastrarCliente(Cliente cliente){			
+		this.cliente.add(cliente);
 	}
-	public int getTamanho(){
-		return tamanho;
-	}
-	public void cadastrarCliente(Cliente cliente){
-		boolean retorno = false;
-		for(int i=0;i<tamanho;i++){
-			if(	cliente!=null 
-					&& 
-					this.getProxima()<this.clientes.length){				
-				for(int j =0; j<this.clientes.length;j++){
-					boolean equivale = cliente.getCpf().equals(clientes[j].getCpf());
-					if(!equivale){
-						clientes[proxima] = cliente;
-						proxima++;
-						retorno = true;
-						if(this.getProxima()>this.getTamanho()){
-							this.tamanho = tamanho*2;
-						}
-					}
-				
-				}
-			}
-		}
-		return;
-	}
-	public int obterIndice(String cpf){
-		
+	private int obterIndice(String cpf){		
 		int indice = -1;
-		for (int i=0; i<this.getProxima();i++){
-			if(clientes[i].getCpf().equals(cpf)){
+		for (int i=0; i<this.cliente.size();i++){
+			if(this.cliente.get(i).getCpf().equals(cpf)){
 				indice =i;
 			}
-		}
-		
+		}		
 		return indice;
 	}
+	@Override
 	public Cliente buscarCliente(String cpf){
 		Cliente retorno = null;
 		int indice = this.obterIndice(cpf);
 		if(indice != -1){
-			retorno = this.clientes[indice];
+			retorno = this.cliente.get(indice);
 		}
 		return retorno;
 	}
-	public boolean removerCliente(String cpf){
-		boolean retorno = false;
+	@Override
+	public void removerCliente(String cpf){		
 		int indice = this.obterIndice(cpf);
 		if(indice!=-1){
-			this.clientes[indice] = this.clientes[proxima-1];
-			this.clientes[proxima-1] = null;
-			proxima--;
-			retorno = true;
-		}
-		
-		return retorno;
+			this.cliente.remove(indice);			
+		}		
 	}
+	@Override
 	public void alterarCliente(Cliente cliente){
-		int indice = this.obterIndice(cliente.getCpf());
-		
+		int indice = this.obterIndice(cliente.getCpf());		
 		if(indice != -1){
-			this.clientes[indice] = cliente;
+			this.cliente.set(indice, cliente);
 		}
 	}
-
 	@Override
 	public boolean existe(String cpf) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean existe = false;
+		int indice = this.obterIndice(cpf);
+		if(indice!=-1){
+			existe = true;
+		}
+		return existe;	
 	}
-
 	@Override
-	public List<Cliente> mostrarAdms() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	public List<Cliente> listarClientes() {		
+		return this.cliente;
+	}	
 }

@@ -1,69 +1,118 @@
 package br.ufrpe.dulceGusto.negócio;
 
+import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
+import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
+import br.ufrpe.dulceGusto.classesbasicas.Pedido;
+import br.ufrpe.dulceGusto.dados.*;
 
 public class Fachada implements IFachada {
 	
 	private ICadastroAdministrador cadastroAdministrador;
 	private ICadastroProduto cadastroProduto;
-	//TODO Resto das interfaces
+	private ICadastroPedido cadastroPedido;
+	private ICadastroClientes cadastroCliente;	
 	private static Fachada instancia;
 	
 	private Fachada(){
-		this.cadastroAdministrador = new CadastroAdministrador();
-		this.cadastroProduto = new CadastroProduto();
-		
-		//TODO inicializar o resto das coisas
+		this.cadastroAdministrador.getInstancia();
+		this.cadastroProduto.getInstancia();
+		this.cadastroCliente.getInstancia();
+		this.cadastroPedido.getInstancia();		
 	}
+	
 	public static Fachada getInstancia(){
 		if(instancia == null){
 			instancia = new Fachada();
 		}
-		return instancia;
-		
-	}
+		return instancia;		
+	}	
 	
-	
-	//TODO Apenas administrador deve poder executar
+	//ADMINISTRADOR
+	//TODO APENAS ADM DEVE PODER EXECUTAR
 	public void cadastrarCliente(Administrador adm){
 		this.cadastroAdministrador.cadastrarAdministrador(adm);
 	}
-	//TODO Apenas administrador deve poder executar
+	//TODO APENAS ADM
 	public Administrador buscarAdministrador(String cpf){
 		return this.cadastroAdministrador.buscarAdministrador(cpf);
 	}
-	//TODO Apenas administrador deve poder executar
+	//TODO APENAS ADM
 	public void removerAdministrador(Administrador adm){
 		this.removerAdministrador(adm);
 	}
-	//TODO Apenas administrador deve poder executar
+	//TODO APENAS ADM
 	public void alterarAdministrador(Administrador adm){
 		this.cadastroAdministrador.alterarAdministrador(adm);
 	}
-	//TODO implementar método que possa se chamado por cliente mas apenas informe as informações básicas
-	public void exibirAdministradores(){
-		this.cadastroAdministrador.mostrarAdms();
+	//TODO implementar método que possa seR chamado por cliente mas apenas informe as informações básicas
+	public List<Administrador> exibirAdministradores(){
+		return this.cadastroAdministrador.mostrarAdms();
 	}
-	//TODO Apenas administrador deve poder executar
+	
+	
+	
+	//PRODUTO
+	//TODO APENAS ADM
 	public void adicionarProduto(Produto produt){
 		this.cadastroProduto.adicionarProduto(produt);
 	}
 	public Produto buscarProduto(String nome){
 		return this.cadastroProduto.buscarProduto(nome);
 	}
-	//TODO Apenas administrador deve poder executar
+	//TODO APENAS ADM
 	public void removerProduto(Produto produt){
 		this.cadastroProduto.removerProduto(produt);
 	}
-	//TODO Apenas administrador deve poder executar
+	//TODO APENAS ADM
 	public void alterarProduto(Produto produt){
 		this.cadastroProduto.alterarProduto(produt);
 	}
-	public void listarProdutos(){
-		this.cadastroProduto.listarProdutos();
+	public List<Produto> listarProdutos(){
+		return this.cadastroProduto.listarProdutos();
 	}
 	
-	//TODO Terminar As Atribuições 
 	
+	
+	//CLIENTE
+	//Apenas ADM
+	public void adicionarCliente(Cliente cliente){
+		this.cadastroCliente.cadastrarCliente(cliente);
+	}
+	//APENAS ADM
+	public Cliente buscarCliente(String nome){
+		return this.cadastroCliente.buscarCliente(nome);
+	}
+	//APENAS ADM
+	public void removerCliente(Cliente cliente){
+		this.cadastroCliente.removerCliente(cliente);
+	}
+	//APENAS ADM ALTERA OUTROS, O PROPRIO PODE SE ALTERAR
+	public void alterarCliente(Cliente cliente){
+		this.cadastroCliente.alterarCliente(cliente);
+	}
+	//APENAS ADM
+	public List<Cliente> listarClientes(){
+		return this.cadastroCliente.listarClientes();
+	}
+	
+	
+	//PEDIDO
+	public void cadastrarPedido(Pedido pedido){
+		this.cadastroPedido.cadastrarPedido(pedido);
+	}
+	public Pedido buscarPedido(int numeroPedido){
+		return this.cadastroPedido.buscarPedido(numeroPedido);
+	}
+	public void removerPedido(Pedido pedido){
+		this.cadastroPedido.removerPedido(pedido);
+	}
+	public void alterarPedido(Pedido pedido){
+		this.cadastroPedido.cadastrarPedido(pedido);
+	}
+	public List<Pedido> mostrarPedido(){
+		return this.cadastroPedido.mostrarPedido();
+	}
 }

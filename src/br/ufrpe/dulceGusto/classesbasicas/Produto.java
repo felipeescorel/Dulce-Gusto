@@ -8,7 +8,7 @@ public class Produto {
 	private String[] ingredientes;
 	private int tamanho;
 	private int proxima;
-	//TODO variável que informa se é doce ou salgado
+	//TODO variável que informa se é doce ou salgado ???
 	
 	public Produto(String nome, double preco, String descricao){
 		this.nome=nome;

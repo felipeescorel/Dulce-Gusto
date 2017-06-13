@@ -1,5 +1,7 @@
 package br.ufrpe.dulceGusto.classesbasicas;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Pedido  {
 	
@@ -8,7 +10,7 @@ public class Pedido  {
 	private double valorTotal;
 	private Calendar dataPedido;
 	private int quantidade;
-	private Produto[] produto;
+	private List<Produto> produto = new ArrayList<Produto>(); //TODO pensar em como utilizar.
 	private int numeroPedido;
 	
 	public Pedido(Cliente cliente, double valor, Calendar dataPedido,int quantidade, int numeroPedido){
@@ -17,8 +19,7 @@ public class Pedido  {
 		this.dataPedido = dataPedido;
 		this.numeroPedido = numeroPedido;
 		setQuantidade(quantidade);
-	}
-	
+	}	
 	
 	public int getQuantidade(){
 		return quantidade;
@@ -30,8 +31,7 @@ public class Pedido  {
 		return cliente;
 	}
 	public void setCliente(Cliente cliente){
-		this.cliente = cliente;
-				
+		this.cliente = cliente;				
 	}
 	public double getValorTotal(){
 		return valorTotal;
@@ -53,15 +53,21 @@ public class Pedido  {
 	public void setNumeroPedido(int numeroPedido) {
 		this.numeroPedido = numeroPedido;
 	}
-
-
-	public void cadastrarProduto(){
-		//TODO
-	}
-	public void listarProdutos(){
-		for(Produto produto : produto){
-			System.out.println(produto);
+	
+	public void novoProduto(Produto produto){
+		if(produto!=null){
+			for(int i = 0; i<this.produto.size();i++){
+				if(this.produto.get(i).getNome().equals(produto.getNome())){
+					this.produto.add(produto);
+				}
+			}
 		}
+		
 	}
+	public List<Produto> mostrarProdutos(){
+		return this.produto;
+	}
+	
+	
 }
 

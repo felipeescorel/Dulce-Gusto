@@ -5,8 +5,12 @@ public class NotasIMPORTANTE {
 	//PRA NÃO ESQUERCERMOS NENHUM CÓDIGO!!!!
 	
 	//Classe de Log in
-	//Implementar Resto das interfaces na fachada, vão colocando à medido que vocês as terminarem.
-	//Restrições de CadastroAdministrador
 	//Atribuir senha aos usuários
+	
+	//MOSTRAR SEUS PEDIDOS.
+	//NÃO MOSTRAR PEDIDOS DE OUTROS CLIENTES.
+	//ALTERAR SEU PRÓPRIO PEDIDO. NÃO DE TERCEIROS
+	//ADM PODE ALTERAR TDS PEDIDOS.
+	//MESMA COISA PROS DEMAIS MÉTODOS
 	
 }

@@ -1,53 +1,69 @@
 package br.ufrpe.dulceGusto.negócio;
 
-import br.ufrpe.dulceGusto.dados.*;
-
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
-
+import br.ufrpe.dulceGusto.dados.IRepositorioCliente;
 import java.util.List;
-
 	
 	public class CadastroClientes implements ICadastroClientes{
 		
+		private static CadastroClientes instancia;
 		private IRepositorioCliente repositorio;	
-		public CadastroClientes(){
+		private CadastroClientes(){
 			repositorio.getInstancia();
-		}
-		
+		}		
 		@Override	
 		public void cadastrarCliente(Cliente client){
-			this.repositorio.cadastrarCliente(client);		
-			if (client == null) {
+			if(client!=null){
+				boolean existe = this.repositorio.existe(client.getCpf());
+				if(existe!=true)
+					this.repositorio.cadastrarCliente(client);		
+			}			
+			else {
 				System.out.println("Cliente invalido " + client);
 				return;
+				//Não precisa botar isso, a gente vai resolver com excessão depois.
 			}
 		}
 		@Override
-		public Cliente buscarCliente (String nome){
-			return this.repositorio.buscarCliente(nome);		
+		public Cliente buscarCliente (String cpf){
+			Cliente retorno = null;
+			if(cpf!=null){
+				retorno = this.repositorio.buscarCliente(cpf);
+			}
+			return retorno;	
 		}
 		@Override
 		public void removerCliente (Cliente client){
-			this.repositorio.removerCliente(client.getNome());
+			if(client != null){				
+				if(this.repositorio.existe(client.getCpf()) != false){
+					this.repositorio.removerCliente(client.getNome());
+				}
+			}			
 		}
 		@Override
-		public void alterarCliente(Cliente client){
-			
+		public void alterarCliente(Cliente client){			
 			if (client == null) {
 				System.out.println("Cliente invalido!");
 				return;
-			}		
-			this.repositorio.alterarCliente(client);
+				//Não precisa blablabla exceção
+			}
+			if(client != null){
+				if(this.repositorio.existe(client.getCpf())){
+					this.repositorio.alterarCliente(client);
+				}
+			}
 		}
-
 		@Override
-		public List<Cliente> listarClientes() {
-			// TODO Auto-generated method stub
-			return null;
+		public List<Cliente> listarClientes() {			
+			return this.repositorio.listarClientes();
 		}
-	
-		
-
+		@Override
+		public CadastroClientes getInstancia(){
+			if(instancia == null){
+				instancia = new CadastroClientes();
+			}
+			return instancia;
+		}
 	}
 	
 	

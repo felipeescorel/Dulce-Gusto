@@ -24,8 +24,7 @@ public class RepositorioProduto implements IRepositorioProduto {
 		return instancia;
 	}
 	@Override
-	public void adicionarProduto(Produto produt){
-		
+	public void adicionarProduto(Produto produt){		
 		this.produt.add(produt);
 	}
 	@Override
@@ -56,19 +55,15 @@ public class RepositorioProduto implements IRepositorioProduto {
 		return existe;
 	}
 	@Override
-	public void removerProduto(String nome){
-		
+	public void removerProduto(String nome){		
 		int indice = this.obterIndice(nome);
 		if(indice!=-1){
 			this.produt.remove(nome);
 		}
 	}
 	@Override
-	public void alterarProduto(Produto produt){
-		
-		
-		int indice = this.obterIndice(produt.getNome());
-		
+	public void alterarProduto(Produto produt){		
+		int indice = this.obterIndice(produt.getNome());		
 		if(indice!=-1){
 			this.produt.set(indice, produt);
 		}

@@ -10,12 +10,17 @@ public class RepositorioPedido implements IRepositorioPedido {
 	private static RepositorioPedido instancia;
 	private List<Pedido> pedido = new ArrayList<Pedido>();
 	
-	public static RepositorioPedido getInstancia(){
+	
+	@Override
+	public RepositorioPedido getInstancia(){
 		if(instancia == null){
 			instancia = new RepositorioPedido();
 		}
 		return instancia;
 	}
+	private RepositorioPedido(){
+		
+	}	
 	@Override
 	public void cadastrarPedido(Pedido ped){
 		this.pedido.add(ped);
@@ -32,7 +37,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	private int obterIndice(int numeroPedido) {
 		int indice = -1;
 		for(int i=0;i<pedido.size();i++){
-			if(this.pedido.get(i).equals(numeroPedido)){
+			if(this.pedido.get(i).getNumeroPedido() == numeroPedido){
 				indice = i;
 			}
 		}
@@ -41,26 +46,22 @@ public class RepositorioPedido implements IRepositorioPedido {
 	@Override
 	public boolean existe(int numeroPedido){
 		boolean existe = false;
-		int indice=this.obterIndice(numeroPedido);
+		int indice = this.obterIndice(numeroPedido);
 		if(indice!=-1){
 			existe = true;
 		}
 		return existe;
 	}
 	@Override
-	public void removerPedido(int numeroPedido){
-		
+	public void removerPedido(int numeroPedido){		
 		int indice = this.obterIndice(numeroPedido);
 		if(indice!=-1){
 			this.pedido.remove(numeroPedido);
 		}
 	}
 	@Override
-	public void alterarPedido(Pedido pedido){
-		
-		
-		int indice = this.obterIndice(pedido.getNumeroPedido());
-		
+	public void alterarPedido(Pedido pedido){		
+		int indice = this.obterIndice(pedido.getNumeroPedido());		
 		if(indice!=-1){
 			this.pedido.set(indice, pedido);
 		}

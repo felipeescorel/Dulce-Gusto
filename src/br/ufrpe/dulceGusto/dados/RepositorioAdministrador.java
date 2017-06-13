@@ -34,40 +34,35 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 			retorno = this.administrador.get(indice);
 		}
 		return retorno;
-	}
-	
+	}	
 	private int obterIndice(String cpf){
 		int indice = -1;
 		for(int i=0;i<administrador.size();i++){
-			if(this.administrador.get(i).equals(cpf)){
+			if(this.administrador.get(i).getCpf().equals(cpf)){
 				indice = i;
 			}
 		}
-		return indice;
-			
-		
+		return indice;		
 	}
 	@Override
 	public boolean existe(String cpf){
 		boolean existe = false;
-		int indice=this.obterIndice(cpf);
+		int indice = this.obterIndice(cpf);
 		if(indice!=-1){
 			existe = true;
 		}
 		return existe;
-	}
-	//Remove Usuário, tanto adm quanto cliente?
+	}	
 	@Override
 	public void removerAdministrador(String cpf){
 		int indice = this.obterIndice(cpf);
 		if(indice!=-1){
-			this.administrador.remove(cpf);
+			this.administrador.remove(indice);
 		}
 	}
 	@Override
 	public void alterarAdministrador(Administrador adm){
-		int indice = this.obterIndice(adm.getCpf());
-		
+		int indice = this.obterIndice(adm.getCpf());		
 		if(indice!=-1){
 			this.administrador.set(indice, adm);
 		}

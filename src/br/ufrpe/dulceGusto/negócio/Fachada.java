@@ -82,8 +82,8 @@ public class Fachada implements IFachada {
 		this.cadastroCliente.cadastrarCliente(cliente);
 	}
 	//APENAS ADM
-	public Cliente buscarCliente(String nome){
-		return this.cadastroCliente.buscarCliente(nome);
+	public Cliente buscarCliente(String cpf){
+		return this.cadastroCliente.buscarCliente(cpf);
 	}
 	//APENAS ADM
 	public void removerCliente(Cliente cliente){

@@ -8,7 +8,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 public interface ICadastroClientes {
 	
 		void cadastrarCliente(Cliente client);
-		Cliente buscarCliente(String nome);
+		Cliente buscarCliente(String cpf);
 		void removerCliente(Cliente client);
 		void alterarCliente(Cliente client);
 		List<Cliente> listarClientes();

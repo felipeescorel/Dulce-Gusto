@@ -27,7 +27,7 @@ public interface IFachada {
 		
 		//TODO Cliente
 		void adicionarCliente(Cliente cliente);
-		Cliente buscarCliente(String nome);
+		Cliente buscarCliente(String cpf);
 		void removerCliente(Cliente cliente);
 		void alterarCliente(Cliente cliente);
 		List<Cliente> listarClientes();

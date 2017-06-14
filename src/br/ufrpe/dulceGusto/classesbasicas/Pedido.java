@@ -11,7 +11,8 @@ public class Pedido  {
 	private Calendar dataPedido;
 	private int quantidade;
 	private List<Produto> produto = new ArrayList<Produto>(); //TODO pensar em como utilizar.
-	private int numeroPedido;
+	private int numeroPedido;//TODO gerar randomicamente
+	
 	
 	public Pedido(Cliente cliente, double valor, Calendar dataPedido,int quantidade, int numeroPedido){
 		this.cliente = cliente;
@@ -21,6 +22,10 @@ public class Pedido  {
 		setQuantidade(quantidade);
 	}	
 	
+	public Pedido() {
+		
+	}
+
 	public int getQuantidade(){
 		return quantidade;
 	}

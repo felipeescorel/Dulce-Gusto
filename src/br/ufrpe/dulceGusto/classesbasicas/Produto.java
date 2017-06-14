@@ -18,6 +18,10 @@ public class Produto {
 		ingredientes = new String[tamanho];
 	}
 	
+	public Produto() {
+	
+	}
+
 	public String getNome(){
 		return nome;
 	}

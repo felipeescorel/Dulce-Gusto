@@ -40,7 +40,7 @@ public class Produto {
 	public void setDescricao(String descricao){
 		this.descricao = descricao;
 	}
-	
+
 	public void cadastrarIngrediente(String ingrediente){
 		for (int i = 0;i<proxima;i++){
 			if(ingrediente!= null && proxima<tamanho){

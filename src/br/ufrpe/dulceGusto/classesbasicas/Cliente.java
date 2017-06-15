@@ -8,8 +8,8 @@ public class Cliente extends Usuario{
 		this.setAdm(false);
 	}
 
-	public Cliente(String nome, String email, String telefone, String endereco, String user,String cpf) {
-		super(nome, email, telefone, endereco, user);
+	public Cliente(String nome, String email, String telefone, String endereco,String cpf,String senha) {
+		super(nome, email, telefone, endereco, senha);
 		this.cpf = cpf;
 		this.setAdm(false);
 		

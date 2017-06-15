@@ -14,6 +14,7 @@ public class NotasIMPORTANTE {
 	//MESMA COISA PROS DEMAIS MÉTODOS
 
 	//CRIAR METODO QUE REMOVE INGREDIENTES NA CLASSE DE PRODUTO.
+	//ALTERAR A ARQUITETURA PRA APENAS UTILIZAR USUARIO, E NELE CHECA O TIPO DE USUARIO!!!
 	
 	/*DUVIDAS PARA NAO ESQUECER DE PERGUNTAR
 	 *	INTEIRO MUITO GRANDE DÁ ERRO. UTILIZAR LONG???
@@ -21,4 +22,6 @@ public class NotasIMPORTANTE {
 	 *	NUMERO PEDIDO VAI TER QUE SER UMA STRING ------- LEMBRAR DE MODIFICAR
 	 * 	PESQUISAR JAVADATETIME(É ESSE NOME MESMO??)
 	 */
+	//Modificar na parte de cliente adicionarCliente para cadastrarCliente
+	//Na hora de chamar o login primeiro verificar se entra como adm, se for false verifica se é usuario se for false imprime na tela invalido e continua o loop!
 }

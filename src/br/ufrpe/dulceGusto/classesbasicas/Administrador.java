@@ -7,8 +7,8 @@ public class Administrador extends Usuario{
 //	falta adicionar as senhas nos usuários.
 		
 	}
-	public Administrador(String nome, String email, String telefone,String endereco, String user, String cpf){
-		super(nome,email,telefone,endereco,user);
+	public Administrador(String nome, String email, String telefone,String endereco,String cpf,String senha){
+		super(nome,email,telefone,endereco,senha);
 		setCpf(cpf);
 		this.setAdm(true);
 	}

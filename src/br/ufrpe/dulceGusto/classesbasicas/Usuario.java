@@ -6,19 +6,29 @@ public class Usuario {
 	private String email;
 	private String telefone;
 	private String endereco;
-	private String user;
+	private String senha;
 	private boolean adm;
+	
 	
 	public Usuario(){
 		
 	}
 	
-	public Usuario(String nome, String email, String telefone, String endereco, String user) {
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Usuario(String nome, String email, String telefone, String endereco, String senha) {
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
-		this.user = user;
+		
+		this.senha = senha;
 	}
 
 	public String getNome() {
@@ -53,14 +63,7 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-		
-	}
+	
 	public boolean getAdm(){
 		return adm;
 		

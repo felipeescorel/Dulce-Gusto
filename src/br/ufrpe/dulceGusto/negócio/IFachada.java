@@ -25,7 +25,7 @@ public interface IFachada {
 		List<Produto> listarProdutos();
 		
 		
-		//TODO Cliente
+		//Cliente
 		void adicionarCliente(Cliente cliente);
 		Cliente buscarCliente(String cpf);
 		void removerCliente(Cliente cliente);
@@ -33,12 +33,18 @@ public interface IFachada {
 		List<Cliente> listarClientes();
 		
 		
-		//TODO Pedido
+		//Pedido
 		void cadastrarPedido(Pedido pedido);
 		Pedido buscarPedido(int numeroPedido);
 		void removerPedido(Pedido pedido);
 		void alterarPedido(Pedido pedido);
 		List<Pedido> mostrarPedido();		
 		
+		
+		//LOGIN
+		boolean autenticarLoginCliente(String senha, String cpf);
+		boolean autenticarLoginAdm(String senha, String cpf);
+		void atribuirCliente(CadastroClientes cadastroC);
+		void atribuirAdm(CadastroAdministrador cadastroA);
 }
 			

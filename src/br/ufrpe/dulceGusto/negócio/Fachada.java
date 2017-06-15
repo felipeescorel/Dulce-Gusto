@@ -15,6 +15,7 @@ public class Fachada implements IFachada {
 	private ICadastroPedido cadastroPedido;
 	private ICadastroClientes cadastroCliente;
 	private static Fachada instancia;
+	private IControleDeLogin controleLogin;
 	
 	private Fachada(){
 		CadastroAdministrador.getInstancia();
@@ -134,5 +135,20 @@ public class Fachada implements IFachada {
 	@Override
 	public List<Pedido> mostrarPedido(){
 		return this.cadastroPedido.mostrarPedido();
+	}
+	
+	//LOGIN
+//	@Override
+	public boolean autenticarLoginCliente(String senha, String cpf){
+		return this.controleLogin.autenticarLoginCliente(senha, cpf);
+	}
+	public boolean autenticarLoginAdm(String senha, String cpf){
+		return this.controleLogin.autenticarLoginAdm(senha, cpf);
+	}
+	public void atribuirAdm(CadastroAdministrador cadastroA){
+		this.controleLogin.atribuirAdm(cadastroA);
+	}
+	public void atribuirCliente(CadastroClientes cadastroC){
+		this.controleLogin.atribuirCliente(cadastroC);
 	}
 }

@@ -194,7 +194,7 @@ public class Aplicaçao {
 					System.out.println("Informar user");
 					user = scan.nextLine();
 					scan.next();
-					cliente.setUser(user);
+//					cliente.setUser(user);
 				}
 
 				case 2: {
@@ -222,7 +222,7 @@ public class Aplicaçao {
 					System.out.println("Informar user");
 					user = scan.nextLine();
 					scan.nextLine();
-					administrador.setUser(user);
+//					administrador.setUser(user);
 				}
 
 				case 3: {
@@ -530,7 +530,7 @@ public class Aplicaçao {
 						System.out.println("Informe o novo nome de usuario: ");
 						user = scan.nextLine();
 						scan.next();
-						administrador.setUser(user);
+//						administrador.setUser(user);
 
 						break;
 					}

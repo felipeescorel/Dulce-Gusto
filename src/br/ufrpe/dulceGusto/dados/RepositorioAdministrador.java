@@ -3,13 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
+import br.ufrpe.dulceGusto.classesbasicas.Usuario;
 
 
 
 public class RepositorioAdministrador implements IRepositorioAdministrador{
 
 	private List<Administrador> administrador = new ArrayList<Administrador>();
-	
+	Administrador adm;
 	
 	private static RepositorioAdministrador instancia;
 	
@@ -71,4 +72,17 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 	public List<Administrador> mostrarAdms(){
 		return this.administrador;
 	}
+	@Override
+	public boolean autenticarLogin(String senha, String cpf){
+		boolean retorno = false;
+		adm = this.buscarAdministrador(cpf);
+		boolean tipo = adm.getAdm();
+		if(adm.getSenha().equals(senha)&&tipo!=false){
+			retorno = true;
+		}
+		return retorno;
+	}
+	
+	
+	
 }

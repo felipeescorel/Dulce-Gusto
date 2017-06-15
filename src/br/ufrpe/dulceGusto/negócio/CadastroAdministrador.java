@@ -8,7 +8,8 @@ import br.ufrpe.dulceGusto.dados.RepositorioAdministrador;
 public class CadastroAdministrador implements ICadastroAdministrador {
 	
 	private static CadastroAdministrador instancia;
-	private IRepositorioAdministrador repositorio;
+	private IRepositorioAdministrador repositorio = RepositorioAdministrador.getInstancia();
+	
 	private CadastroAdministrador(){
 		RepositorioAdministrador.getInstancia();
 	}
@@ -16,8 +17,9 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 	public void cadastrarAdministrador(Administrador adm){
 		if(adm!=null){
 			boolean existe = this.repositorio.existe(adm.getCpf());
-			if(existe!=true)
+			if(existe!=true){
 				this.repositorio.cadastrarAdministrador(adm);
+			}
 		}	
 	}
 	@Override

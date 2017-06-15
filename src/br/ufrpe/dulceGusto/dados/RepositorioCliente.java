@@ -6,7 +6,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 public class RepositorioCliente implements IRepositorioCliente{
 	
 	
-	private List<Cliente> cliente = new ArrayList<Cliente>();
+	private ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 	Cliente clt;
 
 	private static RepositorioCliente instancia;

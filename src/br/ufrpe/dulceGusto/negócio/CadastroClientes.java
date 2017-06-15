@@ -9,7 +9,7 @@ import java.util.List;
 	public class CadastroClientes implements ICadastroClientes{
 		
 		private static CadastroClientes instancia;
-		private IRepositorioCliente repositorio;	
+		private IRepositorioCliente repositorio = RepositorioCliente.getInstancia();
 		private CadastroClientes(){
 			RepositorioCliente.getInstancia();
 		}		

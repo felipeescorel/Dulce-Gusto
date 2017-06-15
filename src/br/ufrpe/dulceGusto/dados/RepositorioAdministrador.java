@@ -3,13 +3,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
-import br.ufrpe.dulceGusto.classesbasicas.Usuario;
+
 
 
 
 public class RepositorioAdministrador implements IRepositorioAdministrador{
 
-	private List<Administrador> administrador = new ArrayList<Administrador>();
+	private ArrayList<Administrador> administrador = new ArrayList<Administrador>();
 	Administrador adm;
 	
 	private static RepositorioAdministrador instancia;
@@ -38,7 +38,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 	}	
 	private int obterIndice(String cpf){
 		int indice = -1;
-		for(int i=0;i<administrador.size();i++){
+		for(int i=0;i<this.administrador.size();i++){
 			if(this.administrador.get(i).getCpf().equals(cpf)){
 				indice = i;
 			}

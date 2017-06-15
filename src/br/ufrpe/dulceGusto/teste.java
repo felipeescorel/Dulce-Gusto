@@ -2,12 +2,16 @@ package br.ufrpe.dulceGusto;
 
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
+import br.ufrpe.dulceGusto.dados.RepositorioAdministrador;
+import br.ufrpe.dulceGusto.dados.RepositorioCliente;
 import br.ufrpe.dulceGusto.negócio.CadastroAdministrador;
 import br.ufrpe.dulceGusto.negócio.CadastroClientes;
+//import br.ufrpe.dulceGusto.negócio.CadastroAdministrador;
+//import br.ufrpe.dulceGusto.negócio.CadastroClientes;
 import br.ufrpe.dulceGusto.negócio.ControleDeLogin;
 import br.ufrpe.dulceGusto.negócio.Fachada;
-import br.ufrpe.dulceGusto.negócio.ICadastroAdministrador;
-import br.ufrpe.dulceGusto.negócio.ICadastroClientes;
+//import br.ufrpe.dulceGusto.negócio.ICadastroAdministrador;
+//import br.ufrpe.dulceGusto.negócio.ICadastroClientes;
 import br.ufrpe.dulceGusto.negócio.IControleDeLogin;
 import br.ufrpe.dulceGusto.negócio.IFachada;
 
@@ -25,6 +29,10 @@ public class teste {
 		IFachada fachada = Fachada.getInstancia();
 		boolean retorno,retorno2,loop;
 		Scanner scan = new Scanner(System.in);
+		RepositorioAdministrador repo = RepositorioAdministrador.getInstancia();
+		CadastroAdministrador control = CadastroAdministrador.getInstancia();
+		RepositorioCliente rep = RepositorioCliente.getInstancia();
+		CadastroClientes control2 = CadastroClientes.getInstancia();
 		String cpf,senha;
 //		login.atribuirAdm(cadastroA);
 //		login.atribuirCliente(cadastroC);
@@ -32,20 +40,23 @@ public class teste {
 		adm.setCpf("testecpf");
 		adm.setSenha("testesenha");
 		adm.setNome("Felipe");
+		
+		
+		
 		Cliente cliente = new Cliente();
 		cliente.setCpf("testecpf2");
 		cliente.setSenha("testesenha2");
 		cliente.setNome("Voinha");
-		fachada.cadastrarCliente(adm);
+		fachada.cadastrarAdm(adm);
 		fachada.adicionarCliente(cliente);
 		loop = true;
 		while(loop!=false){
 			System.out.println("Tela de Login\nInforme seu cpf:");
 			cpf = scan.nextLine();
-			scan.next();
+			
 			System.out.println("Informe sua senha:");
 			senha = scan.nextLine();
-			scan.next();
+			
 			retorno = login.autenticarLoginAdm(senha, cpf);
 			if(retorno!=true){
 				retorno2 = login.autenticarLoginCliente(senha, cpf);

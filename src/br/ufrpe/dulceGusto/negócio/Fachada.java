@@ -10,12 +10,12 @@ import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 
 public class Fachada implements IFachada {
 	
-	private ICadastroAdministrador cadastroAdministrador;
-	private ICadastroProduto cadastroProduto;
-	private ICadastroPedido cadastroPedido;
-	private ICadastroClientes cadastroCliente;
+	private ICadastroAdministrador cadastroAdministrador = CadastroAdministrador.getInstancia();
+	private ICadastroProduto cadastroProduto =CadastroProduto.getInstancia();
+	private ICadastroPedido cadastroPedido =CadastroPedido.getInstancia();
+	private ICadastroClientes cadastroCliente = CadastroClientes.getInstancia();
 	private static Fachada instancia;
-	private IControleDeLogin controleLogin;
+	private IControleDeLogin controleLogin = ControleDeLogin.getInstancia();
 	
 	private Fachada(){
 		CadastroAdministrador.getInstancia();
@@ -34,7 +34,7 @@ public class Fachada implements IFachada {
 	//ADMINISTRADOR
 	//TODO APENAS ADM DEVE PODER EXECUTAR
 	@Override
-	public void cadastrarCliente(Administrador adm){
+	public void cadastrarAdm(Administrador adm){
 		this.cadastroAdministrador.cadastrarAdministrador(adm);
 	}
 	//TODO APENAS ADM

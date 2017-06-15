@@ -10,7 +10,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 public interface IFachada {
 
 		//ADMINISTRADOR
-		void cadastrarCliente(Administrador adm);
+		void cadastrarAdm(Administrador adm);
 		Administrador buscarAdministrador(String cpf);
 		void removerAdministrador(Administrador adm);
 		void alterarAdministrador(Administrador adm);

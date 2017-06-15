@@ -3,14 +3,16 @@ package br.ufrpe.dulceGusto.negócio;
 import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 import br.ufrpe.dulceGusto.dados.IRepositorioPedido;
+import br.ufrpe.dulceGusto.dados.RepositorioPedido;
 
 public class CadastroPedido implements ICadastroPedido{
 	
 	private static CadastroPedido instancia;
 	private IRepositorioPedido repositorio;
 	private CadastroPedido(){
-		repositorio.getInstancia();
+		RepositorioPedido.getInstancia();
 	}
+	
 	@Override
 	public void cadastrarPedido(Pedido pedido){
 		if(pedido!=null){
@@ -46,8 +48,8 @@ public class CadastroPedido implements ICadastroPedido{
 	public List<Pedido> mostrarPedido(){
 		return this.repositorio.listarPedido();
 	}
-	@Override
-	public CadastroPedido getInstancia(){
+	
+	public static CadastroPedido getInstancia(){
 		if(instancia==null){
 			instancia = new CadastroPedido();
 		}

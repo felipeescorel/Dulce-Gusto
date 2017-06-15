@@ -16,8 +16,8 @@ public class RepositorioProduto implements IRepositorioProduto {
 	
 	//Metodo SINGLETON
 	
-	@Override
-	public RepositorioProduto getInstancia(){
+	
+	public static RepositorioProduto getInstancia(){
 		if(instancia == null){ 								//Checa se foi inicializado != de nulo
 			instancia = new RepositorioProduto();			//inicializa
 		}

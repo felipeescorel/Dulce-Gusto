@@ -12,8 +12,8 @@ public class RepositorioCliente implements IRepositorioCliente{
 	private static RepositorioCliente instancia;
 
 	
-	@Override
-	public RepositorioCliente getInstancia(){
+	
+	public static RepositorioCliente getInstancia(){
 		if(instancia == null){
 			instancia = new RepositorioCliente();
 		}

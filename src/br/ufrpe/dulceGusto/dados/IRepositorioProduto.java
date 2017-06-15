@@ -11,6 +11,6 @@ public interface IRepositorioProduto {
 	void alterarProduto(Produto produt);
 	boolean existe(String nome);
 	List<Produto> listarProdutos();
-	RepositorioProduto getInstancia();
+	
 
 }

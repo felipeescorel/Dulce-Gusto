@@ -11,8 +11,8 @@ public class RepositorioPedido implements IRepositorioPedido {
 	private List<Pedido> pedido = new ArrayList<Pedido>();
 	
 	
-	@Override
-	public RepositorioPedido getInstancia(){
+	
+	public static RepositorioPedido getInstancia(){
 		if(instancia == null){
 			instancia = new RepositorioPedido();
 		}

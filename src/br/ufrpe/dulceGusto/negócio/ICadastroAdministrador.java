@@ -11,5 +11,5 @@ public interface ICadastroAdministrador {
 	void removerAdministrador(Administrador adm);
 	void alterarAdministrador(Administrador adm);
 	public List<Administrador> mostrarAdms();
-	CadastroAdministrador getInstancia();
+	
 }

@@ -3,13 +3,14 @@ package br.ufrpe.dulceGusto.negócio;
 import br.ufrpe.dulceGusto.dados.*;
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 import java.util.List;
+import br.ufrpe.dulceGusto.dados.RepositorioAdministrador;
 
 public class CadastroAdministrador implements ICadastroAdministrador {
 	
 	private static CadastroAdministrador instancia;
 	private IRepositorioAdministrador repositorio;
 	private CadastroAdministrador(){
-		repositorio.getInstancia();
+		RepositorioAdministrador.getInstancia();
 	}
 	@Override
 	public void cadastrarAdministrador(Administrador adm){
@@ -45,8 +46,8 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 	public List<Administrador> mostrarAdms(){
 		return this.repositorio.mostrarAdms();
 	}
-	@Override
-	public CadastroAdministrador getInstancia(){
+	
+	public static CadastroAdministrador getInstancia(){
 		if(instancia == null){
 			instancia = new CadastroAdministrador();
 		}

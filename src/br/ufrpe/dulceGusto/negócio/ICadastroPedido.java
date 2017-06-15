@@ -11,5 +11,7 @@ public interface ICadastroPedido {
 	void removerPedido(Pedido pedido);
 	void alterarPedido(Pedido pedido);
 	List<Pedido> mostrarPedido();
-	CadastroPedido getInstancia();
+	
+	
+	
 }

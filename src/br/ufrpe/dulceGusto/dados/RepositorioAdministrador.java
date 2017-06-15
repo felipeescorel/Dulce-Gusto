@@ -12,8 +12,8 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 	
 	
 	private static RepositorioAdministrador instancia;
-	@Override
-	public RepositorioAdministrador getInstancia(){
+	
+	public static RepositorioAdministrador getInstancia(){
 		if(instancia == null){
 			instancia = new RepositorioAdministrador();
 		}

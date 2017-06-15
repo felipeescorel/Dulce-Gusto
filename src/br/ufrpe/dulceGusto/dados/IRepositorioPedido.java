@@ -12,7 +12,7 @@ public interface IRepositorioPedido {
 	void removerPedido(int numeroPedido);
 	List<Pedido> listarPedido();
 	void alterarPedido(Pedido pedido);
-	RepositorioPedido getInstancia();
+	
 
 
 

@@ -2,6 +2,8 @@ package br.ufrpe.dulceGusto.negócio;
 
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.dados.IRepositorioCliente;
+import br.ufrpe.dulceGusto.dados.RepositorioCliente;
+
 import java.util.List;
 	
 	public class CadastroClientes implements ICadastroClientes{
@@ -9,7 +11,7 @@ import java.util.List;
 		private static CadastroClientes instancia;
 		private IRepositorioCliente repositorio;	
 		private CadastroClientes(){
-			repositorio.getInstancia();
+			RepositorioCliente.getInstancia();
 		}		
 		@Override	
 		public void cadastrarCliente(Cliente client){
@@ -57,8 +59,8 @@ import java.util.List;
 		public List<Cliente> listarClientes() {			
 			return this.repositorio.listarClientes();
 		}
-		@Override
-		public CadastroClientes getInstancia(){
+		
+		public static CadastroClientes getInstancia(){
 			if(instancia == null){
 				instancia = new CadastroClientes();
 			}

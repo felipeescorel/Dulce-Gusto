@@ -11,6 +11,6 @@ public interface ICadastroProduto {
 	void removerProduto(Produto produt);
 	void alterarProduto(Produto produt);
 	List<Produto> listarProdutos();
-	CadastroProduto getInstancia();
+	
 	
 }

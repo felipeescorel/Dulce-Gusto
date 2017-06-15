@@ -12,7 +12,7 @@ public interface ICadastroClientes {
 		void removerCliente(Cliente client);
 		void alterarCliente(Cliente client);
 		List<Cliente> listarClientes();
-		CadastroClientes getInstancia();
+		
 	}
 
 

@@ -12,5 +12,5 @@ public interface IRepositorioAdministrador {
 	void alterarAdministrador(Administrador adm);
 	boolean existe(String cpf);
 	List<Administrador> mostrarAdms();
-	RepositorioAdministrador getInstancia();
+	
 }

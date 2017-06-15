@@ -1,6 +1,8 @@
 package br.ufrpe.dulceGusto.negócio;
 
 import br.ufrpe.dulceGusto.dados.IRepositorioProduto;
+import br.ufrpe.dulceGusto.dados.RepositorioProduto;
+
 import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 
@@ -9,7 +11,7 @@ public class CadastroProduto implements ICadastroProduto{
 	private IRepositorioProduto repositorio;
 	private static CadastroProduto instancia;
 	private CadastroProduto(){
-		repositorio.getInstancia();
+		RepositorioProduto.getInstancia();
 	}
 	
 	@Override	
@@ -41,8 +43,8 @@ public class CadastroProduto implements ICadastroProduto{
 	public List<Produto> listarProdutos(){
 		return this.repositorio.listarProdutos();
 	}
-	@Override
-	public CadastroProduto getInstancia(){
+	
+	public static CadastroProduto getInstancia(){
 		if(instancia == null){
 			instancia = new CadastroProduto();
 		}

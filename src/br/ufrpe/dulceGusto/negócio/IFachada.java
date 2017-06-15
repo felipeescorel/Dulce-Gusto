@@ -38,6 +38,7 @@ public interface IFachada {
 		Pedido buscarPedido(int numeroPedido);
 		void removerPedido(Pedido pedido);
 		void alterarPedido(Pedido pedido);
-		List<Pedido> mostrarPedido();
+		List<Pedido> mostrarPedido();		
 		
 }
+			

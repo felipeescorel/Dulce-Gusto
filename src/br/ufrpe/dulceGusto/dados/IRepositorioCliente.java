@@ -12,7 +12,7 @@ public interface IRepositorioCliente {
 	void alterarCliente(Cliente client);
 	boolean existe(String cpf);
 	List<Cliente> listarClientes();
-	RepositorioCliente getInstancia();
+	
 
 
 }

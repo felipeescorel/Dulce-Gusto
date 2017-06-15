@@ -8,7 +8,7 @@ import br.ufrpe.dulceGusto.dados.RepositorioPedido;
 public class CadastroPedido implements ICadastroPedido{
 	
 	private static CadastroPedido instancia;
-	private IRepositorioPedido repositorio;
+	private IRepositorioPedido repositorio = RepositorioPedido.getInstancia();
 	private CadastroPedido(){
 		RepositorioPedido.getInstancia();
 	}

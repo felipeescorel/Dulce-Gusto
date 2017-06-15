@@ -8,7 +8,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 
 public class CadastroProduto implements ICadastroProduto{
 	
-	private IRepositorioProduto repositorio;
+	private IRepositorioProduto repositorio = RepositorioProduto.getInstancia();
 	private static CadastroProduto instancia;
 	private CadastroProduto(){
 		RepositorioProduto.getInstancia();

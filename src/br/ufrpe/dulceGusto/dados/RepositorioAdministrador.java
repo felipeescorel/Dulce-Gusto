@@ -77,8 +77,12 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 		boolean retorno = false;
 		adm = this.buscarAdministrador(cpf);
 		boolean tipo = adm.getAdm();
-		if(adm.getSenha().equals(senha)&&tipo!=false){
-			retorno = true;
+		if(tipo!=false){
+			boolean equivale = this.adm.getSenha().equals(senha);
+			if(equivale!=false){
+				retorno = true;
+			}
+			
 		}
 		return retorno;
 	}

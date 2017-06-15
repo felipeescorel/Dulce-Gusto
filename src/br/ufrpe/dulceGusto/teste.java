@@ -50,6 +50,13 @@ public class teste {
 		fachada.cadastrarAdm(adm);
 		fachada.adicionarCliente(cliente);
 		loop = true;
+		boolean aux = adm.getSenha().equals("testesenha");
+		if(aux!=false){
+			System.out.println("sim");
+		}
+		else{
+			System.out.println("nao");
+		}
 		while(loop!=false){
 			System.out.println("Tela de Login\nInforme seu cpf:");
 			cpf = scan.nextLine();
@@ -65,12 +72,12 @@ public class teste {
 				}
 				else{
 					System.out.println("Cliente "+fachada.buscarCliente(cpf).getNome()+" logado com sucesso.");
-					loop = true;
+					loop = false;
 				}
 			}
 			else{
 				System.out.println("Administrador "+fachada.buscarAdministrador(cpf).getNome()+" logado com sucesso.");
-				loop = true;
+				loop = false;
 			}
 				
 		}

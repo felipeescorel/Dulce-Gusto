@@ -8,7 +8,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 public class RepositorioPedido implements IRepositorioPedido {
 	
 	private static RepositorioPedido instancia;
-	private List<Pedido> pedido = new ArrayList<Pedido>();
+	private ArrayList<Pedido> pedido = new ArrayList<Pedido>();
 	
 	
 	

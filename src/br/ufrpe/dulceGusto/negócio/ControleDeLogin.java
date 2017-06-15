@@ -4,8 +4,8 @@ import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
 public class ControleDeLogin implements IControleDeLogin {
 	
-	private CadastroClientes cadastroCliente;
-	private CadastroAdministrador cadastroAdm;
+	private CadastroClientes cadastroCliente = CadastroClientes.getInstancia();
+	private CadastroAdministrador cadastroAdm = CadastroAdministrador.getInstancia();
 	private static ControleDeLogin instancia;
 	
 	public static ControleDeLogin getInstancia(){

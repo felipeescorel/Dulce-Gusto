@@ -11,7 +11,7 @@ public class RepositorioProduto implements IRepositorioProduto {
 		
 	}
 	private static RepositorioProduto instancia;			 //SINGLETON instancia inicializa com valor null
-	private List<Produto> produt = new ArrayList<Produto>();
+	private ArrayList<Produto> produt = new ArrayList<Produto>();
 	
 	
 	//Metodo SINGLETON

@@ -17,32 +17,29 @@ import br.ufrpe.dulceGusto.negócio.IFachada;
 
 import java.util.Scanner;
 
-
-
 public class teste {
 
-	public static void main(String [] args){
-		
+	public static void main(String[] args) {
+
 		IControleDeLogin login = ControleDeLogin.getInstancia();
-//		CadastroClientes cadastroC = CadastroClientes.getInstancia();
-//		CadastroAdministrador cadastroA = CadastroAdministrador.getInstancia();
+		// CadastroClientes cadastroC = CadastroClientes.getInstancia();
+		// CadastroAdministrador cadastroA =
+		// CadastroAdministrador.getInstancia();
 		IFachada fachada = Fachada.getInstancia();
-		boolean retorno,retorno2,loop;
+		boolean retorno, retorno2, loop;
 		Scanner scan = new Scanner(System.in);
 		RepositorioAdministrador repo = RepositorioAdministrador.getInstancia();
 		CadastroAdministrador control = CadastroAdministrador.getInstancia();
 		RepositorioCliente rep = RepositorioCliente.getInstancia();
 		CadastroClientes control2 = CadastroClientes.getInstancia();
-		String cpf,senha;
-//		login.atribuirAdm(cadastroA);
-//		login.atribuirCliente(cadastroC);
+		String cpf, senha;
+		// login.atribuirAdm(cadastroA);
+		// login.atribuirCliente(cadastroC);
 		Administrador adm = new Administrador();
 		adm.setCpf("testecpf");
 		adm.setSenha("testesenha");
 		adm.setNome("Felipe");
-		
-		
-		
+
 		Cliente cliente = new Cliente();
 		cliente.setCpf("testecpf2");
 		cliente.setSenha("testesenha2");
@@ -51,34 +48,32 @@ public class teste {
 		fachada.adicionarCliente(cliente);
 		loop = true;
 		boolean aux = adm.getSenha().equals(cliente.getSenha());
-		if(aux!=false){
+		if (aux != false) {
 			System.out.println("sim");
-		}
-		else{
+		} else {
 			System.out.println("nao");
 		}
-		while(loop!=false){
+		while (loop != false) {
 			System.out.println("Tela de Login\nInforme seu cpf:");
 			cpf = scan.nextLine();
-			
+
 			System.out.println("Informe sua senha:");
-			senha = scan.nextLine();			
+			senha = scan.nextLine();
 			retorno = login.autenticarLoginAdm(senha, cpf);
-			if(retorno!=true){
+			if (retorno != true) {
 				retorno2 = login.autenticarLoginCliente(senha, cpf);
-				if(retorno2 == false){
+				if (retorno2 == false) {
 					System.out.println("Login falhou.Tente Novamente.");
-				}
-				else{
-					System.out.println("Cliente "+fachada.buscarCliente(cpf).getNome()+" logado com sucesso.");
+				} else {
+					System.out.println("Cliente " + fachada.buscarCliente(cpf).getNome() + " logado com sucesso.");
 					loop = false;
 				}
-			}
-			else{
-				System.out.println("Administrador "+fachada.buscarAdministrador(cpf).getNome()+" logado com sucesso.");
+			} else {
+				System.out.println(
+						"Administrador " + fachada.buscarAdministrador(cpf).getNome() + " logado com sucesso.");
 				loop = false;
 			}
-				
+
 		}
 	}
 }

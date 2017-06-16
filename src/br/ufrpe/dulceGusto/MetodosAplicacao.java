@@ -1,6 +1,7 @@
 package br.ufrpe.dulceGusto;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.Scanner;
 
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
@@ -10,139 +11,13 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 import br.ufrpe.dulceGusto.negócio.IFachada;
 
-// *NOTAS SOBRE A CLASSE APLICAÇAO*
-
-//static IFachada fachada = Fachada.getInstancia();
-//static Scanner scan = new Scanner(System.in);
-//static int opcao, quantidade, numeroPedido;
-//static String nome;
-//static String cpf;
-//static String endereco;
-//static String telefone;
-//static String email;
-//static String user;
-//static String descricao;
-//static String ingredientes;
-//static double preco, valor;
-//static Calendar dataPedido = Calendar.getInstance();
-//
-//static int opcao2, op3, op4, op5, op6, op7;
-//static Cliente cliente = new Cliente();
-//static Administrador administrador = new Administrador();
-//static Produto produto = new Produto();
-//static Pedido pedido = new Pedido();
-//
-//static boolean condicao = true;
-//static boolean condicao2 = true;
-//
-//public static String menuInicial(){
-//	return "CADASTRAR(1)	BUSCAR(2)	REMOVER(3)	ALTERAR(4)	SAIR(5)";
-//}
-//public static void novoCliente(){
-//	System.out.println("Informar nome do cliente");
-//	nome = scan.nextLine();
-//	scan.next();
-//	cliente.setNome(nome);
-//	System.out.println("Informar cpf");
-//	cpf = scan.nextLine();
-//	scan.next();
-//	cliente.setCpf(cpf);
-//	System.out.println("Informar endereço");
-//	endereco = scan.nextLine();
-//	scan.next();
-//	cliente.setEndereco(endereco);
-//	System.out.println("Informar telefone");
-//	telefone = scan.nextLine();
-//	scan.next();
-//	cliente.setTelefone(telefone);
-//	System.out.println("Informar email");
-//	email = scan.nextLine();
-//	scan.next();
-//	cliente.setEmail(email);
-//	System.out.println("Informar user");
-//	user = scan.nextLine();
-//	scan.next();
-//	cliente.setUser(user);
-//}
-//public static void novoAdm(){
-//	System.out.println("Informar nome do Administrador");
-//	nome = scan.nextLine();
-//	scan.next();
-//	administrador.setNome(nome);
-//	System.out.println("Informar cpf");
-//	cpf = scan.nextLine();
-//	scan.next();
-//	administrador.setCpf(cpf);
-//	System.out.println("Informar endereço");
-//	endereco = scan.nextLine();
-//	scan.next();
-//	administrador.setEndereco(endereco);
-//	System.out.println("Informar telefone");
-//	telefone = scan.nextLine();
-//	scan.next();
-//	administrador.setTelefone(telefone);
-//	System.out.println("Informar email");
-//	email = scan.nextLine();
-//	scan.next();
-//	administrador.setEmail(email);
-//	System.out.println("Informar user");
-//	user = scan.nextLine();
-//	scan.next();
-//	administrador.setUser(user);
-//}
-//public static void novoProduto(){
-//	System.out.println("Informar nome do Produto");
-//	nome = scan.nextLine();
-//	scan.next();
-//	produto.setNome(nome);
-//	System.out.println("Informar preço");
-//	preco = scan.nextDouble();
-//	scan.next();
-//	produto.setPreco(preco);
-//	System.out.println("Informar a descriçao");
-//	descricao = scan.nextLine();
-//	scan.next();
-//	produto.setDescricao(descricao);
-//	System.out.println("Informar os ingredientes");
-//	ingredientes = scan.nextLine();
-//	scan.next();
-//	produto.cadastrarIngrediente(ingredientes);
-//	while (condicao2 != false) {
-//		System.out.println("Deseja informar outro ingrediente? SIM(1) Não(2)");
-//		op3 = scan.nextInt();
-//		scan.next();
-//		switch (op3) {
-//		case 1: {
-//			System.out.println("Informar ingrediente");
-//			ingredientes = scan.nextLine();
-//			scan.next();
-//			break;
-//		}
-//		case 2: {
-//			System.out.println("Todos ingredientes foram cadastrados.");
-//			condicao2 = false;
-//			break;
-//		}
-//		default: {
-//			System.out.println("Opção inválida.Tente novamente.");
-//			break;
-//		}
-//
-//		}
-//	}
-//}
-//public static void novoPedido(){
-//	
-//}
-
-
 // *METODOS DA CLASSE APLIÇAO*
 public class MetodosAplicacao {
 
 	IFachada fachada = Fachada.getInstancia();
 	Scanner scan = new Scanner(System.in);
 	int opcao, quantidade, numeroPedido;
-	String nome, cpf, endereco, telefone, email, user, descricao, ingredientes,ingredientes2;
+	String nome, cpf, endereco, telefone, email, user, descricao, ingredientes, ingredientes2;
 	double preco, valor;
 	Calendar dataPedido = Calendar.getInstance();
 
@@ -154,39 +29,34 @@ public class MetodosAplicacao {
 	String lixo;
 	boolean condicao = true;
 	boolean condicao2 = true;
-	
 
-	
-	public void caso1(){
-		
-			System.out.println("Informar nome do cliente");
-			nome = scan.nextLine();
-			scan.next();
-			cliente.setNome(nome);
-			System.out.println("Informar cpf");
-			cpf = scan.nextLine();
-			scan.next();
-			cliente.setCpf(cpf);
-			System.out.println("Informar endereço");
-			endereco = scan.nextLine();
-			scan.next();
-			cliente.setEndereco(endereco);
-			System.out.println("Informar telefone");
-			telefone = scan.nextLine();
-			scan.next();
-			cliente.setTelefone(telefone);
-			System.out.println("Informar email");
-			email = scan.nextLine();
-			scan.next();
-			cliente.setEmail(email);
-			System.out.println("Informar user");
-			user = scan.nextLine();
-			scan.next();
-			cliente.setUser(user);
+	// MENU ADM
+	public void novoCliente() {
+
+		System.out.println("Informar nome do cliente");
+		nome = scan.nextLine();
+		scan.next();
+		cliente.setNome(nome);
+		System.out.println("Informar cpf");
+		cpf = scan.nextLine();
+		scan.next();
+		cliente.setCpf(cpf);
+		System.out.println("Informar endereço");
+		endereco = scan.nextLine();
+		scan.next();
+		cliente.setEndereco(endereco);
+		System.out.println("Informar telefone");
+		telefone = scan.nextLine();
+		scan.next();
+		cliente.setTelefone(telefone);
+		System.out.println("Informar email");
+		email = scan.nextLine();
+		scan.next();
+		cliente.setEmail(email);
 	}
-	
-	public void caso2(){
-		
+
+	public void novoAdministrador() {
+
 		System.out.println("Informar nome do Administrador");
 		nome = scan.nextLine();
 		scan.nextLine();
@@ -207,14 +77,9 @@ public class MetodosAplicacao {
 		email = scan.nextLine();
 		scan.nextLine();
 		administrador.setEmail(email);
-		System.out.println("Informar user");
-		user = scan.nextLine();
-		scan.nextLine();
-		administrador.setUser(user);
 	}
 
-
-	public void caso3(){
+	public void novoProduto() {
 		System.out.println("Informar nome do Produto");
 		nome = scan.nextLine();
 		scan.next();
@@ -231,7 +96,7 @@ public class MetodosAplicacao {
 		ingredientes = scan.nextLine();
 		scan.next();
 		produto.cadastrarIngrediente(ingredientes);
-		while (condicao2 != false){ 
+		while (condicao2 != false) {
 			System.out.println("Deseja informar outro ingrediente? SIM(1) Não(2)");
 			op3 = scan.nextInt();
 			scan.next();
@@ -251,112 +116,105 @@ public class MetodosAplicacao {
 				System.out.println("Opção inválida.Tente novamente.");
 				break;
 			}
-			
+
 			}
 		}
-			
-        
+
 	}
 
-		public void caso4(){
-			
-			 System.out.println("Lista de Produtos disponíveis: "); 
-			  fachada.listarProdutos();				  
-			  while(condicao2!=false){				  
-				  System.out.println(
-				  "\nDeseja selecionar algum produto? SIM(1) Não(2)"); 
-				  op3 =scan.nextInt(); 						 
-				  switch(op3){ 
-					  case 1:{
-						  System.out.println("Informar produto: "); 
-						  nome = scan.nextLine(); 
-						  scan.next(); 
-						  produto = fachada.buscarProduto(nome); 							  
-						  
-						  System.out.println("Informar Quantidade: "); 
-						  quantidade =scan.nextInt(); 								  
-						  pedido = new Pedido();
-						  pedido.setQuantidade(quantidade);
-						  pedido.setValorTotal(produto.getPreco());								 
-//						  dataPedido.getTime();
-						  dataPedido.set(Calendar.YEAR,dataPedido.get(Calendar.YEAR));
-						  dataPedido.set(Calendar.MONTH,dataPedido.get(Calendar.MONTH));
-						  dataPedido.set(Calendar.DAY_OF_MONTH,dataPedido.get(Calendar.DAY_OF_MONTH));
-//						  Date date = new Date();
-//						  dataPedido.setTime(date);
-						  //TODO perguntar ao professor como colocar a hora
-						  pedido.setDataPedido(dataPedido);
-						  //TODO ARRUMAR NUMERO PEDIDO
-						  fachada.cadastrarPedido(pedido);
-						  break; 
-					  }
-					  case 2:{ 
-						  System.out.println("Todos ingredientes foram cadastrados."); 
-						  condicao2 = false;
-						  break; 
-						  } 
-					  default: { 
-						  System.out.println("Opção inválida.Tente novamente."); 
-						  break; 
-					  }	
-				  }
-			  }
-		}
-			  
-				  
-			  				  
-		  
-		
-		public void caso01(){
-			
-			System.out.println("NOVO CLIENTE(1)	NOVO ADMINISTRADOR(2)	NOVO PRODUTO(3)	NOVO PEDIDO(4)	SAIR(5)	");
-			opcao2 = scan.nextInt();
-			scan.nextLine();
-			MetodosAplicacao casoUm = new MetodosAplicacao();
-			MetodosAplicacao casoDois = new MetodosAplicacao();
-			MetodosAplicacao casoTres = new MetodosAplicacao();
-			MetodosAplicacao casoQuatro = new MetodosAplicacao();
-			switch (opcao2) {
+	public void novoPedido() {
+
+		System.out.println("Lista de Produtos disponíveis: ");
+		fachada.listarProdutos();
+		while (condicao2 != false) {
+			System.out.println("\nDeseja selecionar algum produto? SIM(1) Não(2)");
+			op3 = scan.nextInt();
+			switch (op3) {
 			case 1: {
-//				Aplicaçao.novoCliente();
-				casoUm.caso1();
-			}
+				System.out.println("Informar produto: ");
+				nome = scan.nextLine();
+				scan.next();
+				produto = fachada.buscarProduto(nome);
 
+				System.out.println("Informar Quantidade: ");
+				quantidade = scan.nextInt();
+				pedido = new Pedido();
+				pedido.setQuantidade(quantidade);
+				pedido.setValorTotal(produto.getPreco());
+				// dataPedido.getTime();
+				dataPedido.set(Calendar.YEAR, dataPedido.get(Calendar.YEAR));
+				dataPedido.set(Calendar.MONTH, dataPedido.get(Calendar.MONTH));
+				dataPedido.set(Calendar.DAY_OF_MONTH, dataPedido.get(Calendar.DAY_OF_MONTH));
+				// Date date = new Date();
+				// dataPedido.setTime(date);
+				// TODO perguntar ao professor como colocar a hora
+				pedido.setDataPedido(dataPedido);
+				// TODO ARRUMAR NUMERO PEDIDO
+				fachada.cadastrarPedido(pedido);
+				break;
+			}
 			case 2: {
-//				Aplicaçao.novoAdm();
-				casoDois.caso2();		
-			}
-
-			case 3: {
-//				Aplicaçao.novoProduto();
-				casoTres.caso3();	
-				}
-
-			case 4:{
-				casoQuatro.caso4();
-			}
-			 
-
-			case 5: {
-				condicao = false;
+				System.out.println("Todos ingredientes foram cadastrados.");
+				condicao2 = false;
 				break;
 			}
-
 			default: {
-				System.out.println("Opção inválida, tente Novamente.");
+				System.out.println("Opção inválida.Tente novamente.");
 				break;
 			}
 			}
-			
 		}
-		
-	public void caso02(){
-		
-		System.out.println("BUSCAR CLIENTE(1)	BUSCAR ADMINISTRADOR(2)   BUSCAR PRODUTO(3)	BUSCAR PEDIDO(4)	SAIR(5)	");
+	}
+
+	public void Cadastrar() {
+
+		System.out.println("NOVO CLIENTE(1)	NOVO ADMINISTRADOR(2)	NOVO PRODUTO(3)	NOVO PEDIDO(4)	SAIR(5)	");
 		opcao2 = scan.nextInt();
-		
-		
-		switch(opcao2){
+		scan.nextLine();
+		MetodosAplicacao casoUm = new MetodosAplicacao();
+		MetodosAplicacao casoDois = new MetodosAplicacao();
+		MetodosAplicacao casoTres = new MetodosAplicacao();
+		MetodosAplicacao casoQuatro = new MetodosAplicacao();
+		switch (opcao2) {
+		case 1: {
+			// Aplicaçao.novoCliente();
+			casoUm.novoCliente();
+		}
+
+		case 2: {
+			// Aplicaçao.novoAdm();
+			casoDois.novoAdministrador();
+		}
+
+		case 3: {
+			// Aplicaçao.novoProduto();
+			casoTres.novoProduto();
+		}
+
+		case 4: {
+			casoQuatro.novoPedido();
+		}
+
+		case 5: {
+			condicao = false;
+			break;
+		}
+
+		default: {
+			System.out.println("Opção inválida, tente Novamente.");
+			break;
+		}
+		}
+
+	}
+
+	public void Buscar() {
+
+		System.out
+				.println("BUSCAR CLIENTE(1)	BUSCAR ADMINISTRADOR(2)   BUSCAR PRODUTO(3)	BUSCAR PEDIDO(4)	SAIR(5)	");
+		opcao2 = scan.nextInt();
+
+		switch (opcao2) {
 		case 1: {
 			System.out.println("Informe o CPF do cliente que deseja encontrar: ");
 			cpf = scan.nextLine();
@@ -371,32 +229,32 @@ public class MetodosAplicacao {
 			fachada.buscarAdministrador(cpf);
 			break;
 		}
-		case 3:{
+		case 3: {
 			System.out.println("Informe o nome do produto que deseja encontrar: ");
 			nome = scan.nextLine();
 			scan.next();
 			fachada.buscarProduto(nome);
 			break;
 		}
-		case 4:{
+		case 4: {
 			System.out.println("Informe o número do pedido que deseja encontrar: ");
-			numeroPedido = scan.nextInt();					
+			numeroPedido = scan.nextInt();
 			fachada.buscarPedido(numeroPedido);
 			break;
 		}
-		case 5:{
-			//TODO boolean recebe false e sai do loop
+		case 5: {
+			// TODO boolean recebe false e sai do loop
 			break;
 		}
-			
+
 		}
 	}
-	
-	public void caso03(){
-		
+
+	public void Remover() {
+
 		System.out.println(
 				"REMOVER CLIENTE(1)	REMOVER ADMINISTRADOR(2)   REMOVER PRODUTO(3)	REMOVER PEDIDO(4)	SAIR(5)	");
-		opcao2 = scan.nextInt();				
+		opcao2 = scan.nextInt();
 		switch (opcao2) {
 		case 1: {
 			System.out.println("Informe o cpf do cliente que deseja remover: ");
@@ -424,7 +282,7 @@ public class MetodosAplicacao {
 		}
 		case 4: {
 			System.out.println("Informe o numero do pedido que deseja remover: ");
-			numeroPedido = scan.nextInt();					
+			numeroPedido = scan.nextInt();
 			fachada.removerPedido(fachada.buscarPedido(numeroPedido));
 
 			break;
@@ -443,22 +301,22 @@ public class MetodosAplicacao {
 		}
 		}
 	}
-	
-	public void caso04(){
+
+	public void Alterar() {
 		System.out.println(
 				"ALTERAR CLIENTE(1)	ALTERAR ADMINISTRADOR(2)   ALTERAR PRODUTO(3)	ALTERAR PEDIDO(4)	SAIR(5)	");
 		opcao2 = scan.nextInt();
-		
+
 		switch (opcao2) {
 		case 1: {
 			System.out.println("Informe o CPF do cliente que deseja alterar: ");
 			cpf = scan.nextLine();
 			scan.next();
 			cliente = fachada.buscarCliente(cpf);
-			System.out.println(
-					"O que você deseja alterar? NOME(1), EMAIL(2), TELEFONE(3), ENDEREÇO(4), CPF(5), SAIR(6)");
+			System.out
+					.println("O que você deseja alterar? NOME(1), EMAIL(2), TELEFONE(3), ENDEREÇO(4), CPF(5), SAIR(6)");
 			op3 = scan.nextInt();
-			
+
 			// TODO tem que implementar um while
 			switch (op3) {
 			case 1: {
@@ -520,7 +378,7 @@ public class MetodosAplicacao {
 			System.out.println(
 					"O que você deseja alterar? NOME(1), EMAIL(2), TELEFONE(3), ENDEREÇO(4), USER(5), CPF(6), SAIR(7) ");
 			op4 = scan.nextInt();
-			
+
 			switch (op4) {
 			case 1: {
 				System.out.println("Informe o novo nome: ");
@@ -554,14 +412,7 @@ public class MetodosAplicacao {
 
 				break;
 			}
-			case 5: {
-				System.out.println("Informe o novo nome de usuario: ");
-				user = scan.nextLine();
-				scan.next();
-				administrador.setUser(user);
 
-				break;
-			}
 			case 6: {
 				System.out.println("Informe o novo CPF: ");
 				cpf = scan.nextLine();
@@ -601,7 +452,7 @@ public class MetodosAplicacao {
 			}
 			case 2: {
 				System.out.println("Informe o novo preço: ");
-				preco = scan.nextDouble();						
+				preco = scan.nextDouble();
 				produto.setPreco(preco);
 
 				break;
@@ -626,7 +477,8 @@ public class MetodosAplicacao {
 				System.out.println("Informe o ingrediente que deseja remover: ");
 				String ingredientes2 = scan.nextLine();
 				scan.next();
-				// produto.remove(ingredientes2); //TODO criar metodo q remove um ingrediente
+				// produto.remove(ingredientes2); //TODO criar metodo q remove
+				// um ingrediente
 
 				break;
 
@@ -635,27 +487,49 @@ public class MetodosAplicacao {
 				// TODO boolean vai receber false
 				break;
 			}
-			default:{
+			default: {
 				System.out.println("Opção invalida, tente novamente.");
-				
+
 				break;
 			}
 
 			}
 
-		}case 4:{
-			
-
-	}
-	case 5: {
-
-	}
-	default: {
-
-				}
-			}
 		}
-	
-	}
 
-	
+		default: {
+
+		}
+		}
+
+		// MENU CLIENTE
+		/*
+		 * PRODUTOS DISPONIVEIS E LISTAR // DESEJA COMPRAR ALGUM,SE SIM DIGITAR
+		 * O NOME,SENAO SAIR GERAR NOVO PEDIDO
+		 */
+		produto = (Produto) fachada.listarProdutos();
+		System.out.println("Produtos disponiveis: " + produto);
+		System.out.println("Deseja comprar algum produto? (1) SIM  (2) NÃO");
+		op6 = scan.nextInt();
+		scan.next();
+		switch (op6) {
+		case 1: {
+			System.out.println("Digite o nome do produto pretendido: ");
+			nome = scan.nextLine();
+			scan.next();
+
+			break;
+		}
+		case 2: {
+			break;
+		}
+		default: {
+			System.out.println("Opção inválida, tente novamente.");
+
+			break;
+		}
+
+		}
+
+	}
+}

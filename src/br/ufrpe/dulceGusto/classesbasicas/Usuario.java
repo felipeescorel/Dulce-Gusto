@@ -1,6 +1,5 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
-
 public class Usuario {
 	private String nome;
 	private String email;
@@ -8,12 +7,11 @@ public class Usuario {
 	private String endereco;
 	private String senha;
 	private boolean adm;
-	
-	
-	public Usuario(){
-		
+
+	public Usuario() {
+
 	}
-	
+
 	public String getSenha() {
 		return senha;
 	}
@@ -27,7 +25,7 @@ public class Usuario {
 		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
-		
+
 		this.senha = senha;
 	}
 
@@ -63,55 +61,34 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 
-	
-	public boolean getAdm(){
+	public boolean getAdm() {
 		return adm;
-		
+
 	}
-	public void setAdm(boolean adm){
-		this.adm=adm;
+
+	public void setAdm(boolean adm) {
+		this.adm = adm;
 	}
-	
+
 	// TODO EXCEÇOES
 	/*
-	
-	
-	public void setTelefone(String telefone) throws DadosException {
-		if(telefone>=10000000){
-			this.telefone = telefone;
-		}
-		else
-			throw new DadosException("Telefone inválido");
-	}
-	
-	
-	public void setNome(String nome) throws DadosException{
-		if(nome!= ""){
-			this.nome = nome;
-		}
-		else
-			throw new DadosException();
-	}
-	
-	public void setEmail(String email) throws DadosException {
-		if(email != ""){
-			this.email = email;
-		}
-		else
-			throw new DadosException();
-	}
-	
-	public void setEndereco(String endereco) throws DadosException {
-		if(endereco != ""){
-			this.endereco = endereco;
-		}
-		else
-			throw new DadosException();
-	}
-	
+	 * 
+	 * 
+	 * public void setTelefone(String telefone) throws DadosException {
+	 * if(telefone>=10000000){ this.telefone = telefone; } else throw new
+	 * DadosException("Telefone inválido"); }
+	 * 
+	 * 
+	 * public void setNome(String nome) throws DadosException{ if(nome!= ""){
+	 * this.nome = nome; } else throw new DadosException(); }
+	 * 
+	 * public void setEmail(String email) throws DadosException { if(email !=
+	 * ""){ this.email = email; } else throw new DadosException(); }
+	 * 
+	 * public void setEndereco(String endereco) throws DadosException {
+	 * if(endereco != ""){ this.endereco = endereco; } else throw new
+	 * DadosException(); }
+	 * 
 	 */
-	
-	
-	
 
 }

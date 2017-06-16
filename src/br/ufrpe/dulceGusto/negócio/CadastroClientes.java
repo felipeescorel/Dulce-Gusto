@@ -70,9 +70,8 @@ import java.util.List;
 		public boolean autenticarLogin(String senha, String cpf){
 			boolean retorno = false;
 			if(cpf!=null &&senha!=null){
-				if(this.repositorio.existe(cpf)){
-					this.repositorio.autenticarLogin(senha, cpf);
-					retorno = true;
+				if(this.repositorio.existe(cpf)){					
+					retorno = this.repositorio.autenticarLogin(senha, cpf);
 				}
 			}
 			return retorno;

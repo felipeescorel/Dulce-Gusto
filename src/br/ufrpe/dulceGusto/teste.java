@@ -50,7 +50,7 @@ public class teste {
 		fachada.cadastrarAdm(adm);
 		fachada.adicionarCliente(cliente);
 		loop = true;
-		boolean aux = adm.getSenha().equals("testesenha");
+		boolean aux = adm.getSenha().equals(cliente.getSenha());
 		if(aux!=false){
 			System.out.println("sim");
 		}
@@ -62,8 +62,7 @@ public class teste {
 			cpf = scan.nextLine();
 			
 			System.out.println("Informe sua senha:");
-			senha = scan.nextLine();
-			
+			senha = scan.nextLine();			
 			retorno = login.autenticarLoginAdm(senha, cpf);
 			if(retorno!=true){
 				retorno2 = login.autenticarLoginCliente(senha, cpf);

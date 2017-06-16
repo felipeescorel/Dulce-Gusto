@@ -16,10 +16,12 @@ import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 public class Aplicacao {
 
 	public static void main(String[] args) {
+		IFachada fachada = Fachada.getInstancia();
 		Administrador teste = new Administrador();
 		teste.setCpf("cpfteste");
 		teste.setSenha("senhateste");
 		teste.setNome("Adm");
+		fachada.cadastrarAdm(teste);
 		Aplicacao.Login();
 
 	}
@@ -137,6 +139,7 @@ public class Aplicacao {
 							}
 						}
 					}
+					break;
 				}
 				case 2:{
 					Aplicacao.Remover();		

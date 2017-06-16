@@ -52,6 +52,8 @@ public interface IFachada {
 	void alterarPedido(Pedido pedido);
 
 	List<Pedido> mostrarPedido();
+	
+	void novoProduto(Produto produto);
 
 	// LOGIN
 	boolean autenticarLoginCliente(String senha, String cpf);

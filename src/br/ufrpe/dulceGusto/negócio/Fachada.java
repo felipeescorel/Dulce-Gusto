@@ -127,7 +127,10 @@ public class Fachada implements IFachada {
 	public void cadastrarPedido(Pedido pedido) {
 		this.cadastroPedido.cadastrarPedido(pedido);
 	}
-
+	@Override
+	public void novoProduto(Produto produto){
+		this.cadastroPedido.novoProduto(produto);
+	}
 	@Override
 	public Pedido buscarPedido(int numeroPedido) {
 		return this.cadastroPedido.buscarPedido(numeroPedido);

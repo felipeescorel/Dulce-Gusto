@@ -58,6 +58,7 @@ public class CadastroClientes implements ICadastroClientes {
 				this.repositorio.alterarCliente(client);
 			}
 		}
+
 	}
 
 	@Override
@@ -68,10 +69,15 @@ public class CadastroClientes implements ICadastroClientes {
 	public static CadastroClientes getInstancia() {
 		if (instancia == null) {
 			instancia = new CadastroClientes();
+		
+		
+	
+
 		}
 		return instancia;
 	}
 
+	
 	@Override
 	public boolean autenticarLogin(String senha, String cpf) {
 		boolean retorno = false;

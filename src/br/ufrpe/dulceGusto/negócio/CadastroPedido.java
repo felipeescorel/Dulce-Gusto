@@ -2,6 +2,7 @@ package br.ufrpe.dulceGusto.negócio;
 
 import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
+import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.dados.IRepositorioPedido;
 import br.ufrpe.dulceGusto.dados.RepositorioPedido;
 
@@ -22,7 +23,12 @@ public class CadastroPedido implements ICadastroPedido {
 				this.repositorio.cadastrarPedido(pedido);
 		}
 	}
-
+	@Override
+	public void novoProduto(Produto produto){
+		if(produto!=null){
+			this.repositorio.novoProduto(produto);
+		}
+	}
 	@Override
 	public Pedido buscarPedido(int numeroPedido) {
 		Pedido retorno = null;

@@ -60,9 +60,10 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 	public boolean autenticarLogin(String senha, String cpf){
 		boolean retorno = false;
 		if(cpf!=null&&senha!=null){
-			if(this.repositorio.existe(cpf)){
-				this.repositorio.autenticarLogin(senha, cpf);
-				retorno = true;
+			boolean existe = this.repositorio.existe(cpf);
+			if(existe!=false){				
+				
+				retorno = this.repositorio.autenticarLogin(senha, cpf);
 			}
 		}
 		return retorno;

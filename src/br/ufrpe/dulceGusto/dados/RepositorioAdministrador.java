@@ -10,7 +10,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 public class RepositorioAdministrador implements IRepositorioAdministrador{
 
 	private ArrayList<Administrador> administrador = new ArrayList<Administrador>();
-	Administrador adm;
+	Administrador adm = new Administrador();
 	
 	private static RepositorioAdministrador instancia;
 	
@@ -78,8 +78,8 @@ public class RepositorioAdministrador implements IRepositorioAdministrador{
 		adm = this.buscarAdministrador(cpf);
 		boolean tipo = adm.getAdm();
 		if(tipo!=false){
-			boolean equivale = this.adm.getSenha().equals(senha);
-			if(equivale!=false){
+			boolean equivale = adm.getSenha().equals(senha);
+			if(equivale!= false){
 				retorno = true;
 			}
 			

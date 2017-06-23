@@ -20,7 +20,7 @@ public class RepositorioAdministrador implements IRepositorioAdministrador {
 	}
 
 	private RepositorioAdministrador() {
-
+		this.administrador = new ArrayList<Administrador>();
 	}
 
 	@Override

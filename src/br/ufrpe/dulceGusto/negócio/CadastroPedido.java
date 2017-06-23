@@ -1,21 +1,21 @@
 package br.ufrpe.dulceGusto.negócio;
 
 import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.dados.IRepositorioPedido;
 import br.ufrpe.dulceGusto.dados.RepositorioPedido;
 
-public class CadastroPedido implements ICadastroPedido {
+public class CadastroPedido {
 
 	private static CadastroPedido instancia;
-	private IRepositorioPedido repositorio = RepositorioPedido.getInstancia();
+	private IRepositorioPedido repositorio;
 
 	private CadastroPedido() {
-		RepositorioPedido.getInstancia();
+		this.repositorio = RepositorioPedido.getInstancia();
 	}
 
-	@Override
 	public void cadastrarPedido(Pedido pedido) {
 		if (pedido != null) {
 			boolean existe = this.repositorio.existe(pedido.getNumeroPedido());
@@ -23,13 +23,13 @@ public class CadastroPedido implements ICadastroPedido {
 				this.repositorio.cadastrarPedido(pedido);
 		}
 	}
-	@Override
-	public void novoProduto(Produto produto){
-		if(produto!=null){
+
+	public void novoProduto(Produto produto) {
+		if (produto != null) {
 			this.repositorio.novoProduto(produto);
 		}
 	}
-	@Override
+
 	public Pedido buscarPedido(int numeroPedido) {
 		Pedido retorno = null;
 		if (numeroPedido != 0) {
@@ -38,7 +38,6 @@ public class CadastroPedido implements ICadastroPedido {
 		return retorno;
 	}
 
-	@Override
 	public void removerPedido(Pedido pedido) {
 		if (pedido != null) {
 			if (this.repositorio.existe(pedido.getNumeroPedido()))
@@ -47,7 +46,6 @@ public class CadastroPedido implements ICadastroPedido {
 
 	}
 
-	@Override
 	public void alterarPedido(Pedido pedido) {
 		if (pedido != null) {
 			if (this.repositorio.existe(pedido.getNumeroPedido()))
@@ -55,7 +53,6 @@ public class CadastroPedido implements ICadastroPedido {
 		}
 	}
 
-	@Override
 	public List<Pedido> mostrarPedido() {
 		return this.repositorio.listarPedido();
 	}

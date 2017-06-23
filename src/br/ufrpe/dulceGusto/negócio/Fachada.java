@@ -4,23 +4,24 @@ import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
-import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
+import br.ufrpe.dulceGusto.classesbasicas.Produto;
 
-public class Fachada implements IFachada {
+public class Fachada {
 
-	private ICadastroAdministrador cadastroAdministrador = CadastroAdministrador.getInstancia();
-	private ICadastroProduto cadastroProduto = CadastroProduto.getInstancia();
-	private ICadastroPedido cadastroPedido = CadastroPedido.getInstancia();
-	private ICadastroClientes cadastroCliente = CadastroClientes.getInstancia();
+	private CadastroAdministrador cadastroAdministrador;
+	private CadastroProduto cadastroProduto;
+	private CadastroPedido cadastroPedido;
+	private CadastroClientes cadastroCliente;
 	private static Fachada instancia;
-	private IControleDeLogin controleLogin = ControleDeLogin.getInstancia();
+	private ControleDeLogin controleLogin;
 
 	private Fachada() {
-		CadastroAdministrador.getInstancia();
-		CadastroProduto.getInstancia();
-		CadastroClientes.getInstancia();
-		CadastroPedido.getInstancia();
+		this.cadastroAdministrador = CadastroAdministrador.getInstancia();
+		this.cadastroProduto = CadastroProduto.getInstancia();
+		this.cadastroPedido = CadastroPedido.getInstancia();
+		this.cadastroCliente = CadastroClientes.getInstancia();
+		this.controleLogin = ControleDeLogin.getInstancia();
 	}
 
 	public static Fachada getInstancia() {
@@ -32,127 +33,114 @@ public class Fachada implements IFachada {
 
 	// ADMINISTRADOR
 	// TODO APENAS ADM DEVE PODER EXECUTAR
-	@Override
+
 	public void cadastrarAdm(Administrador adm) {
 		this.cadastroAdministrador.cadastrarAdministrador(adm);
 	}
 
 	// TODO APENAS ADM
-	@Override
+
 	public Administrador buscarAdministrador(String cpf) {
 		return this.cadastroAdministrador.buscarAdministrador(cpf);
 	}
 
 	// TODO APENAS ADM
-	@Override
 	public void removerAdministrador(Administrador adm) {
 		this.removerAdministrador(adm);
 	}
 
 	// TODO APENAS ADM
-	@Override
+
 	public void alterarAdministrador(Administrador adm) {
 		this.cadastroAdministrador.alterarAdministrador(adm);
 	}
 
 	// TODO implementar método que possa seR chamado por cliente mas apenas
 	// informe as informações básicas
-	@Override
+
 	public List<Administrador> exibirAdministradores() {
 		return this.cadastroAdministrador.mostrarAdms();
 	}
 
 	// PRODUTO
 	// TODO APENAS ADM
-	@Override
+
 	public void adicionarProduto(Produto produt) {
 		this.cadastroProduto.adicionarProduto(produt);
 	}
 
-	@Override
 	public Produto buscarProduto(String nome) {
 		return this.cadastroProduto.buscarProduto(nome);
 	}
 
-	@Override
 	// TODO APENAS ADM
 	public void removerProduto(Produto produt) {
 		this.cadastroProduto.removerProduto(produt);
 	}
 
-	@Override
 	// TODO APENAS ADM
 	public void alterarProduto(Produto produt) {
 		this.cadastroProduto.alterarProduto(produt);
 	}
 
-	@Override
 	public List<Produto> listarProdutos() {
 		return this.cadastroProduto.listarProdutos();
 	}
 
-	@Override
 	// CLIENTE
 	// Apenas ADM
 	public void adicionarCliente(Cliente cliente) {
 		this.cadastroCliente.cadastrarCliente(cliente);
 	}
 
-	@Override
 	// APENAS ADM
 	public Cliente buscarCliente(String cpf) {
 		return this.cadastroCliente.buscarCliente(cpf);
 	}
 
-	@Override
 	// APENAS ADM
 	public void removerCliente(Cliente cliente) {
 		this.cadastroCliente.removerCliente(cliente);
 	}
 
-	@Override
 	// APENAS ADM ALTERA OUTROS, O PROPRIO PODE SE ALTERAR
 	public void alterarCliente(Cliente cliente) {
 		this.cadastroCliente.alterarCliente(cliente);
 	}
 
-	@Override
 	// APENAS ADM
 	public List<Cliente> listarClientes() {
 		return this.cadastroCliente.listarClientes();
 	}
 
 	// PEDIDO
-	@Override
+
 	public void cadastrarPedido(Pedido pedido) {
 		this.cadastroPedido.cadastrarPedido(pedido);
 	}
-	@Override
-	public void novoProduto(Produto produto){
+
+	public void novoProduto(Produto produto) {
 		this.cadastroPedido.novoProduto(produto);
 	}
-	@Override
+
 	public Pedido buscarPedido(int numeroPedido) {
 		return this.cadastroPedido.buscarPedido(numeroPedido);
 	}
 
-	@Override
 	public void removerPedido(Pedido pedido) {
 		this.cadastroPedido.removerPedido(pedido);
 	}
 
-	@Override
 	public void alterarPedido(Pedido pedido) {
 		this.cadastroPedido.cadastrarPedido(pedido);
 	}
 
-	@Override
 	public List<Pedido> mostrarPedido() {
 		return this.cadastroPedido.mostrarPedido();
 	}
 
 	// LOGIN
-	// @Override
+
 	public boolean autenticarLoginCliente(String senha, String cpf) {
 		return this.controleLogin.autenticarLoginCliente(senha, cpf);
 	}

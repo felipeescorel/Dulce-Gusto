@@ -1,20 +1,19 @@
 package br.ufrpe.dulceGusto.negócio;
 
-import br.ufrpe.dulceGusto.dados.*;
-import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 import java.util.List;
-import br.ufrpe.dulceGusto.dados.RepositorioAdministrador;
 
-public class CadastroAdministrador implements ICadastroAdministrador {
+import br.ufrpe.dulceGusto.classesbasicas.Administrador;
+import br.ufrpe.dulceGusto.dados.*;
+
+public class CadastroAdministrador {
 
 	private static CadastroAdministrador instancia;
-	private IRepositorioAdministrador repositorio = RepositorioAdministrador.getInstancia();
+	private IRepositorioAdministrador repositorio;
 
 	private CadastroAdministrador() {
-		RepositorioAdministrador.getInstancia();
+		this.repositorio = RepositorioAdministrador.getInstancia();
 	}
 
-	@Override
 	public void cadastrarAdministrador(Administrador adm) {
 		if (adm != null) {
 			boolean existe = this.repositorio.existe(adm.getCpf());
@@ -24,7 +23,6 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 		}
 	}
 
-	@Override
 	public Administrador buscarAdministrador(String cpf) {
 		Administrador retorno = null;
 		if (cpf != null) {
@@ -33,7 +31,6 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 		return retorno;
 	}
 
-	@Override
 	public void removerAdministrador(Administrador adm) {
 		if (adm != null) {
 			if (this.repositorio.existe(adm.getCpf()) != false)
@@ -41,7 +38,6 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 		}
 	}
 
-	@Override
 	public void alterarAdministrador(Administrador adm) {
 		if (adm != null) {
 			if (this.repositorio.existe(adm.getCpf()) != false)
@@ -49,7 +45,6 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 		}
 	}
 
-	@Override
 	public List<Administrador> mostrarAdms() {
 		return this.repositorio.mostrarAdms();
 	}
@@ -62,7 +57,6 @@ public class CadastroAdministrador implements ICadastroAdministrador {
 
 	}
 
-	@Override
 	public boolean autenticarLogin(String senha, String cpf) {
 		boolean retorno = false;
 		if (cpf != null && senha != null) {

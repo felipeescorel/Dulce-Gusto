@@ -3,10 +3,10 @@ package br.ufrpe.dulceGusto.negócio;
 import br.ufrpe.dulceGusto.classesbasicas.Administrador;
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
-public class ControleDeLogin implements IControleDeLogin {
+public class ControleDeLogin {
 
-	private CadastroClientes cadastroCliente = CadastroClientes.getInstancia();
-	private CadastroAdministrador cadastroAdm = CadastroAdministrador.getInstancia();
+	private CadastroClientes cadastroCliente;
+	private CadastroAdministrador cadastroAdm;
 	private static ControleDeLogin instancia;
 
 	public static ControleDeLogin getInstancia() {
@@ -17,27 +17,27 @@ public class ControleDeLogin implements IControleDeLogin {
 	}
 
 	private ControleDeLogin() {
+		this.cadastroCliente = CadastroClientes.getInstancia();
+		this.cadastroAdm = CadastroAdministrador.getInstancia();
 
 	}
 
 	// Cliente
-	@Override
+
 	public void atribuirCliente(CadastroClientes cadastroCliente) {
 		this.cadastroCliente = cadastroCliente;
 	}
 
-	@Override
 	public boolean autenticarLoginCliente(String senha, String cpf) {
 		return this.cadastroCliente.autenticarLogin(senha, cpf);
 	}
 
 	// ADM
-	@Override
+
 	public void atribuirAdm(CadastroAdministrador cadastroAdm) {
 		this.cadastroAdm = cadastroAdm;
 	}
 
-	@Override
 	public boolean autenticarLoginAdm(String senha, String cpf) {
 		return this.cadastroAdm.autenticarLogin(senha, cpf);
 	}

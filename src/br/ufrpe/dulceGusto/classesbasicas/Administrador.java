@@ -1,32 +1,32 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
 public class Administrador extends Usuario {
-
-	public String cpf;
+	private String redeSocial;
 
 	public Administrador() {
 		// falta adicionar as senhas nos usuários.
 		this.setAdm(true);
 	}
 
-	public Administrador(String nome, String email, String telefone, String endereco, String cpf, String senha) {
-		super(nome, email, telefone, endereco, senha);
-		setCpf(cpf);
+	public Administrador(String nome, String cpf, String email, String telefone, String endereco, String senha,
+			String redeSocial) {
+		super(nome, cpf, email, telefone, endereco, senha);
+		this.setRedeSocial(redeSocial);
 		this.setAdm(true);
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getRedeSocial() {
+		return redeSocial;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setRedeSocial(String redeSocial) {
+		this.redeSocial = redeSocial;
 	}
 
 	@Override
 	public String toString() {
-		return "Nome: " + this.getNome() + "\nEmail: " + this.getEmail() + "\nTelefone: " + this.getTelefone()
-				+ "\nCpf: " + this.getCpf() + "\n\nEndereço: " + this.getEndereco();
+		return "Nome: " + this.getNome() + "\nCpf: " + this.getCpf() + "\nEmail: " + this.getEmail() + "\nTelefone: "
+				+ this.getTelefone() + "\n\nEndereço: " + this.getEndereco() + "\nRede Social: " + this.getRedeSocial();
 	}
 
 }

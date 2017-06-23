@@ -1,6 +1,7 @@
 package br.ufrpe.dulceGusto.dados;
 
 import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
 public interface IRepositorioCliente {

@@ -1,21 +1,20 @@
 package br.ufrpe.dulceGusto.negócio;
 
+import java.util.List;
+
+import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.dados.IRepositorioProduto;
 import br.ufrpe.dulceGusto.dados.RepositorioProduto;
 
-import java.util.List;
-import br.ufrpe.dulceGusto.classesbasicas.Produto;
+public class CadastroProduto {
 
-public class CadastroProduto implements ICadastroProduto {
-
-	private IRepositorioProduto repositorio = RepositorioProduto.getInstancia();
+	private IRepositorioProduto repositorio;
 	private static CadastroProduto instancia;
 
 	private CadastroProduto() {
-		RepositorioProduto.getInstancia();
+		this.repositorio = RepositorioProduto.getInstancia();
 	}
 
-	@Override
 	public void adicionarProduto(Produto produt) {
 		this.repositorio.adicionarProduto(produt);
 		if (produt == null) {
@@ -24,17 +23,14 @@ public class CadastroProduto implements ICadastroProduto {
 		}
 	}
 
-	@Override
 	public Produto buscarProduto(String nome) {
 		return this.repositorio.buscarProduto(nome);
 	}
 
-	@Override
 	public void removerProduto(Produto produt) {
 		this.repositorio.removerProduto(produt.getNome());
 	}
 
-	@Override
 	public void alterarProduto(Produto produt) {
 
 		if (produt == null) {
@@ -44,7 +40,6 @@ public class CadastroProduto implements ICadastroProduto {
 		this.repositorio.alterarProduto(produt);
 	}
 
-	@Override
 	public List<Produto> listarProdutos() {
 		return this.repositorio.listarProdutos();
 	}

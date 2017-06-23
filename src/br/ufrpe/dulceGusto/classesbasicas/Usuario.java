@@ -2,6 +2,7 @@ package br.ufrpe.dulceGusto.classesbasicas;
 
 public class Usuario {
 	private String nome;
+	private String cpf;
 	private String email;
 	private String telefone;
 	private String endereco;
@@ -20,8 +21,9 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Usuario(String nome, String email, String telefone, String endereco, String senha) {
+	public Usuario(String nome, String cpf, String email, String telefone, String endereco, String senha) {
 		this.nome = nome;
+		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
@@ -35,6 +37,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getEmail() {

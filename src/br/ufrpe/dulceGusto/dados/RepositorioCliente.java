@@ -2,12 +2,13 @@ package br.ufrpe.dulceGusto.dados;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 
 public class RepositorioCliente implements IRepositorioCliente {
 
 	private ArrayList<Cliente> cliente = new ArrayList<Cliente>();
-	Cliente clt;
+	private Cliente clt;
 
 	private static RepositorioCliente instancia;
 
@@ -81,9 +82,9 @@ public class RepositorioCliente implements IRepositorioCliente {
 	@Override
 	public boolean autenticarLogin(String senha, String cpf) {
 		boolean retorno = false;
-		clt = this.buscarCliente(cpf);
-		boolean tipo = clt.getAdm();
-		if (clt.getSenha().equals(senha) && tipo != true) {
+		this.clt = this.buscarCliente(cpf);
+		boolean tipo = this.clt.getAdm();
+		if (this.clt.getSenha().equals(senha) && tipo != true) {
 			retorno = true;
 		}
 		return retorno;

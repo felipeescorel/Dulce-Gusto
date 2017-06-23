@@ -18,6 +18,6 @@ public interface IRepositorioPedido {
 	List<Pedido> listarPedido();
 
 	void alterarPedido(Pedido pedido);
-	
+
 	void novoProduto(Produto produto);
 }

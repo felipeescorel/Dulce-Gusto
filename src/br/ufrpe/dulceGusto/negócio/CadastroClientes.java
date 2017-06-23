@@ -1,21 +1,20 @@
 package br.ufrpe.dulceGusto.negócio;
 
+import java.util.List;
+
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.dados.IRepositorioCliente;
 import br.ufrpe.dulceGusto.dados.RepositorioCliente;
 
-import java.util.List;
-
-public class CadastroClientes implements ICadastroClientes {
+public class CadastroClientes {
 
 	private static CadastroClientes instancia;
-	private IRepositorioCliente repositorio = RepositorioCliente.getInstancia();
+	private IRepositorioCliente repositorio;
 
 	private CadastroClientes() {
-		RepositorioCliente.getInstancia();
+		this.repositorio = RepositorioCliente.getInstancia();
 	}
 
-	@Override
 	public void cadastrarCliente(Cliente client) {
 		if (client != null) {
 			boolean existe = this.repositorio.existe(client.getCpf());
@@ -28,7 +27,6 @@ public class CadastroClientes implements ICadastroClientes {
 		}
 	}
 
-	@Override
 	public Cliente buscarCliente(String cpf) {
 		Cliente retorno = null;
 		if (cpf != null) {
@@ -37,7 +35,6 @@ public class CadastroClientes implements ICadastroClientes {
 		return retorno;
 	}
 
-	@Override
 	public void removerCliente(Cliente client) {
 		if (client != null) {
 			if (this.repositorio.existe(client.getCpf()) != false) {
@@ -46,7 +43,6 @@ public class CadastroClientes implements ICadastroClientes {
 		}
 	}
 
-	@Override
 	public void alterarCliente(Cliente client) {
 		if (client == null) {
 			System.out.println("Cliente invalido!");
@@ -61,7 +57,6 @@ public class CadastroClientes implements ICadastroClientes {
 
 	}
 
-	@Override
 	public List<Cliente> listarClientes() {
 		return this.repositorio.listarClientes();
 	}
@@ -69,16 +64,11 @@ public class CadastroClientes implements ICadastroClientes {
 	public static CadastroClientes getInstancia() {
 		if (instancia == null) {
 			instancia = new CadastroClientes();
-		
-		
-	
 
 		}
 		return instancia;
 	}
 
-	
-	@Override
 	public boolean autenticarLogin(String senha, String cpf) {
 		boolean retorno = false;
 		if (cpf != null && senha != null) {

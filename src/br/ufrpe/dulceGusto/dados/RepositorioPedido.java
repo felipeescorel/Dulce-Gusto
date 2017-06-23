@@ -11,7 +11,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	private static RepositorioPedido instancia;
 	private ArrayList<Pedido> pedido = new ArrayList<Pedido>();
 	private ArrayList<Produto> produto = new ArrayList<Produto>();
-	
+
 	public static RepositorioPedido getInstancia() {
 		if (instancia == null) {
 			instancia = new RepositorioPedido();
@@ -20,8 +20,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	}
 
 	private RepositorioPedido() {
-		
-		
+
 	}
 
 	@Override
@@ -38,11 +37,12 @@ public class RepositorioPedido implements IRepositorioPedido {
 		}
 		return retorno;
 	}
+
 	@Override
-	public void novoProduto(Produto produto){
-		for(int i=0;i<pedido.size();i++){
+	public void novoProduto(Produto produto) {
+		for (int i = 0; i < pedido.size(); i++) {
 			boolean verf = this.pedido.get(i).equals(produto);
-			if(verf=!false){
+			if (verf = !false) {
 				this.pedido.get(i).novoProduto(produto);
 				return;
 			}

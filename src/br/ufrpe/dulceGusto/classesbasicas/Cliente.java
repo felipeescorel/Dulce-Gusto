@@ -1,26 +1,37 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
+import java.util.ArrayList;
+
 public class Cliente extends Usuario {
-	private String restricaoAlimentar;
-
+	
+	
+	private ArrayList<String> restricaoAlimentar = new ArrayList<String>();
+	private String telefone;
+	private Endereco endereco;
+	
 	public Cliente() {
-		this.setAdm(false);
+	
 	}
-
-	public Cliente(String nome, String cpf, String email, String telefone, String endereco, String senha,
-			String restricaoAlimentar) {
-		super(nome, cpf, email, telefone, endereco, senha);
-		this.restricaoAlimentar = restricaoAlimentar;
-		this.setAdm(false);
-
+	public Cliente(String nome, String cpf, String email, String telefone, Endereco endereco, String senha) {
+		super(nome, cpf, email,senha);
+//		TODO this.restricaoAlimentar = restricaoAlimentar;
 	}
-
-	public String getRestricaoAlimentar() {
-		return restricaoAlimentar;
+	public void cadastrarNovaRestricao(String alimento){
+		restricaoAlimentar.add(alimento);
 	}
-
-	public void setRestricaoAlimentar(String restricaoAlimentar) {
-		this.restricaoAlimentar = restricaoAlimentar;
+	public String getTelefone(){
+		return telefone;
 	}
+	public void setTelefone(String telefone){
+		this.telefone = telefone;
+	}
+	public Endereco getEndereco(){
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco){
+		this.endereco = endereco;
+	}
+	
+	
 
 }

@@ -11,7 +11,7 @@ public class CadastroProduto {
 	private IRepositorioProduto repositorio;
 	private static CadastroProduto instancia;
 
-	private CadastroProduto() {
+	public CadastroProduto() {
 		this.repositorio = RepositorioProduto.getInstancia();
 	}
 

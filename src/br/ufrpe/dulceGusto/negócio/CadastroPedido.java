@@ -12,7 +12,7 @@ public class CadastroPedido {
 	private static CadastroPedido instancia;
 	private IRepositorioPedido repositorio;
 
-	private CadastroPedido() {
+	public CadastroPedido() {
 		this.repositorio = RepositorioPedido.getInstancia();
 	}
 

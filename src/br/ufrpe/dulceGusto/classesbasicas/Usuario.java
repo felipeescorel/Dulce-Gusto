@@ -1,13 +1,12 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
-public class Usuario {
+public abstract class Usuario {
+	
 	private String nome;
 	private String cpf;
-	private String email;
-	private String telefone;
-	private String endereco;
+	private String email;	
 	private String senha;
-	private boolean adm;
+	
 
 	public Usuario() {
 
@@ -21,13 +20,10 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public Usuario(String nome, String cpf, String email, String telefone, String endereco, String senha) {
+	public Usuario(String nome, String cpf, String email, String senha) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		this.telefone = telefone;
-		this.endereco = endereco;
-
 		this.senha = senha;
 	}
 
@@ -55,30 +51,13 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
+	
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	
 
-	public String getEndereco() {
-		return endereco;
-	}
+	
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-
-	public boolean getAdm() {
-		return adm;
-
-	}
-
-	public void setAdm(boolean adm) {
-		this.adm = adm;
-	}
+	
 
 	// TODO EXCEÇOES
 	/*

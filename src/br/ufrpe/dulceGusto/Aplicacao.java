@@ -4,10 +4,7 @@ import java.sql.Date;
 import java.util.Calendar;
 import java.util.Scanner;
 
-import br.ufrpe.dulceGusto.classesbasicas.Administrador;
-import br.ufrpe.dulceGusto.classesbasicas.Cliente;
-import br.ufrpe.dulceGusto.classesbasicas.Pedido;
-import br.ufrpe.dulceGusto.classesbasicas.Produto;
+import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.negócio.ControleDeLogin;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 
@@ -19,7 +16,7 @@ public class Aplicacao {
 		teste.setCpf("cpfteste");
 		teste.setSenha("senhateste");
 		teste.setNome("Adm");
-		fachada.cadastrarAdm(teste);
+		fachada.cadastrarUsuario(teste);
 		Aplicacao.Login();
 
 	}
@@ -85,19 +82,19 @@ public class Aplicacao {
 
 			System.out.println("Informe sua senha:");
 			senha = scan.nextLine();
-			retorno = login.autenticarLoginAdm(senha, cpf);
+			retorno = login.autenticarLogin(senha, cpf);
 			if (retorno != true) {
-				retorno2 = login.autenticarLoginCliente(senha, cpf);
+				retorno2 = login.autenticarLogin(senha, cpf);
 				if (retorno2 == false) {
 					System.out.println("Login falhou.Tente Novamente.");
 				} else {
-					System.out.println("Cliente " + fachada.buscarCliente(cpf).getNome() + " logado com sucesso.");
+					System.out.println("Cliente " + fachada.buscarUsuario(cpf).getNome() + " logado com sucesso.");
 					loop = false;
 					Aplicacao.MenuCompras();
 				}
 			} else {
 				System.out.println(
-						"Administrador " + fachada.buscarAdministrador(cpf).getNome() + " logado com sucesso.");
+						"Administrador " + fachada.buscarUsuario(cpf).getNome() + " logado com sucesso.");
 				Aplicacao.MenuAdm();
 				loop = false;
 			}
@@ -170,26 +167,51 @@ public class Aplicacao {
 	}
 
 	public static void novoCliente() {
-		String nome, cpf, telefone, endereco, email, senha, restricaoAlimentar;
+		String nome, cpf, telefone, endereco, email, senha,numero,cidade,bairro,estado,complemento,cep, restricaoAlimentar;
 		Scanner scan = new Scanner(System.in);
 		Cliente cliente = new Cliente();
 		Fachada fachada = Fachada.getInstancia();
 		System.out.println("Informar nome do cliente");
 		nome = scan.nextLine();
-
 		cliente.setNome(nome);
+		
 		System.out.println("Informar cpf");
 		cpf = scan.nextLine();
-
 		cliente.setCpf(cpf);
+		
 		System.out.println("Informar senha");
 		senha = scan.nextLine();
-
 		cliente.setSenha(senha);
-		System.out.println("Informar endereço");
+		
+		System.out.println("Cadastro de endereço\nLogradouro:");
 		endereco = scan.nextLine();
-
-		cliente.setEndereco(endereco);
+		cliente.getEndereco().setLogradouro(endereco);
+		
+		System.out.println("\nNumero");
+		numero = scan.nextLine();
+		cliente.getEndereco().setNumero(numero);
+		
+		System.out.println("\nComplemento");
+		complemento = scan.nextLine();
+		cliente.getEndereco().setComplemento(complemento);
+		
+		System.out.println("\nCep");
+		cep = scan.nextLine();
+		cliente.getEndereco().setCep(cep);
+		
+		System.out.println("\nBairro");
+		bairro = scan.nextLine();
+		cliente.getEndereco().setBairro(bairro);
+		
+		System.out.println("\nCidade");
+		cidade = scan.nextLine();
+		cliente.getEndereco().setCidade(cidade);
+		
+		System.out.println("\nEstado");
+		estado = scan.nextLine();
+		cliente.getEndereco().setEstado(estado);
+		System.out.println(cliente.getEndereco());
+		
 		System.out.println("Informar telefone");
 		telefone = scan.nextLine();
 
@@ -202,47 +224,33 @@ public class Aplicacao {
 		System.out.println("Informar alguma restriçao alimentar");
 		restricaoAlimentar = scan.nextLine();
 
-		cliente.setRestricaoAlimentar(restricaoAlimentar);
+		cliente.cadastrarNovaRestricao(restricaoAlimentar);
 
-		fachada.adicionarCliente(cliente);
+		fachada.cadastrarUsuario(cliente);
 	}
 
 	public static void novoAdministrador() {
-		String nome, cpf, telefone, endereco, email, senha, redeSocial;
+		String nome, cpf, email, senha;
 		Scanner scan = new Scanner(System.in);
 		Fachada fachada = Fachada.getInstancia();
 		Administrador administrador = new Administrador();
 		System.out.println("Informar nome do Administrador");
 		nome = scan.nextLine();
-
 		administrador.setNome(nome);
+		
 		System.out.println("Informar cpf");
 		cpf = scan.nextLine();
-
 		administrador.setCpf(cpf);
-		System.out.println("Informar endereço");
-		endereco = scan.nextLine();
-
-		administrador.setEndereco(endereco);
+		
 		System.out.println("Informar senha");
 		senha = scan.nextLine();
-
 		administrador.setSenha(senha);
-		System.out.println("Informar telefone");
-		telefone = scan.nextLine();
-
-		administrador.setTelefone(telefone);
+		
 		System.out.println("Informar email");
 		email = scan.nextLine();
-
 		administrador.setEmail(email);
-
-		System.out.println("Informar alguma Rede Social");
-		redeSocial = scan.nextLine();
-
-		administrador.setRedeSocial(redeSocial);
-
-		fachada.cadastrarAdm(administrador);
+		
+		fachada.cadastrarUsuario(administrador);
 	}
 
 	public static void novoProduto() {
@@ -314,14 +322,14 @@ public class Aplicacao {
 				System.out.println("Informe o cpf do cliente que deseja remover: ");
 				cpf = scan.nextLine();
 
-				fachada.removerCliente(fachada.buscarCliente(cpf));
+				fachada.removerUsuario(fachada.buscarUsuario(cpf));
 				break;
 			}
 			case 2: {
 				System.out.println("Informe o cpf do administrador que deseja remover: ");
 				cpf = scan.nextLine();
 
-				fachada.removerAdministrador(fachada.buscarAdministrador(cpf));
+				fachada.removerUsuario(fachada.buscarUsuario(cpf));
 				break;
 			}
 			case 3: {
@@ -371,7 +379,7 @@ public class Aplicacao {
 				System.out.println("Informe o CPF do cliente que deseja encontrar: ");
 				cpf = scan.nextLine();
 
-				fachada.buscarCliente(cpf);
+				fachada.buscarUsuario(cpf);
 				// TODO implementar toStrings pra exibir na tela
 				break;
 			}
@@ -379,7 +387,7 @@ public class Aplicacao {
 				System.out.println("Informe o CPF do administrador que deseja encontrar: ");
 				cpf = scan.nextLine();
 
-				fachada.buscarAdministrador(cpf);
+				fachada.buscarUsuario(cpf);
 				// TODO implementar toStrings pra exibir na tela
 				break;
 			}
@@ -418,8 +426,8 @@ public class Aplicacao {
 		int opcao, opcao2, opcao3, opcao4;
 		Scanner scan = new Scanner(System.in);
 		String cpf, email, telefone, endereco, nome, senha, descricao, ingredientes, restricaoAlimentar, redeSocial;
-		Cliente cliente = new Cliente();
-		Administrador administrador = new Administrador();
+		Usuario cliente = new Cliente();
+		Usuario administrador = new Administrador();
 		Produto produto = new Produto();
 		boolean loop = true, loop2 = true, loop3 = true, loop4 = true;
 		double preco;
@@ -433,7 +441,7 @@ public class Aplicacao {
 				System.out.println("Informe o CPF do cliente que deseja alterar: ");
 				cpf = scan.nextLine();
 
-				cliente = fachada.buscarCliente(cpf);
+				cliente = fachada.buscarUsuario(cpf);
 
 				while (loop2 != false) {
 					System.out.println(
@@ -460,16 +468,15 @@ public class Aplicacao {
 						System.out.println("Informe o novo telefone: ");
 						telefone = scan.nextLine();
 
-						cliente.setTelefone(telefone);
+						((Cliente)cliente).setTelefone(telefone);
 
 						break;
 					}
 					case 4: {
 						System.out.println("Informe o novo endereço: ");
 						endereco = scan.nextLine();
-
-						cliente.setEndereco(endereco);
-
+						((Cliente)cliente).getEndereco().setLogradouro(endereco);
+						
 						break;
 					}
 					case 5: {
@@ -491,7 +498,7 @@ public class Aplicacao {
 						System.out.println("Informar nova restriçao alimentar");
 						restricaoAlimentar = scan.nextLine();
 
-						cliente.setRestricaoAlimentar(restricaoAlimentar);
+						((Cliente)cliente).cadastrarNovaRestricao(restricaoAlimentar);
 						break;
 					}
 
@@ -513,7 +520,7 @@ public class Aplicacao {
 				System.out.println("Informe o CPF do administrador que deseja alterar");
 				cpf = scan.nextLine();
 
-				administrador = fachada.buscarAdministrador(cpf);
+				administrador = fachada.buscarUsuario(cpf);
 				while (loop3 != false) {
 					System.out.println(
 							"O que você deseja alterar? NOME(1), EMAIL(2), TELEFONE(3), ENDEREÇO(4), SENHA(5), CPF(6), REDE SOCIAL (7), SAIR(8) ");
@@ -536,19 +543,11 @@ public class Aplicacao {
 						break;
 					}
 					case 3: {
-						System.out.println("Informe o novo telefone: ");
-						telefone = scan.nextLine();
-
-						administrador.setTelefone(telefone);
+						
 
 						break;
 					}
 					case 4: {
-						System.out.println("Informe o novo endereço: ");
-						endereco = scan.nextLine();
-
-						administrador.setEndereco(endereco);
-
 						break;
 					}
 
@@ -560,13 +559,7 @@ public class Aplicacao {
 						break;
 					}
 
-					case 7: {
-						System.out.println("Informe a nova Rede Social");
-						redeSocial = scan.nextLine();
-
-						administrador.setRedeSocial(redeSocial);
-						break;
-					}
+					
 					case 8: {
 						loop3 = false;
 						System.out.println("Voltando ao menu principal");

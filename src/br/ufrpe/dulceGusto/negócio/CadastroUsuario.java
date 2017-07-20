@@ -7,8 +7,14 @@ public class CadastroUsuario {
 	private static CadastroUsuario instancia;
 	private IRepositorioUsuario repositorio;
 	
-	public CadastroUsuario(){
+	private CadastroUsuario(){
 		this.repositorio = RepositorioUsuario.getInstancia();
+	}
+	public static CadastroUsuario getInstancia(){
+		if(instancia == null){
+			instancia = new CadastroUsuario();
+		}
+		return instancia;
 	}
 	public void cadastrarAdministrador(Usuario user) {
 		if (user != null) {

@@ -9,11 +9,11 @@ public interface IRepositorioPedido {
 
 	void cadastrarPedido(Pedido ped);
 
-	Pedido buscarPedido(int numeroPedido);
+	Pedido buscarPedido(String numeroPedido);
 
-	boolean existe(int numeroPedido);
+	boolean existe(String numeroPedido);
 
-	void removerPedido(int numeroPedido);
+	void removerPedido(String numeroPedido);
 
 	List<Pedido> listarPedido();
 

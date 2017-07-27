@@ -25,7 +25,6 @@ public class Fachada {
 		}
 		return instancia;
 	}
-	
 	//USUARIO
 	public void cadastrarUsuario(Usuario user){
 		this.cadastroUsuario.cadastrarAdministrador(user);
@@ -83,7 +82,7 @@ public class Fachada {
 		this.cadastroPedido.novoProduto(produto);
 	}
 
-	public Pedido buscarPedido(int numeroPedido) {
+	public Pedido buscarPedido(String numeroPedido) {
 		return this.cadastroPedido.buscarPedido(numeroPedido);
 	}
 

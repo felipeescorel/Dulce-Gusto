@@ -29,7 +29,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	}
 
 	@Override
-	public Pedido buscarPedido(int numeroPedido) {
+	public Pedido buscarPedido(String numeroPedido) {
 		Pedido retorno = null;
 		int indice = this.obterIndice(numeroPedido);
 		if (indice != -1) {
@@ -49,10 +49,10 @@ public class RepositorioPedido implements IRepositorioPedido {
 		}
 	}
 
-	private int obterIndice(int numeroPedido) {
+	private int obterIndice(String numeroPedido) {
 		int indice = -1;
 		for (int i = 0; i < pedido.size(); i++) {
-			if (this.pedido.get(i).getNumeroPedido() == numeroPedido) {
+			if (this.pedido.get(i).getNumeroPedido().equals(numeroPedido)) {
 				indice = i;
 			}
 		}
@@ -60,7 +60,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	}
 
 	@Override
-	public boolean existe(int numeroPedido) {
+	public boolean existe(String numeroPedido) {
 		boolean existe = false;
 		int indice = this.obterIndice(numeroPedido);
 		if (indice != -1) {
@@ -70,7 +70,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 	}
 
 	@Override
-	public void removerPedido(int numeroPedido) {
+	public void removerPedido(String numeroPedido) {
 		int indice = this.obterIndice(numeroPedido);
 		if (indice != -1) {
 			this.pedido.remove(numeroPedido);

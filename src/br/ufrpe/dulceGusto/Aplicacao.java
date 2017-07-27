@@ -310,7 +310,7 @@ public class Aplicacao {
 		Scanner scan = new Scanner(System.in);
 		int opcao;
 		String cpf, nome;
-		int numeroPedido;
+		String numeroPedido;
 		boolean loop = true;
 
 		while (loop != false) {
@@ -341,7 +341,7 @@ public class Aplicacao {
 			}
 			case 4: {
 				System.out.println("Informe o numero do pedido que deseja remover: ");
-				numeroPedido = scan.nextInt();
+				numeroPedido = scan.nextLine();
 				fachada.removerPedido(fachada.buscarPedido(numeroPedido));
 
 				break;
@@ -365,7 +365,7 @@ public class Aplicacao {
 		Fachada fachada = Fachada.getInstancia();
 		int opcao;
 		String cpf, nome;
-		int numeroPedido;
+		String numeroPedido;
 		Scanner scan = new Scanner(System.in);
 		boolean loop = true;
 
@@ -401,7 +401,7 @@ public class Aplicacao {
 			}
 			case 4: {
 				System.out.println("Informe o número do pedido que deseja encontrar: ");
-				numeroPedido = scan.nextInt();
+				numeroPedido = scan.nextLine();
 				fachada.buscarPedido(numeroPedido);
 				// TODO implementar toStrings pra exibir na tela
 				break;

@@ -1,6 +1,7 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente extends Usuario {
 	
@@ -30,6 +31,9 @@ public class Cliente extends Usuario {
 	}
 	public void setEndereco(Endereco endereco){
 		this.endereco = endereco;
+	}
+	public List getRestricaoAlimentar(){
+		return restricaoAlimentar;
 	}
 	
 	

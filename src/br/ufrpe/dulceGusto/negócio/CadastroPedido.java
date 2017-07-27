@@ -30,9 +30,9 @@ public class CadastroPedido {
 		}
 	}
 
-	public Pedido buscarPedido(int numeroPedido) {
+	public Pedido buscarPedido(String numeroPedido) {
 		Pedido retorno = null;
-		if (numeroPedido != 0) {
+		if (numeroPedido != null) {
 			retorno = this.repositorio.buscarPedido(numeroPedido);
 		}
 		return retorno;

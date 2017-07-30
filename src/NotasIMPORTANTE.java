@@ -13,7 +13,11 @@ public class NotasIMPORTANTE {
 	//ALTERAR SEU PRÓPRIO PEDIDO. NÃO DE TERCEIROS ==>> O PROFESSOR FALOU PRA GERIR ISSO NOS CONTROLADORES
 	
 
-	//CRIAR METODO QUE REMOVE INGREDIENTES NA CLASSE DE PRODUTO.
+	//(1)CRIAR METODO QUE REMOVE INGREDIENTES NA CLASSE DE PRODUTO.
+	//(2) Exceptions // joga tudo e trata dps
+	//(3) Manipular data do pedido
+	//(4) Gerar uma string de numero do pedido aaaa/mm/dd + alguma coisa q eu n sei
+	//(5) Mudar os repositorios pra arquivo
 	
 	
 	/*DUVIDAS PARA NAO ESQUECER DE PERGUNTAR

@@ -12,8 +12,6 @@ public class NotasIMPORTANTE {
 	//NÃO MOSTRAR PEDIDOS DE OUTROS CLIENTES. **
 	//ALTERAR SEU PRÓPRIO PEDIDO. NÃO DE TERCEIROS ==>> O PROFESSOR FALOU PRA GERIR ISSO NOS CONTROLADORES
 	
-
-	//(1)CRIAR METODO QUE REMOVE INGREDIENTES NA CLASSE DE PRODUTO.
 	//(2) Exceptions // joga tudo e trata dps
 	//(3) Manipular data do pedido
 	//(4) Gerar uma string de numero do pedido aaaa/mm/dd + alguma coisa q eu n sei

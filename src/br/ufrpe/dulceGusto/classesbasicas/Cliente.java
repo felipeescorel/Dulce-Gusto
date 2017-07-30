@@ -9,6 +9,7 @@ public class Cliente extends Usuario {
 	private ArrayList<String> restricaoAlimentar = new ArrayList<String>();
 	private String telefone;
 	private Endereco endereco = new Endereco();
+	//pedido aqui
 	
 	public Cliente() {
 	

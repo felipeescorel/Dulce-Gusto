@@ -21,6 +21,7 @@ public class Pedido {
 		this.setDataPedido(dataPedido);
 //		this.numeroPedido = numeroPedido;
 		this.gerarNumeroPedido();
+		//gerar o numero aqui dentro
 		
 	}
 

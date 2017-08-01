@@ -1,12 +1,13 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
+import br.ufrpe.dulceGusto.exceptions.*;
+
 public abstract class Usuario {
-	
+
 	private String nome;
 	private String cpf;
-	private String email;	
+	private String email;
 	private String senha;
-	
 
 	public Usuario() {
 
@@ -31,8 +32,11 @@ public abstract class Usuario {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String nome) throws DadosException {
+		if (nome != "") {
+			this.nome = nome;
+		} else
+			throw new DadosException();
 	}
 
 	public String getCpf() {
@@ -47,37 +51,11 @@ public abstract class Usuario {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String email) throws DadosException {
+		if (email != "") {
+			this.email = email;
+		} else
+			throw new DadosException();
 	}
-
-	
-
-	
-
-	
-
-	
-
-	// TODO EXCEÇOES
-	/*
-	 * 
-	 * 
-	 * public void setTelefone(String telefone) throws DadosException {
-	 * if(telefone>=10000000){ this.telefone = telefone; } else throw new
-	 * DadosException("Telefone inválido"); }
-	 * 
-	 * 
-	 * public void setNome(String nome) throws DadosException{ if(nome!= ""){
-	 * this.nome = nome; } else throw new DadosException(); }
-	 * 
-	 * public void setEmail(String email) throws DadosException { if(email !=
-	 * ""){ this.email = email; } else throw new DadosException(); }
-	 * 
-	 * public void setEndereco(String endereco) throws DadosException {
-	 * if(endereco != ""){ this.endereco = endereco; } else throw new
-	 * DadosException(); }
-	 * 
-	 */
 
 }

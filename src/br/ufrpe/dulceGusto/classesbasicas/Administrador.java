@@ -1,19 +1,16 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
 public class Administrador extends Usuario {
-//	TODO private String redeSocial;
+	// TODO private String redeSocial;
 
 	public Administrador() {
-		
+
 	}
 
 	public Administrador(String nome, String cpf, String email, String senha) {
-		super(nome, cpf, email,senha);
-//		this.setRedeSocial(redeSocial);
+		super(nome, cpf, email, senha);
+		// this.setRedeSocial(redeSocial);
 	}
-		   
-
-	
 
 	@Override
 	public String toString() {

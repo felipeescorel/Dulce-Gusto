@@ -5,12 +5,13 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
+import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.negócio.ControleDeLogin;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 
 public class Aplicacao {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws DadosException {
 		Fachada fachada = Fachada.getInstancia();
 		Administrador teste = new Administrador();
 		teste.setCpf("cpfteste");
@@ -69,7 +70,7 @@ public class Aplicacao {
 		}
 	}
 
-	public static void Login() {
+	public static void Login() throws DadosException {
 		boolean loop, retorno, retorno2;
 		Scanner scan = new Scanner(System.in);
 		String cpf, senha;
@@ -93,8 +94,7 @@ public class Aplicacao {
 					Aplicacao.MenuCompras();
 				}
 			} else {
-				System.out.println(
-						"Administrador " + fachada.buscarUsuario(cpf).getNome() + " logado com sucesso.");
+				System.out.println("Administrador " + fachada.buscarUsuario(cpf).getNome() + " logado com sucesso.");
 				Aplicacao.MenuAdm();
 				loop = false;
 			}
@@ -102,7 +102,7 @@ public class Aplicacao {
 		}
 	}
 
-	public static void MenuAdm() {
+	public static void MenuAdm() throws DadosException {
 
 		Scanner scan = new Scanner(System.in);
 		int opcao, opcao2;
@@ -166,54 +166,55 @@ public class Aplicacao {
 		}
 	}
 
-	public static void novoCliente() {
-		String nome, cpf, telefone, endereco, email, senha,numero,cidade,bairro,estado,complemento,cep, restricaoAlimentar;
+	public static void novoCliente() throws DadosException {
+		String nome, cpf, endereco, email, senha, numero, cidade, bairro, estado, complemento, cep, restricaoAlimentar;
+		long telefone;
 		Scanner scan = new Scanner(System.in);
 		Cliente cliente = new Cliente();
 		Fachada fachada = Fachada.getInstancia();
 		System.out.println("Informar nome do cliente");
 		nome = scan.nextLine();
 		cliente.setNome(nome);
-		
+
 		System.out.println("Informar cpf");
 		cpf = scan.nextLine();
 		cliente.setCpf(cpf);
-		
+
 		System.out.println("Informar senha");
 		senha = scan.nextLine();
 		cliente.setSenha(senha);
-		
+
 		System.out.println("Cadastro de endereço\nLogradouro:");
 		endereco = scan.nextLine();
 		cliente.getEndereco().setLogradouro(endereco);
-		
+
 		System.out.println("\nNumero");
 		numero = scan.nextLine();
 		cliente.getEndereco().setNumero(numero);
-		
+
 		System.out.println("\nComplemento");
 		complemento = scan.nextLine();
 		cliente.getEndereco().setComplemento(complemento);
-		
+
 		System.out.println("\nCep");
 		cep = scan.nextLine();
 		cliente.getEndereco().setCep(cep);
-		
+
 		System.out.println("\nBairro");
 		bairro = scan.nextLine();
 		cliente.getEndereco().setBairro(bairro);
-		
+
 		System.out.println("\nCidade");
 		cidade = scan.nextLine();
 		cliente.getEndereco().setCidade(cidade);
-		
+
 		System.out.println("\nEstado");
 		estado = scan.nextLine();
 		cliente.getEndereco().setEstado(estado);
 		System.out.println(cliente.getEndereco());
-		
+
 		System.out.println("Informar telefone");
-		telefone = scan.nextLine();
+		telefone = scan.nextLong();
 
 		cliente.setTelefone(telefone);
 		System.out.println("Informar email");
@@ -229,7 +230,7 @@ public class Aplicacao {
 		fachada.cadastrarUsuario(cliente);
 	}
 
-	public static void novoAdministrador() {
+	public static void novoAdministrador() throws DadosException {
 		String nome, cpf, email, senha;
 		Scanner scan = new Scanner(System.in);
 		Fachada fachada = Fachada.getInstancia();
@@ -237,19 +238,19 @@ public class Aplicacao {
 		System.out.println("Informar nome do Administrador");
 		nome = scan.nextLine();
 		administrador.setNome(nome);
-		
+
 		System.out.println("Informar cpf");
 		cpf = scan.nextLine();
 		administrador.setCpf(cpf);
-		
+
 		System.out.println("Informar senha");
 		senha = scan.nextLine();
 		administrador.setSenha(senha);
-		
+
 		System.out.println("Informar email");
 		email = scan.nextLine();
 		administrador.setEmail(email);
-		
+
 		fachada.cadastrarUsuario(administrador);
 	}
 
@@ -421,11 +422,12 @@ public class Aplicacao {
 
 	}
 
-	public static void Alterar() {
+	public static void Alterar() throws DadosException {
 		Fachada fachada = Fachada.getInstancia();
 		int opcao, opcao2, opcao3, opcao4;
 		Scanner scan = new Scanner(System.in);
-		String cpf, email, telefone, endereco, nome, senha, descricao, ingredientes, restricaoAlimentar, redeSocial;
+		String cpf, email, endereco, nome, senha, descricao, ingredientes, restricaoAlimentar, redeSocial;
+		long telefone;
 		Usuario cliente = new Cliente();
 		Usuario administrador = new Administrador();
 		Produto produto = new Produto();
@@ -466,17 +468,17 @@ public class Aplicacao {
 					}
 					case 3: {
 						System.out.println("Informe o novo telefone: ");
-						telefone = scan.nextLine();
+						telefone = scan.nextLong();
 
-						((Cliente)cliente).setTelefone(telefone);
+						((Cliente) cliente).setTelefone(telefone);
 
 						break;
 					}
 					case 4: {
 						System.out.println("Informe o novo endereço: ");
 						endereco = scan.nextLine();
-						((Cliente)cliente).getEndereco().setLogradouro(endereco);
-						
+						((Cliente) cliente).getEndereco().setLogradouro(endereco);
+
 						break;
 					}
 					case 5: {
@@ -498,7 +500,7 @@ public class Aplicacao {
 						System.out.println("Informar nova restriçao alimentar");
 						restricaoAlimentar = scan.nextLine();
 
-						((Cliente)cliente).cadastrarNovaRestricao(restricaoAlimentar);
+						((Cliente) cliente).cadastrarNovaRestricao(restricaoAlimentar);
 						break;
 					}
 
@@ -543,7 +545,6 @@ public class Aplicacao {
 						break;
 					}
 					case 3: {
-						
 
 						break;
 					}
@@ -559,7 +560,6 @@ public class Aplicacao {
 						break;
 					}
 
-					
 					case 8: {
 						loop3 = false;
 						System.out.println("Voltando ao menu principal");

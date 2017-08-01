@@ -8,10 +8,13 @@ public class Endereco {
 	private String cep;
 	private String complemento;
 	private String estado;
-	public Endereco(){
-	
+
+	public Endereco() {
+
 	}
-	public Endereco(String logradouro, String numero, String cidade, String estado,String bairro, String cep, String complemento) {
+
+	public Endereco(String logradouro, String numero, String cidade, String estado, String bairro, String cep,
+			String complemento) {
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.cidade = cidade;
@@ -68,15 +71,20 @@ public class Endereco {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	public String getEstado(){
+
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(String estado){
-		this.estado= estado;
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
+
 	@Override
-	public String toString(){
-		return "Logradouro: "+this.getLogradouro()+"		Número: "+this.getNumero()+"\nComplemento: "+this.getComplemento()+"\nCep: "+this.getCep()+"\nCidade: "+this.getCidade()+"		Estado: "+this.getEstado();
+	public String toString() {
+		return "Logradouro: " + this.getLogradouro() + "		Número: " + this.getNumero() + "\nComplemento: "
+				+ this.getComplemento() + "\nCep: " + this.getCep() + "\nCidade: " + this.getCidade()
+				+ "		Estado: " + this.getEstado();
 	}
 
 }

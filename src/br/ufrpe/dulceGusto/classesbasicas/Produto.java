@@ -2,7 +2,9 @@ package br.ufrpe.dulceGusto.classesbasicas;
 
 import java.util.ArrayList;
 
-public class Produto {
+import br.ufrpe.dulceGusto.exceptions.ItemException;
+
+public class Produto  {
 
 	private String nome;
 	private double preco;
@@ -44,12 +46,15 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public void cadastrarIngrediente(String ingrediente) {
-		if (ingrediente == null || ingredientes.contains(ingrediente)) {
-			System.out.println("Esse ingrediente já foi adicionado anteriormente ou está vazio.");
-		} else {
-			ingredientes.add(ingrediente);
-			System.out.println("Ingrediente adicionado.");
+	public void cadastrarIngrediente(String ingrediente) throws ItemException{
+//		if (ingrediente == null || ingredientes.contains(ingrediente)) {
+//			System.out.println("Esse ingrediente já foi adicionado anteriormente ou está vazio.");
+//		} else {
+//			ingredientes.add(ingrediente);
+//			System.out.println("Ingrediente adicionado.");
+//		}
+		if(ingrediente==null || this.ingredientes.contains(ingrediente)){
+			
 		}
 
 	}

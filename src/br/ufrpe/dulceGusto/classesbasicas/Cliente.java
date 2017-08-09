@@ -10,12 +10,12 @@ public class Cliente extends Usuario {
 	private ArrayList<String> restricaoAlimentar = new ArrayList<String>();
 	private long telefone;
 	private Endereco endereco = new Endereco();
-	// pedido aqui
+	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 
 	public Cliente() {
 
 	}
-
+	
 	public Cliente(String nome, String cpf, String email, String telefone, Endereco endereco, String senha) {
 		super(nome, cpf, email, senha);
 		// TODO this.restricaoAlimentar = restricaoAlimentar;
@@ -49,6 +49,14 @@ public class Cliente extends Usuario {
 
 	public List getRestricaoAlimentar() {
 		return restricaoAlimentar;
+	}
+
+	public ArrayList getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(Pedido pedidos) {
+		this.pedidos.add(pedidos);
 	}
 
 }

@@ -25,7 +25,7 @@ public class Pedido {
 	}
 
 	public Pedido() {
-
+//		dataPedido = new Date();
 	}
 
 	public int getQuantidade() {
@@ -34,8 +34,7 @@ public class Pedido {
 
 	public String gerarNumeroPedido() {
 
-		return Integer.toString(
-				this.getDataPedido().getYear() + this.getDataPedido().getMonth() + this.getDataPedido().getDay());
+		return Integer.toString(				dataPedido.getYear() + dataPedido.getMonth() + dataPedido.getDay());
 	}
 
 	public LocalTime getData() {

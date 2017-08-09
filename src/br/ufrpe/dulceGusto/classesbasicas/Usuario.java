@@ -1,5 +1,7 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
+import java.util.ArrayList;
+
 import br.ufrpe.dulceGusto.exceptions.*;
 
 public abstract class Usuario {
@@ -8,10 +10,11 @@ public abstract class Usuario {
 	private String cpf;
 	private String email;
 	private String senha;
-
-	public Usuario() {
+		public Usuario() {
 
 	}
+
+
 
 	public String getSenha() {
 		return senha;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
-//import br.ufrpe.dulceGusto.classesbasicas.Produto;
+import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
@@ -22,7 +22,7 @@ public interface IRepositorioPedido {
 
 	void alterarPedido(Pedido pedido) throws ItemException;
 
-//	void novoProduto(Produto produto);
+	void novoProduto(Produto produto, Pedido pedido) throws ItemException;
 	
 	List<Pedido> buscarPedido(Cliente cliente) throws DadosException;
 }

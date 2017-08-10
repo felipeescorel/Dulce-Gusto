@@ -5,6 +5,7 @@ import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.dados.IRepositorioProduto;
 import br.ufrpe.dulceGusto.dados.RepositorioProduto;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 public class CadastroProduto {
 
@@ -24,11 +25,24 @@ public class CadastroProduto {
 	}
 
 	public Produto buscarProduto(String nome) {
-		return this.repositorio.buscarProduto(nome);
+		Produto produto = null;
+		try {
+			produto =  this.repositorio.buscarProduto(nome);
+		} catch (ItemException e) {
+			// TODO tratar
+			e.printStackTrace();
+		}
+		
+		return produto;
 	}
 
 	public void removerProduto(Produto produt) {
-		this.repositorio.removerProduto(produt.getNome());
+		try {
+			this.repositorio.removerProduto(produt.getNome());
+		} catch (ItemException e) {
+			// TODO tratar
+			e.printStackTrace();
+		}
 	}
 
 	public void alterarProduto(Produto produt) {
@@ -37,7 +51,12 @@ public class CadastroProduto {
 			System.out.println("Produto invalido!");
 			return;
 		}
-		this.repositorio.alterarProduto(produt);
+		try {
+			this.repositorio.alterarProduto(produt);
+		} catch (ItemException e) {
+			// TODO tratar
+			e.printStackTrace();
+		}
 	}
 
 	public List<Produto> listarProdutos() {

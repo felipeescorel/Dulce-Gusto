@@ -78,8 +78,8 @@ public class Fachada {
 		this.cadastroPedido.cadastrarPedido(pedido);
 	}
 
-	public void novoProduto(Produto produto) {
-		this.cadastroPedido.novoProduto(produto);
+	public void novoProduto(Produto produto, Pedido pedido) {
+		this.cadastroPedido.novoProduto(produto, pedido);
 	}
 
 	public Pedido buscarPedido(String numeroPedido) {

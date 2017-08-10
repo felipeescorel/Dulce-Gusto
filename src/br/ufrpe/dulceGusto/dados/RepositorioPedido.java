@@ -11,7 +11,7 @@ import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
-//import br.ufrpe.dulceGusto.classesbasicas.Produto;
+import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
@@ -100,18 +100,11 @@ public class RepositorioPedido implements IRepositorioPedido {
 		return retorno;
 	}
 
-//	@Override
-//	public void novoProduto(Produto produto) {
-////		for (int i = 0; i < pedido.size(); i++) {
-////			
-////			boolean verf = this.pedido.get(i).equals(produto);
-////			if (verf = !false) {
-////				this.pedido.get(i).novoProduto(produto);
-////				return;
-////			}
-////		}
-////		this.pedido.get(i)
-//	}
+	@Override
+	public void novoProduto(Produto produto, Pedido pedido) throws ItemException {		
+		pedido.novoProduto(produto);
+
+	}
 
 	private int obterIndice(String numeroPedido) {
 		int indice = -1;

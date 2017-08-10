@@ -2,6 +2,8 @@ package br.ufrpe.dulceGusto.negócio;
 import java.util.List;
 import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.dados.*;
+import br.ufrpe.dulceGusto.exceptions.DadosException;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 public class CadastroUsuario {
 	private static CadastroUsuario instancia;
@@ -28,7 +30,12 @@ public class CadastroUsuario {
 	public Usuario buscarUsuario(String cpf) {
 		Usuario retorno = null;
 		if (cpf != null) {
-			retorno = this.repositorio.buscarUsuario(cpf);
+			try {
+				retorno = this.repositorio.buscarUsuario(cpf);
+			} catch (ItemException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return retorno;
 	}
@@ -36,14 +43,24 @@ public class CadastroUsuario {
 	public void removerUsuario(Usuario user) {
 		if (user != null) {
 			if (this.repositorio.existe(user.getCpf()) != false)
-				this.repositorio.removerUsuario(user.getCpf());
+				try {
+					this.repositorio.removerUsuario(user.getCpf());
+				} catch (ItemException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 	}
 
 	public void alterarUsuario(Usuario user) {
 		if (user != null) {
 			if (this.repositorio.existe(user.getCpf()) != false)
-				this.repositorio.alterarUsuario(user);
+				try {
+					this.repositorio.alterarUsuario(user);
+				} catch (DadosException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 	}
 
@@ -58,7 +75,12 @@ public class CadastroUsuario {
 		if (cpf != null && senha != null) {
 			boolean existe = this.repositorio.existe(cpf);
 			if (existe != false) {
-				retorno = this.repositorio.autenticarLogin(senha, cpf);
+				try {
+					retorno = this.repositorio.autenticarLogin(senha, cpf);
+				} catch (ItemException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		return retorno;

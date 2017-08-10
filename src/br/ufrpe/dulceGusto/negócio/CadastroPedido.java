@@ -6,6 +6,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.dados.IRepositorioPedido;
 import br.ufrpe.dulceGusto.dados.RepositorioPedido;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 public class CadastroPedido {
 
@@ -24,16 +25,33 @@ public class CadastroPedido {
 		}
 	}
 
-	public void novoProduto(Produto produto) {
-		if (produto != null) {
-			this.repositorio.novoProduto(produto);
-		}
+	public void novoProduto(Produto produto, Pedido pedido) {
+		try{
+			if (produto != null && 
+				pedido!=null&& 
+				repositorio.existe(pedido.getNumeroPedido()) && 
+					!pedido.getProduto().contains(produto)){
+			
+				this.repositorio.novoProduto(produto,pedido);
+			
+				
+			}
+		}catch (ItemException e) {
+			// TODO Tratar
+			e.printStackTrace();
+		}				
+		
 	}
 
 	public Pedido buscarPedido(String numeroPedido) {
 		Pedido retorno = null;
 		if (numeroPedido != null) {
-			retorno = this.repositorio.buscarPedido(numeroPedido);
+			try {
+				retorno = this.repositorio.buscarPedido(numeroPedido);
+			} catch (ItemException e) {
+				//TODO TRATAR
+				e.printStackTrace();
+			}
 		}
 		return retorno;
 	}
@@ -41,7 +59,12 @@ public class CadastroPedido {
 	public void removerPedido(Pedido pedido) {
 		if (pedido != null) {
 			if (this.repositorio.existe(pedido.getNumeroPedido()))
-				this.repositorio.removerPedido(pedido.getNumeroPedido());
+				try {
+					this.repositorio.removerPedido(pedido.getNumeroPedido());
+				} catch (ItemException e) {
+					// TODO TRATAR
+					e.printStackTrace();
+				}
 		}
 
 	}
@@ -49,7 +72,12 @@ public class CadastroPedido {
 	public void alterarPedido(Pedido pedido) {
 		if (pedido != null) {
 			if (this.repositorio.existe(pedido.getNumeroPedido()))
-				this.repositorio.alterarPedido(pedido);
+				try {
+					this.repositorio.alterarPedido(pedido);
+				} catch (ItemException e) {
+					// TODO TRATAR
+					e.printStackTrace();
+				}
 		}
 	}
 

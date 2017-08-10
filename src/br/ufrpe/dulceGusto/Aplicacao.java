@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 import br.ufrpe.dulceGusto.negócio.ControleDeLogin;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 
 public class Aplicacao {
 
-	public static void main(String[] args) throws DadosException {
+	public static void main(String[] args) throws DadosException, ItemException {
 		Fachada fachada = Fachada.getInstancia();
 		Administrador teste = new Administrador();
 		teste.setCpf("cpfteste");
@@ -70,7 +71,7 @@ public class Aplicacao {
 		}
 	}
 
-	public static void Login() throws DadosException {
+	public static void Login() throws DadosException, ItemException {
 		boolean loop, retorno, retorno2;
 		Scanner scan = new Scanner(System.in);
 		String cpf, senha;
@@ -102,7 +103,7 @@ public class Aplicacao {
 		}
 	}
 
-	public static void MenuAdm() throws DadosException {
+	public static void MenuAdm() throws DadosException, ItemException {
 
 		Scanner scan = new Scanner(System.in);
 		int opcao, opcao2;
@@ -254,7 +255,7 @@ public class Aplicacao {
 		fachada.cadastrarUsuario(administrador);
 	}
 
-	public static void novoProduto() {
+	public static void novoProduto() throws ItemException {
 		Scanner scan = new Scanner(System.in);
 		String nome, descricao, ingredientes;
 		Produto produto = new Produto();
@@ -422,7 +423,7 @@ public class Aplicacao {
 
 	}
 
-	public static void Alterar() throws DadosException {
+	public static void Alterar() throws DadosException, ItemException {
 		Fachada fachada = Fachada.getInstancia();
 		int opcao, opcao2, opcao3, opcao4;
 		Scanner scan = new Scanner(System.in);

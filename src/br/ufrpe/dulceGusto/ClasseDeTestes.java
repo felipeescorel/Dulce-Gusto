@@ -5,11 +5,12 @@ import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.classesbasicas.Pedido;
 import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 
 public class ClasseDeTestes {
 
-	public static void main(String[] args) throws DadosException{
+	public static void main(String[] args) throws DadosException, ItemException{
 		Fachada fachada = Fachada.getInstancia();
 		Cliente felipe = new Cliente();
 		Pedido pedido = new Pedido();

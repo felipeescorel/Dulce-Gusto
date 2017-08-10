@@ -47,26 +47,25 @@ public class Produto  {
 	}
 
 	public void cadastrarIngrediente(String ingrediente) throws ItemException{
-//		if (ingrediente == null || ingredientes.contains(ingrediente)) {
-//			System.out.println("Esse ingrediente já foi adicionado anteriormente ou está vazio.");
-//		} else {
-//			ingredientes.add(ingrediente);
-//			System.out.println("Ingrediente adicionado.");
-//		}
 		if(ingrediente==null || this.ingredientes.contains(ingrediente)){
-			
+			ItemException itemInvalido = new ItemException(ingrediente);
+			throw itemInvalido;
+		}
+		else{
+			this.ingredientes.add(ingrediente);
 		}
 
 	}
 
-	public void removerIngrediente(String ingrediente) {
-		for (int i = 0; i < ingredientes.size(); i++) {
-			if (ingrediente == null) {
-				System.out.println("Esse ingrediente não existe");
-			} else {
-				ingredientes.remove(ingrediente);
-				System.out.println("Ingrediente removido");
-			}
+	public void removerIngrediente(String ingrediente) throws ItemException {
+//		
+		if(ingrediente != null || this.ingredientes.contains(ingrediente)){
+			this.ingredientes.remove(ingrediente);
+		}
+		else{
+			ItemException itemInvalido = new ItemException(ingrediente);
+			throw itemInvalido;
+			
 		}
 	}
 

@@ -47,11 +47,11 @@ public class Cliente extends Usuario {
 			throw new DadosException();
 	}
 
-	public List getRestricaoAlimentar() {
+	public List<String> getRestricaoAlimentar() {
 		return restricaoAlimentar;
 	}
 
-	public ArrayList getPedidos() {
+	public ArrayList<Pedido> getPedidos() {
 		return pedidos;
 	}
 

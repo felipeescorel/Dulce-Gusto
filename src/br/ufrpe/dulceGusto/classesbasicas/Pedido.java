@@ -2,42 +2,53 @@ package br.ufrpe.dulceGusto.classesbasicas;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
-import java.time.LocalTime;
+//import java.sql.Date;
+import java.time.LocalDateTime;
+//import java.time.LocalTime;
+//import java.time.ZoneOffset;
+//import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Pedido {
 
 	private Cliente cliente;
 	private double valorTotal;
-	private Date dataPedido;
 	private int quantidade;
-	private LocalTime data; // ??
+
 	private List<Produto> produto = new ArrayList<Produto>();
-	private String numeroPedido;// TODO pedir ajuda ao professor
+	private String numeroPedido;
+	private int contador = 0;
+//	private DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	private LocalDateTime data = LocalDateTime.now();
+//	private String formatedDateTime = data.format(formater);
 
-	public Pedido(Cliente cliente, Date dataPedido) {
-		this.setCliente(cliente);
-		this.setDataPedido(dataPedido);
-		// this.numeroPedido = numeroPedido;
-		this.gerarNumeroPedido();
-		// gerar o numero aqui dentro
-
+	public Pedido(Cliente cliente, LocalDateTime dataPedido) {
+		this.setCliente(cliente);	
+		this.gerarNumeroPedido(dataPedido);
 	}
 
 	public Pedido() {
-//		dataPedido = new Date();
+		this.gerarNumeroPedido(LocalDateTime.now());
 	}
 
 	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public String gerarNumeroPedido() {
-
-		return Integer.toString(				dataPedido.getYear() + dataPedido.getMonth() + dataPedido.getDay());
+	public void gerarNumeroPedido(LocalDateTime data) {	
+		DateTimeFormatter formatar = DateTimeFormatter.ofPattern("yyyyMMdd");
+//		ZonedDateTime dataZona = data.atZone(ZoneOffset.UTC);
+		String numero = data.format(formatar);
+		setNumeroPedido(numero+"0"+Integer.toString(contador));	
+		contador++;
 	}
-
-	public LocalTime getData() {
+	
+	public void setNumeroPedido(String numeroPedido){
+		this.numeroPedido = numeroPedido;
+		
+	}
+	
+	public LocalDateTime getData() {
 		return data;
 	}
 
@@ -53,6 +64,22 @@ public class Pedido {
 		return numeroPedido;
 	}
 
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
@@ -60,17 +87,6 @@ public class Pedido {
 	public double getValorTotal() {
 		return valorTotal;
 	}
-
-	public Date getDataPedido() {
-		return dataPedido;
-	}
-
-	public void setDataPedido(Date dataPedido) {
-
-		this.dataPedido = dataPedido;
-		// TODO CHECAR SE TÁ FUNCIONANDO.
-	}
-
 	public double getValorDaCompra() {
 		for (int i = 0; i < this.produto.size(); i++) {
 			valorTotal += this.produto.get(i).getPreco() * this.getQuantidade();

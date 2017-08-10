@@ -278,7 +278,12 @@ public class Aplicacao {
 		System.out.println("Informar os ingredientes");
 		ingredientes = scan.nextLine();
 
-		produto.cadastrarIngrediente(ingredientes);
+		try {
+			produto.cadastrarIngrediente(ingredientes);
+		} catch (ItemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		while (loop != false) {
 			System.out.println("Deseja informar outro ingrediente? SIM(1) Não(2)");
 			opcao = scan.nextInt();
@@ -288,7 +293,12 @@ public class Aplicacao {
 				System.out.println("Informar ingrediente");
 				ingredientes = scan.nextLine();
 
-				produto.cadastrarIngrediente(ingredientes);
+				try {
+					produto.cadastrarIngrediente(ingredientes);
+				} catch (ItemException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			}
 			case 2: {
@@ -616,7 +626,12 @@ public class Aplicacao {
 						System.out.println("Informe o novo ingredientes: ");
 						ingredientes = scan.nextLine();
 
-						produto.cadastrarIngrediente(ingredientes);
+						try {
+							produto.cadastrarIngrediente(ingredientes);
+						} catch (ItemException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						System.out.println("Informe o ingrediente que deseja remover: ");
 						// String ingredientes2 = scan.nextLine();
 						System.out.println("Metodo ainda n implementado");

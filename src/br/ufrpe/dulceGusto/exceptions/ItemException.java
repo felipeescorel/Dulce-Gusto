@@ -2,8 +2,10 @@ package br.ufrpe.dulceGusto.exceptions;
 
 public class ItemException extends Exception {
 
-	public ItemException() {
-		super("Não existe nenhum item ");
+	private String str;
+	public ItemException(String str) {
+		super("str");
+		this.str = str;
 	}
 
 }

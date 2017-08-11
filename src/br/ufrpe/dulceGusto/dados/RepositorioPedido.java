@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class RepositorioPedido implements IRepositorioPedido {
+public class RepositorioPedido implements IRepositorioPedido , Serializable{
 
 	private static RepositorioPedido instancia;
 	private ArrayList<Pedido> pedido = new ArrayList<Pedido>();

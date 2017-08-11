@@ -1,4 +1,4 @@
-package application;
+package br.ufrpe.dulceGusto.gui;
 
 import br.ufrpe.dulceGusto.classesbasicas.Cliente;
 import br.ufrpe.dulceGusto.classesbasicas.Usuario;
@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import javafx.scene.text.Font;
 
 public class TelaLoginController {
 	
@@ -25,15 +26,16 @@ public class TelaLoginController {
 	
 	public void initialize(){
 		this.main = Main.getInstancia();
-		this.user = "felipe";
-		this.pass = "senha";		
-		Usuario felipe = new Cliente();
-		felipe.setSenha("senha");
-		felipe.setCpf("06854395429");
-		fachada.cadastrarUsuario(felipe);
-		this.btEntrar.setOnAction(e -> {
+//		this.user = "felipe";
+//		this.pass = "senha";		
+				this.btEntrar.setOnAction(e -> {
 			Stage stage = null;
 			Parent root = null;
+			Cliente cliente = new Cliente();
+			cliente.setCpf("felipe");
+			cliente.setSenha("senha");
+			fachada.cadastrarUsuario(cliente);
+			
 			boolean loginOk = fachada.autenticarLogin(tfLogin.getText(), pfSenha.getText());
 			if(loginOk){
 				Scene scene = new Scene(root);

@@ -1,4 +1,4 @@
-package application;
+package br.ufrpe.dulceGusto.gui;
 
 public class TelaUsuarioController {
 

@@ -7,4 +7,6 @@ public class Notas {
 	//Novo produto no repositorio, precisa?
 	//Login RepoUsuario - exc
 	//Exception nos metodos de cadastro?
+	//Serializable, erro amarelo
+
 }

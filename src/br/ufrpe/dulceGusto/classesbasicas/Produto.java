@@ -1,10 +1,11 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class Produto  {
+public class Produto implements Serializable {
 
 	private String nome;
 	private double preco;

@@ -1,11 +1,12 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 
-public class Cliente extends Usuario {
+public class Cliente extends Usuario implements Serializable {
 
 	private ArrayList<String> restricaoAlimentar = new ArrayList<String>();
 	private long telefone;

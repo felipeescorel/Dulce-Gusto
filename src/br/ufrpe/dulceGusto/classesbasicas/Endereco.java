@@ -1,6 +1,8 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable{
 	private String logradouro;
 	private String numero;
 	private String cidade;

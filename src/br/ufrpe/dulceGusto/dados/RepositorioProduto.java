@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 
-public class RepositorioProduto implements IRepositorioProduto {
+public class RepositorioProduto implements IRepositorioProduto, Serializable {
 
 	private RepositorioProduto() {
 

@@ -2,6 +2,7 @@ package br.ufrpe.dulceGusto.classesbasicas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 //import java.sql.Date;
 import java.time.LocalDateTime;
 //import java.time.LocalTime;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 //import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Pedido {
+public class Pedido implements Serializable {
 
 	private Cliente cliente;
 	private double valorTotal;

@@ -1,4 +1,4 @@
-package application;
+package br.ufrpe.dulceGusto.gui;
 	
 import java.io.IOException;
 import java.net.URL;
@@ -32,19 +32,10 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-//		try {
-//			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("/application/TelaLogin.fxml"));
-//			Scene scene = new Scene(root,600,400);
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
 		instancia = this;
 		this.palcoPrincipal = primaryStage;
 		this.palcoPrincipal.setResizable(false);
-		this.palcoPrincipal.setTitle("DulceGusto");
+		this.palcoPrincipal.setTitle("DulceGusto - BetaVersion");
 		this.rootScene = new Pane();
 		Scene scene = new Scene(this.rootScene,600,400);
 		this.palcoPrincipal.setScene(scene);
@@ -54,7 +45,7 @@ public class Main extends Application {
 	private void openLoginScreen(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/TelaLogin.fxml"));
+			loader.setLocation(getClass().getResource("/br/ufrpe/dulceGusto/gui/TelaLogin.fxml"));
 			Pane pane = (Pane) loader.load();
 			
 			this.rootScene.getChildren().add(pane);

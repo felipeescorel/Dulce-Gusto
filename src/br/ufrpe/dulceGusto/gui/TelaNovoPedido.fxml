@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane fx:id="apTelaNovoPedido" layoutX="0.0" layoutY="0.0" minHeight="218.0" prefHeight="218.0" prefWidth="600.0">
+      <children>
+        <ImageView fitHeight="220.0" fitWidth="600.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../fundo%20tela%20novo%20pedido.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="48.999996185302734" fitWidth="49.572425842285156" layoutX="150.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Sem_titulo.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="167.7584714401652" fitWidth="149.96591186523438" layoutX="428.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_5.png" />
+          </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="212.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Novo Pedido">
+          <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+          </font>
+        </Text>
+        <Text fx:id="txtProduto" fill="WHITE" layoutX="60.0" layoutY="104.0" scaleX="1.0" scaleY="0.9993148847754956" strokeType="OUTSIDE" strokeWidth="0.0" text="Produto :">
+          <font>
+            <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
+          </font>
+        </Text>
+        <Text fx:id="txtQuantidade" fill="WHITE" font="$x1" layoutX="23.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade :" />
+        <Text fx:id="txtValorTotal" fill="WHITE" font="$x1" layoutX="25.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total :" />
+        <ComboBox fx:id="cbProdutos" layoutX="161.0" layoutY="88.0" prefHeight="21.0" prefWidth="226.72265625">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextField fx:id="tfQuantidade" layoutX="161.0" layoutY="126.0" prefWidth="83.0" />
+        <Label id="lb" fx:id="lbValorTotal" layoutX="161.0" layoutY="160.0" prefHeight="20.999900000002526" prefWidth="83.0" text="" textFill="BLACK">
+          <font>
+            <Font name="Comic Sans MS" size="20.0" />
+          </font>
+        </Label>
+        <Button fx:id="btAdicionar" layoutX="275.0" layoutY="160.0" mnemonicParsing="false" prefWidth="113.0" text="Adicionar" textFill="WHITE">
+          <font>
+            <Font name="Comic Sans MS" size="15.0" />
+          </font>
+        </Button>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

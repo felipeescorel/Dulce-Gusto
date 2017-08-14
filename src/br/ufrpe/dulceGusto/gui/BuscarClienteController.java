@@ -1,5 +1,5 @@
 package br.ufrpe.dulceGusto.gui;
 
-public class TelaUsuarioController {
+public class BuscarClienteController {
 
 }

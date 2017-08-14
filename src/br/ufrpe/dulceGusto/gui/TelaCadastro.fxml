@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="490.0" prefWidth="796.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="490.0" prefWidth="796.0">
+      <children>
+        <ImageView fitHeight="508.5" fitWidth="800.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../fundo%20tela%20cadastro.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="179.74835205078125" fitWidth="255.8814342407938" layoutX="510.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_6.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="11.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_1.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="29.04961684302137" fitWidth="25.968597412109375" layoutX="1.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_5.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="50.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_4.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_3.jpg" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="58.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_2.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="29.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_1.png" />
+          </image>
+        </ImageView>
+        <Text fill="WHITE" layoutX="185.0" layoutY="47.0" scaleX="1.0" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seja Bem Vindo a Dulce Gusto!" textAlignment="CENTER">
+          <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+          </font>
+        </Text>
+        <TextField layoutX="146.0" layoutY="306.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <Text fill="WHITE" layoutX="93.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UF :">
+          <font>
+            <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
+          </font>
+        </Text>
+        <Text fill="WHITE" font="$x1" layoutX="279.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento :" />
+        <Text fill="WHITE" font="$x1" layoutX="58.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade :" />
+        <TextField layoutX="146.0" layoutY="379.0" prefHeight="28.0" prefWidth="85.0" />
+        <Text fill="WHITE" font="$x1" layoutX="47.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número :" />
+        <TextField layoutX="146.0" layoutY="344.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <TextField layoutX="421.0" layoutY="269.0" prefHeight="28.0" prefWidth="365.0000999999975" />
+        <TextField layoutX="147.0" layoutY="269.0" prefHeight="27.87109375" prefWidth="85.0" />
+        <Text fill="WHITE" font="$x1" layoutX="62.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro :" />
+        <Text fill="WHITE" font="$x1" layoutX="67.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome :" textAlignment="LEFT" />
+        <Text fill="WHITE" font="$x1" layoutX="86.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF :" />
+        <Text fill="WHITE" font="$x1" layoutX="21.0" layoutY="253.0" scaleX="0.9165938213839633" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro :" />
+        <Text fill="WHITE" font="$x1" layoutX="85.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP :" />
+        <Text fill="WHITE" font="$x1" layoutX="37.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone :" />
+        <TextField layoutX="148.0" layoutY="73.0" prefHeight="28.0" prefWidth="294.0" />
+        <TextField layoutX="148.0" layoutY="109.0" prefHeight="28.0" prefWidth="172.0" />
+        <TextField layoutX="148.0" layoutY="148.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <TextField layoutX="146.0" layoutY="414.0" prefHeight="27.87109375" prefWidth="294.0" />
+        <TextField layoutX="148.0" layoutY="190.0" prefHeight="28.0" prefWidth="172.0" />
+        <TextField layoutX="147.0" layoutY="231.0" prefHeight="28.0" prefWidth="294.0000999999975" />
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="29.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_2.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="33.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_3.jpg" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="61.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_4.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="32.326519824788896" fitWidth="28.89794921875" layoutX="36.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_5.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="29.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_1.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="249.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_2.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="126.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Sem_titulo.png" />
+          </image>
+        </ImageView>
+      </children>
+    </AnchorPane>
+    <Button layoutX="667.0" layoutY="453.0" minHeight="28.999900000002526" mnemonicParsing="false" prefHeight="29.0" prefWidth="108.0" text="Cadastrar" textFill="WHITE" textOverrun="ELLIPSIS">
+      <font>
+        <Font name="Comic Sans MS Bold" size="15.0" />
+      </font>
+    </Button>
+    <Text fill="WHITE" font="$x1" layoutX="66.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha :" />
+    <TextField layoutX="145.0" layoutY="453.0" prefHeight="28.0" prefWidth="171.9998779296875" />
+    <Text fill="WHITE" font="$x1" layoutX="74.0" layoutY="437.0" scaleX="1.0" scaleY="1.0405045550105116" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail :" />
+  </children>
+</AnchorPane>

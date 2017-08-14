@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.*?>
 <?import java.lang.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.dulceGusto.gui.TelaLoginController">
-   <center>
-    <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f59fa6;" BorderPane.alignment="CENTER">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="br.ufrpe.dulceGusto.gui.TelaLoginController">
+  <center>
+    <AnchorPane prefHeight="400.0" prefWidth="600.0">
       <children>
-            <Pane layoutX="8.0" prefHeight="400.0" prefWidth="600.0">
-               <children>
-                  <TextField fx:id="tfLogin" layoutX="200.0" layoutY="210.0" prefHeight="30.0" prefWidth="200.0" />
-              
-                          <Button fx:id="btEntrar" layoutX="250.0" layoutY="310.0" mnemonicParsing="false" onAction="#initialize" prefHeight="30.0" prefWidth="100.0" text="Entrar">
-                <font>
-                  <Font name="Comic Sans MS" size="20.0" />
-                </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-              </Button>
-              <Label layoutX="80.0" layoutY="200.0" text="Login :" textFill="WHITE">
-                <font>
-                  <Font name="Comic Sans MS" size="30.0" fx:id="x1" />
-                </font>
-              </Label>
-              <Label font="$x1" layoutX="65.0" layoutY="260.0" text="Senha :" textFill="WHITE" />
-                  <PasswordField fx:id="pfSenha" layoutX="200.0" layoutY="274.0" prefHeight="30.0" prefWidth="200.0" />
-                  <Label layoutX="381.0" layoutY="373.0" text="Ainda não tem cadastro? " textFill="WHITE" />
-                  <Hyperlink layoutX="516.0" layoutY="370.0" text="Cadastrar" />
-               </children>
-            </Pane>
+        <ImageView fx:id="hypCadastro" fitHeight="400.0" fitWidth="600.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../tela%20login.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="45.91847610473633" fitWidth="33.133332503488475" layoutX="36.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_2.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="38.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_1.png" />
+          </image>
+        </ImageView>
+        <Label id="lb" fx:id="lbLogin" layoutX="88.0" layoutY="193.0" text="Login :" textFill="WHITE">
+          <font>
+            <Font name="Comic Sans MS Bold" size="30.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label fx:id="lbSenha" font="$x1" layoutX="75.0" layoutY="253.0" text="Senha :" textFill="WHITE" />
+        <TextField id="txfLogin" fx:id="tfLogin" layoutX="213.0" layoutY="200.0" prefHeight="28.0" prefWidth="200.0" />
+        <PasswordField fx:id="pfSenha" layoutX="213.0" layoutY="260.0" prefHeight="28.0" prefWidth="200.0" />
+        <Button fx:id="btnEntrar" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" prefHeight="27.999900000002526" prefWidth="99.0" text="Entrar" textFill="BLACK">
+          <font>
+            <Font name="Comic Sans MS" size="15.0" />
+          </font>
+        </Button>
+        <Hyperlink fx:id="hypCadastrar" layoutX="220.0" layoutY="356.0" text="Não e cadastrado? Cadastre-se já!" textFill="WHITE" />
       </children>
     </AnchorPane>
-   </center>
+  </center>
 </BorderPane>

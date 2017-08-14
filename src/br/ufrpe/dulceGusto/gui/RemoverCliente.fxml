@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="500.0" prefWidth="800.0">
+      <children>
+        <ImageView fitHeight="500.0" fitWidth="800.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../fundo%20tela%20cadastro.png" />
+          </image>
+        </ImageView>
+        <Text fx:id="txtBuscarClientes" fill="WHITE" layoutX="289.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remover Clientes">
+          <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+          </font>
+        </Text>
+        <Text fx:id="txtCPFDoCLiente" fill="WHITE" layoutX="22.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF do cliente :">
+          <font>
+            <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
+          </font>
+        </Text>
+        <TextField fx:id="tfCpfCliente" layoutX="190.0" layoutY="68.0" prefHeight="27.871185302734375" prefWidth="249.0" />
+        <Button fx:id="btPesquisr" layoutX="468.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
+          <font>
+            <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
+          </font>
+        </Button>
+        <Text fx:id="txtCPF" fill="WHITE" font="$x1" layoutX="107.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF :" />
+        <Text fx:id="txtNome" fill="WHITE" font="$x1" layoutX="89.0" layoutY="179.0" scaleX="1.0" scaleY="1.0000013827226764" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome :" />
+        <Text fx:id="txtEmail" fill="WHITE" font="$x1" layoutX="80.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail :" />
+        <Text fx:id="txtTelefone" fill="WHITE" font="$x1" layoutX="58.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone :" />
+        <Text fx:id="txtEndereço" fill="WHITE" font="$x1" layoutX="55.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço :" />
+        <Label fx:id="lbCPF" layoutX="180.0" layoutY="116.0" prefHeight="27.87109375" prefWidth="249.0" text="" />
+        <Label id="lbCPF" fx:id="lbNome" layoutX="180.0" layoutY="160.0" prefHeight="28.0" prefWidth="407.0" text="" />
+        <Label id="lbCPF" fx:id="lbEmail" layoutX="180.0" layoutY="200.0" prefHeight="28.0" prefWidth="274.0" text="" />
+        <Label id="lbCPF" fx:id="lbTelefone" layoutX="180.0" layoutY="243.0" prefHeight="27.87109375" prefWidth="249.0" text="" />
+        <Label id="lbCPF" fx:id="lbEndereço" alignment="TOP_LEFT" layoutX="180.0" layoutY="286.0" prefHeight="63.0" prefWidth="393.0" text="" />
+        <Text id="txtEndereço" fx:id="txtRestrição" fill="WHITE" font="$x1" layoutX="56.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restrição" />
+        <Label id="lbCPF" fx:id="lbRestriçãoAlimentar" layoutX="178.0" layoutY="372.0" prefHeight="72.0" prefWidth="393.0" text="" />
+        <Text id="txtEndereço" fx:id="txtAlimentar" fill="WHITE" font="$x1" layoutX="53.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="alimentar :" />
+        <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="222.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Sem_titulo.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="143.830078125" fitWidth="143.830078125" layoutX="610.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" rotate="351.0">
+          <image>
+            <Image url="@../imagem_9.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="143.830078125" fitWidth="143.830078125" layoutX="635.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true" rotate="0.0">
+          <image>
+            <Image url="@../imagem_9.png" />
+          </image>
+        </ImageView>
+        <Button fx:id="btRemover" font="$x2" layoutX="370.0" layoutY="459.0" mnemonicParsing="false" text="Remover" textFill="BLACK" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

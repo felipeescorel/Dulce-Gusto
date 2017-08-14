@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane layoutX="0.0" layoutY="0.0" minHeight="386.0001220703125" prefHeight="386.0001220703125" prefWidth="637.0">
+      <children>
+        <ImageView fitHeight="397.27210998535156" fitWidth="635.6353759765625" layoutX="1.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../fundo%20tela%20cadastro.png" />
+          </image>
+        </ImageView>
+        <Text id="txtBuscarClientes" fx:id="txtBuscarProdutos" fill="WHITE" layoutX="213.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar Produtos">
+          <font>
+            <Font name="Comic Sans MS Bold" size="30.0" />
+          </font>
+        </Text>
+        <Text id="txtCPFDoCLiente" fx:id="txtNomeDoProduto" fill="WHITE" layoutX="22.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Produto :">
+          <font>
+            <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
+          </font>
+        </Text>
+        <TextField id="tfCpfCliente" fx:id="tfProduto" layoutX="216.0" layoutY="68.0" prefHeight="27.871185302734375" prefWidth="249.0" />
+        <Button fx:id="btPesquisr" layoutX="487.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
+          <font>
+            <Font name="Comic Sans MS" size="15.0" />
+          </font>
+        </Button>
+        <Text fx:id="txtNome" fill="WHITE" font="$x1" layoutX="89.0" layoutY="138.0" scaleX="1.0" scaleY="1.0000013827226764" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome :" />
+        <Text id="txtEmail" fx:id="txtPreço" fill="WHITE" font="$x1" layoutX="90.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preço :" />
+        <Text id="txtEndereço" fx:id="txtDescrição" fill="WHITE" font="$x1" layoutX="49.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição :" />
+        <Label id="lbCPF" fx:id="lbNome" layoutX="180.0" layoutY="116.0" prefHeight="28.0" prefWidth="285.0" text="" />
+        <Label id="lbCPF" fx:id="lbPreço" layoutX="180.0" layoutY="160.0" prefHeight="28.0" prefWidth="138.0" text="" />
+        <Label id="lbCPF" fx:id="lbDescrição" alignment="TOP_LEFT" layoutX="180.0" layoutY="209.0" prefHeight="107.0" prefWidth="285.0" text="" />
+        <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="151.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../Sem_titulo.png" />
+          </image>
+        </ImageView>
+        <ImageView fitHeight="159.6353759765625" fitWidth="159.6353759765625" layoutX="463.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../imagem_7.png" />
+          </image>
+        </ImageView>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

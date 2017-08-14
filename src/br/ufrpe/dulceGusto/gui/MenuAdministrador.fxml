@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-   <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #79c3de;">
-         <top>
-            <MenuBar BorderPane.alignment="CENTER">
-              <menus>
-                <Menu mnemonicParsing="false" text="File">
-                  <items>
-                        <MenuItem mnemonicParsing="false" text="Cadastrar" />
-                        <MenuItem mnemonicParsing="false" text="Remover" />
-                        <MenuItem mnemonicParsing="false" text="Buscar" />
-                        <MenuItem mnemonicParsing="false" text="Alterar" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Modificar Cadastro" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-         </top>
-         <center>
-            <ImageView fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../20246515_110127716311344_6394158117444163113_n.jpg" />
-               </image>
-            </ImageView>
-         </center>
-      </BorderPane>
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane fx:id="apMenuAdministrador" layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
+      <children>
+        <ImageView id="img" fx:id="imgMenuAdministrador" fitHeight="400.0" fitWidth="600.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../fundo_doces_2.png" />
+          </image>
+        </ImageView>
+        <MenuBar id="mbAdministrador" fx:id="mbMenuAdministrador" layoutX="1.0" layoutY="0.0" prefWidth="601.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="Cadastrar" fx:id="mnCadastrar">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Cadastrar cliente" fx:id="mnitCadastrarCliente" />
+                <MenuItem mnemonicParsing="false" text="Cadastrar produto" fx:id="mnitCadastrarProduto" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Alterar" fx:id="mnAlterar">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Alterar cliente" fx:id="mnitALterarCliente" />
+                <MenuItem mnemonicParsing="false" text="Alterar produto" fx:id="mnitAlterarProduto" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Remover" fx:id="mnRemover">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Remover cliente" fx:id="mnitRemoverCliente" />
+                <MenuItem mnemonicParsing="false" text="Remover produto" fx:id="mnitRemoverProduto" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Buscar" fx:id="mnBuscar">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Buscar cliente" fx:id="mnitBuscarCliente" />
+                <MenuItem mnemonicParsing="false" text="Buscar produto" fx:id="mnitBuscarProduto" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Sair" fx:id="mnSair" />
+          </menus>
+        </MenuBar>
+      </children>
+    </AnchorPane>
+  </children>
 </AnchorPane>

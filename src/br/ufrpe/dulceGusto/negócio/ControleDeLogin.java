@@ -4,7 +4,7 @@ package br.ufrpe.dulceGusto.negócio;
 
 public class ControleDeLogin {
 
-	private CadastroUsuario cadastroUser;
+	private ControladorUsuario cadastroUser;
 	private static ControleDeLogin instancia;
 
 	public static ControleDeLogin getInstancia() {
@@ -16,7 +16,7 @@ public class ControleDeLogin {
 
 	private ControleDeLogin() {
 		
-		this.cadastroUser = CadastroUsuario.getInstancia();
+		this.cadastroUser = ControladorUsuario.getInstancia();
 
 	}
 	public boolean autenticarLogin(String senha, String cpf) {

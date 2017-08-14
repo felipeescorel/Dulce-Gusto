@@ -7,12 +7,12 @@ import br.ufrpe.dulceGusto.dados.IRepositorioProduto;
 import br.ufrpe.dulceGusto.dados.RepositorioProduto;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class CadastroProduto {
+public class ControladorProduto {
 
 	private IRepositorioProduto repositorio;
-	private static CadastroProduto instancia;
+	private static ControladorProduto instancia;
 
-	private CadastroProduto() {
+	private ControladorProduto() {
 		this.repositorio = RepositorioProduto.getInstancia();
 	}
 
@@ -63,9 +63,9 @@ public class CadastroProduto {
 		return this.repositorio.listarProdutos();
 	}
 
-	public static CadastroProduto getInstancia() {
+	public static ControladorProduto getInstancia() {
 		if (instancia == null) {
-			instancia = new CadastroProduto();
+			instancia = new ControladorProduto();
 		}
 		return instancia;
 	}

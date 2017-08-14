@@ -1,18 +1,13 @@
 package br.ufrpe.dulceGusto.gui;
 	
 import java.io.IOException;
-import java.net.URL;
 
-import br.ufrpe.dulceGusto.classesbasicas.Cliente;
-import br.ufrpe.dulceGusto.classesbasicas.Usuario;
-import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
@@ -37,7 +32,7 @@ public class Main extends Application {
 		this.palcoPrincipal.setResizable(false);
 		this.palcoPrincipal.setTitle("DulceGusto - BetaVersion");
 		this.rootScene = new Pane();
-		Scene scene = new Scene(this.rootScene,600,400);
+		Scene scene = new Scene(this.rootScene,550,380);
 		this.palcoPrincipal.setScene(scene);
 		this.palcoPrincipal.show();
 		this.openLoginScreen();

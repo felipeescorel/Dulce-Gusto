@@ -28,7 +28,7 @@ public class TelaLoginController {
 		this.main = Main.getInstancia();
 //		this.user = "felipe";
 //		this.pass = "senha";		
-				this.btEntrar.setOnAction(e -> {
+			this.btEntrar.setOnAction(e -> {
 			Stage stage = null;
 			Parent root = null;
 			Cliente cliente = new Cliente();

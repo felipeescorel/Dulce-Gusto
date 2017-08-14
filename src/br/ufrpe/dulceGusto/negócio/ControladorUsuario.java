@@ -5,16 +5,16 @@ import br.ufrpe.dulceGusto.dados.*;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class CadastroUsuario {
-	private static CadastroUsuario instancia;
+public class ControladorUsuario {
+	private static ControladorUsuario instancia;
 	private IRepositorioUsuario repositorio;
 	
-	private CadastroUsuario(){
+	private ControladorUsuario(){
 		this.repositorio = RepositorioUsuario.getInstancia();
 	}
-	public static CadastroUsuario getInstancia(){
+	public static ControladorUsuario getInstancia(){
 		if(instancia == null){
-			instancia = new CadastroUsuario();
+			instancia = new ControladorUsuario();
 		}
 		return instancia;
 	}

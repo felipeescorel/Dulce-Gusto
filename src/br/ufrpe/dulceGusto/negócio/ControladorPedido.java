@@ -8,12 +8,12 @@ import br.ufrpe.dulceGusto.dados.IRepositorioPedido;
 import br.ufrpe.dulceGusto.dados.RepositorioPedido;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class CadastroPedido {
+public class ControladorPedido {
 
-	private static CadastroPedido instancia;
+	private static ControladorPedido instancia;
 	private IRepositorioPedido repositorio;
 
-	private CadastroPedido() {
+	private ControladorPedido() {
 		this.repositorio = RepositorioPedido.getInstancia();
 	}
 
@@ -85,9 +85,9 @@ public class CadastroPedido {
 		return this.repositorio.listarPedido();
 	}
 
-	public static CadastroPedido getInstancia() {
+	public static ControladorPedido getInstancia() {
 		if (instancia == null) {
-			instancia = new CadastroPedido();
+			instancia = new ControladorPedido();
 		}
 		return instancia;
 	}

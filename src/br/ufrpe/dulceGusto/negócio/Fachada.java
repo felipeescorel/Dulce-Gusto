@@ -7,17 +7,17 @@ import br.ufrpe.dulceGusto.classesbasicas.*;
 public class Fachada {
 
 
-	private CadastroProduto cadastroProduto;
-	private CadastroPedido cadastroPedido;
+	private ControladorProduto cadastroProduto;
+	private ControladorPedido cadastroPedido;
 	private static Fachada instancia;
 	private ControleDeLogin controleLogin;
-	private CadastroUsuario cadastroUsuario;
+	private ControladorUsuario cadastroUsuario;
 
 	private Fachada() {
-		this.cadastroProduto = CadastroProduto.getInstancia();
-		this.cadastroPedido = CadastroPedido.getInstancia();
+		this.cadastroProduto = ControladorProduto.getInstancia();
+		this.cadastroPedido = ControladorPedido.getInstancia();
 		this.controleLogin = ControleDeLogin.getInstancia();
-		this.cadastroUsuario = CadastroUsuario.getInstancia();
+		this.cadastroUsuario = ControladorUsuario.getInstancia();
 	}
 	public static Fachada getInstancia() {
 		if (instancia == null) {

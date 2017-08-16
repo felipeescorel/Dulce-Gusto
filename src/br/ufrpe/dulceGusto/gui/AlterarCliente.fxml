@@ -28,7 +28,7 @@
           </font>
         </Text>
         <TextField fx:id="tfCpfCliente" layoutX="190.0" layoutY="68.0" prefHeight="27.871185302734375" prefWidth="249.0" />
-        <Button fx:id="btPesquisr" layoutX="468.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
+        <Button id="btPesquisr" fx:id="btBuscar" layoutX="468.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="90.263671875" text="Buscar" textFill="BLACK">
           <font>
             <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
           </font>
@@ -62,6 +62,7 @@
         <TextField fx:id="tfTelefone" layoutX="190.0" layoutY="245.0" prefHeight="28.0" prefWidth="249.0" />
         <TextField fx:id="tfEndereço" layoutX="190.0" layoutY="293.0" prefHeight="74.0" prefWidth="381.0" />
         <TextField fx:id="tfRestriçãoAlimentar" layoutX="190.0" layoutY="381.0" prefHeight="74.0" prefWidth="381.0" />
+        <Button fx:id="btVoltar" font="$x2" layoutX="14.0" layoutY="460.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

@@ -33,14 +33,14 @@
             <Font name="Comic Sans MS Bold" size="30.0" />
           </font>
         </Text>
-        <Text fx:id="txtProduto" fill="WHITE" layoutX="60.0" layoutY="104.0" scaleX="1.0" scaleY="0.9993148847754956" strokeType="OUTSIDE" strokeWidth="0.0" text="Produto :">
+        <Text fx:id="txtProduto" fill="WHITE" layoutX="60.0" layoutY="96.0" scaleX="1.0" scaleY="0.9993148847754956" strokeType="OUTSIDE" strokeWidth="0.0" text="Produto :">
           <font>
             <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
           </font>
         </Text>
-        <Text fx:id="txtQuantidade" fill="WHITE" font="$x1" layoutX="23.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade :" />
-        <Text fx:id="txtValorTotal" fill="WHITE" font="$x1" layoutX="25.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total :" />
-        <ComboBox fx:id="cbProdutos" layoutX="161.0" layoutY="88.0" prefHeight="21.0" prefWidth="226.72265625">
+        <Text fx:id="txtQuantidade" fill="WHITE" font="$x1" layoutX="25.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade :" />
+        <Text fx:id="txtValorTotal" fill="WHITE" font="$x1" layoutX="26.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total :" />
+        <ComboBox fx:id="cbProdutos" layoutX="161.0" layoutY="77.0" prefHeight="21.0" prefWidth="226.72265625">
           <items>
             <FXCollections fx:factory="observableArrayList">
               <String fx:value="Item 1" />
@@ -49,17 +49,18 @@
             </FXCollections>
           </items>
         </ComboBox>
-        <TextField fx:id="tfQuantidade" layoutX="161.0" layoutY="126.0" prefWidth="83.0" />
+        <TextField fx:id="tfQuantidade" layoutX="161.0" layoutY="115.0" prefWidth="83.0" />
         <Label id="lb" fx:id="lbValorTotal" layoutX="161.0" layoutY="160.0" prefHeight="20.999900000002526" prefWidth="83.0" text="" textFill="BLACK">
           <font>
             <Font name="Comic Sans MS" size="20.0" />
           </font>
         </Label>
-        <Button fx:id="btAdicionar" layoutX="275.0" layoutY="160.0" mnemonicParsing="false" prefWidth="113.0" text="Adicionar" textFill="WHITE">
+        <Button fx:id="btAdicionar" layoutX="284.0" layoutY="168.0" mnemonicParsing="false" prefWidth="113.0" text="Adicionar" textFill="WHITE">
           <font>
-            <Font name="Comic Sans MS" size="15.0" />
+            <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
           </font>
         </Button>
+        <Button fx:id="btVoltar" font="$x2" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

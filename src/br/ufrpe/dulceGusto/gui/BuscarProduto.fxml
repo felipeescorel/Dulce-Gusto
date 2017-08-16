@@ -30,7 +30,7 @@
         <TextField id="tfCpfCliente" fx:id="tfProduto" layoutX="216.0" layoutY="68.0" prefHeight="27.871185302734375" prefWidth="249.0" />
         <Button fx:id="btPesquisr" layoutX="487.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
           <font>
-            <Font name="Comic Sans MS" size="15.0" />
+            <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
           </font>
         </Button>
         <Text fx:id="txtNome" fill="WHITE" font="$x1" layoutX="89.0" layoutY="138.0" scaleX="1.0" scaleY="1.0000013827226764" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome :" />
@@ -49,6 +49,7 @@
             <Image url="@../imagem_7.png" />
           </image>
         </ImageView>
+        <Button fx:id="btVoltar" font="$x2" layoutX="14.0" layoutY="347.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

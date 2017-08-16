@@ -34,7 +34,7 @@
         <TextArea fx:id="tfDescrição" layoutX="137.0" layoutY="176.0" prefWidth="267.0" wrapText="true" />
         <Button fx:id="btCadastrar" layoutX="491.0" layoutY="330.0" mnemonicParsing="false" prefHeight="32.0" text="Cadastrar" textFill="WHITE">
           <font>
-            <Font name="Comic Sans MS" size="15.0" />
+            <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
           </font>
         </Button>
         <ImageView fitHeight="48.0" fitWidth="49.0" layoutX="147.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
@@ -47,6 +47,7 @@
             <Image url="@../imagem_10.png" />
           </image>
         </ImageView>
+        <Button font="$x2" layoutX="19.0" layoutY="326.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

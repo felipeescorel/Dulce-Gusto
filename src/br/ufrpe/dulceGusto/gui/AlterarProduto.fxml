@@ -12,7 +12,7 @@
   <children>
     <AnchorPane layoutX="0.0" layoutY="0.0" minHeight="386.0001220703125" prefHeight="386.0001220703125" prefWidth="637.0">
       <children>
-        <ImageView fitHeight="397.27210998535156" fitWidth="635.6353759765625" layoutX="1.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="397.27210998535156" fitWidth="635.6353759765625" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../fundo%20tela%20cadastro.png" />
           </image>
@@ -28,7 +28,7 @@
           </font>
         </Text>
         <TextField id="tfCpfCliente" fx:id="tfProduto" layoutX="216.0" layoutY="68.0" prefHeight="27.871185302734375" prefWidth="249.0" />
-        <Button fx:id="btPesquisr" layoutX="487.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
+        <Button id="btPesquisr" fx:id="btPesquisar" layoutX="487.0" layoutY="69.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Pesquisar" textFill="BLACK">
           <font>
             <Font name="Comic Sans MS" size="15.0" fx:id="x2" />
           </font>
@@ -50,6 +50,7 @@
         <TextField id="tfCpfCliente" fx:id="tfPreço" layoutX="180.0" layoutY="166.0" prefHeight="28.0" prefWidth="149.0" />
         <TextField id="tfCpfCliente" fx:id="tfDescrição" layoutX="180.0" layoutY="209.0" prefHeight="99.0" prefWidth="283.0" />
         <Button id="btPesquisr" fx:id="btSalvar" font="$x2" layoutX="267.0" layoutY="326.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" text="Salvar" textFill="BLACK" />
+        <Button font="$x2" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

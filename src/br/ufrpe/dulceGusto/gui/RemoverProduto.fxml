@@ -50,6 +50,7 @@
           </image>
         </ImageView>
         <Button fx:id="btRemover" font="$x2" layoutX="291.0" layoutY="320.0" mnemonicParsing="false" text="Remover" textFill="BLACK" />
+        <Button fx:id="btVoltar" font="$x2" layoutX="21.0" layoutY="348.0" mnemonicParsing="false" text="Voltar" textFill="BLACK" />
       </children>
     </AnchorPane>
   </children>

@@ -57,7 +57,7 @@
             <Font name="Comic Sans MS Bold" size="30.0" />
           </font>
         </Text>
-        <TextField layoutX="146.0" layoutY="306.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <TextField fx:id="tfCidade" layoutX="146.0" layoutY="306.0" prefHeight="27.87109375" prefWidth="172.0" />
         <Text fill="WHITE" layoutX="93.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UF :">
           <font>
             <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
@@ -65,23 +65,23 @@
         </Text>
         <Text fill="WHITE" font="$x1" layoutX="279.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento :" />
         <Text fill="WHITE" font="$x1" layoutX="58.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade :" />
-        <TextField layoutX="146.0" layoutY="379.0" prefHeight="28.0" prefWidth="85.0" />
+        <TextField fx:id="tfUF" layoutX="146.0" layoutY="379.0" prefHeight="28.0" prefWidth="85.0" />
         <Text fill="WHITE" font="$x1" layoutX="47.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número :" />
-        <TextField layoutX="146.0" layoutY="344.0" prefHeight="27.87109375" prefWidth="172.0" />
-        <TextField layoutX="421.0" layoutY="269.0" prefHeight="28.0" prefWidth="365.0000999999975" />
-        <TextField layoutX="147.0" layoutY="269.0" prefHeight="27.87109375" prefWidth="85.0" />
+        <TextField fx:id="tfBairro" layoutX="146.0" layoutY="344.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <TextField fx:id="tfComplemento" layoutX="421.0" layoutY="269.0" prefHeight="28.0" prefWidth="365.0000999999975" />
+        <TextField fx:id="tfNumero" layoutX="147.0" layoutY="269.0" prefHeight="27.87109375" prefWidth="85.0" />
         <Text fill="WHITE" font="$x1" layoutX="62.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro :" />
         <Text fill="WHITE" font="$x1" layoutX="67.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome :" textAlignment="LEFT" />
         <Text fill="WHITE" font="$x1" layoutX="86.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF :" />
         <Text fill="WHITE" font="$x1" layoutX="21.0" layoutY="253.0" scaleX="0.9165938213839633" scaleY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logradouro :" />
         <Text fill="WHITE" font="$x1" layoutX="85.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP :" />
         <Text fill="WHITE" font="$x1" layoutX="37.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone :" />
-        <TextField layoutX="148.0" layoutY="73.0" prefHeight="28.0" prefWidth="294.0" />
-        <TextField layoutX="148.0" layoutY="109.0" prefHeight="28.0" prefWidth="172.0" />
-        <TextField layoutX="148.0" layoutY="148.0" prefHeight="27.87109375" prefWidth="172.0" />
-        <TextField layoutX="146.0" layoutY="414.0" prefHeight="27.87109375" prefWidth="294.0" />
-        <TextField layoutX="148.0" layoutY="190.0" prefHeight="28.0" prefWidth="172.0" />
-        <TextField layoutX="147.0" layoutY="231.0" prefHeight="28.0" prefWidth="294.0000999999975" />
+        <TextField fx:id="tfNome" layoutX="148.0" layoutY="73.0" prefHeight="28.0" prefWidth="294.0" />
+        <TextField fx:id="tfCPF" layoutX="148.0" layoutY="109.0" prefHeight="28.0" prefWidth="172.0" />
+        <TextField fx:id="tfTelefone" layoutX="148.0" layoutY="148.0" prefHeight="27.87109375" prefWidth="172.0" />
+        <TextField fx:id="tfEmail" layoutX="146.0" layoutY="414.0" prefHeight="27.87109375" prefWidth="294.0" />
+        <TextField fx:id="tfCEP" layoutX="148.0" layoutY="190.0" prefHeight="28.0" prefWidth="172.0" />
+        <TextField fx:id="tfLogradouro" layoutX="147.0" layoutY="231.0" prefHeight="28.0" prefWidth="294.0000999999975" />
         <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="29.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../imagem_2.png" />
@@ -117,6 +117,12 @@
             <Image url="@../Sem_titulo.png" />
           </image>
         </ImageView>
+        <Button fx:id="btVoltar" layoutX="588.0" layoutY="453.0" mnemonicParsing="false" prefHeight="29.0" text="Voltar" textFill="BLACK">
+          <font>
+            <Font name="Comic Sans MS" size="15.0" />
+          </font>
+        </Button>
+        <PasswordField fx:id="pfSenha" layoutX="148.0" layoutY="451.0" prefHeight="28.0" prefWidth="172.0" />
       </children>
     </AnchorPane>
     <Button layoutX="667.0" layoutY="453.0" minHeight="28.999900000002526" mnemonicParsing="false" prefHeight="29.0" prefWidth="108.0" text="Cadastrar" textFill="WHITE" textOverrun="ELLIPSIS">
@@ -125,7 +131,6 @@
       </font>
     </Button>
     <Text fill="WHITE" font="$x1" layoutX="66.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha :" />
-    <TextField layoutX="145.0" layoutY="453.0" prefHeight="28.0" prefWidth="171.9998779296875" />
     <Text fill="WHITE" font="$x1" layoutX="74.0" layoutY="437.0" scaleX="1.0" scaleY="1.0405045550105116" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail :" />
   </children>
 </AnchorPane>

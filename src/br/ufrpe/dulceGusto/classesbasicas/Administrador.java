@@ -1,6 +1,8 @@
 package br.ufrpe.dulceGusto.classesbasicas;
 
-public class Administrador extends Usuario {
+import java.io.Serializable;
+
+public class Administrador extends Usuario implements Serializable {
 
 	public Administrador() {
 

@@ -18,8 +18,7 @@ public class Cliente extends Usuario implements Serializable {
 	}
 	
 	public Cliente(String nome, String cpf, String email, String telefone, Endereco endereco, String senha) {
-		super(nome, cpf, email, senha);
-		// TODO this.restricaoAlimentar = restricaoAlimentar;
+		super(nome, cpf, email, senha);		
 	}
 
 	public void cadastrarNovaRestricao(String alimento) {

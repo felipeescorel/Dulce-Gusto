@@ -2,6 +2,9 @@ package br.ufrpe.dulceGusto.gui;
 	
 import java.io.IOException;
 
+
+
+import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.negócio.Fachada;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +16,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	private static Main instancia;
-	private Fachada fachada = Fachada.getInstancia();
+
 	
 	public static Main getInstancia(){
 		if(instancia == null){
@@ -32,9 +35,11 @@ public class Main extends Application {
 		this.palcoPrincipal.setResizable(false);
 		this.palcoPrincipal.setTitle("DulceGusto - BetaVersion");
 		this.rootScene = new Pane();
+		
 		Scene scene = new Scene(this.rootScene,550,380);
 		this.palcoPrincipal.setScene(scene);
 		this.palcoPrincipal.show();
+		
 		this.openLoginScreen();
 	}
 	private void openLoginScreen(){
@@ -60,7 +65,12 @@ public class Main extends Application {
 		return this.rootScene;
 	}
 	
-	public static void main(String[] args) {		
+	public static void main(String[] args) {	
+		Fachada fachada = Fachada.getInstancia();
+		Usuario felipe = new Administrador();
+		felipe.setCpf("teste");
+		felipe.setSenha("teste");		
+		fachada.cadastrarUsuario(felipe);
 		launch(args);
 	}
 }

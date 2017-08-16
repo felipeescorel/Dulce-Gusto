@@ -3,6 +3,7 @@ package br.ufrpe.dulceGusto.negócio;
 import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
+import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 public class Fachada {
 
@@ -27,13 +28,13 @@ public class Fachada {
 	}
 	//USUARIO
 	public void cadastrarUsuario(Usuario user){
-		this.cadastroUsuario.cadastrarAdministrador(user);
+		this.cadastroUsuario.cadastrarUsuario(user);
 	}
-	public Usuario buscarUsuario(String cpf){
+	public Usuario buscarUsuario(String cpf) throws ItemException{			 
 		return this.cadastroUsuario.buscarUsuario(cpf);
 	}
 	public void removerUsuario(Usuario user){
-		this.removerUsuario(user);
+		this.cadastroUsuario.removerUsuario(user);
 	}
 	public void alterarUSuario(Usuario user){
 		this.cadastroUsuario.alterarUsuario(user);

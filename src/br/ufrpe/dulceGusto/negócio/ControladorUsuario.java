@@ -18,7 +18,7 @@ public class ControladorUsuario {
 		}
 		return instancia;
 	}
-	public void cadastrarAdministrador(Usuario user) {
+	public void cadastrarUsuario(Usuario user) {
 		if (user != null) {
 			boolean existe = this.repositorio.existe(user.getCpf());
 			if (existe != true) {
@@ -78,7 +78,7 @@ public class ControladorUsuario {
 				try {
 					retorno = this.repositorio.autenticarLogin(senha, cpf);
 				} catch (ItemException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 			}

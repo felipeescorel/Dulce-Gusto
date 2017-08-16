@@ -6,43 +6,43 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.dulceGusto.gui.MenuAdministradorController">
   <!-- TODO Add Nodes -->
   <children>
-    <AnchorPane fx:id="apMenuAdministrador" layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
+    <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
       <children>
-        <ImageView id="img" fx:id="imgMenuAdministrador" fitHeight="400.0" fitWidth="600.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView id="img" fitHeight="400.0" fitWidth="600.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
           <image>
             <Image url="@../fundo_doces_2.png" />
           </image>
         </ImageView>
-        <MenuBar id="mbAdministrador" fx:id="mbMenuAdministrador" layoutX="1.0" layoutY="0.0" prefWidth="601.0">
+        <MenuBar id="mbAdministrador" layoutX="1.0" layoutY="0.0" prefWidth="601.0">
           <menus>
-            <Menu mnemonicParsing="false" text="Cadastrar" fx:id="mnCadastrar">
+            <Menu mnemonicParsing="false" text="Cadastrar">
               <items>
-                <MenuItem mnemonicParsing="false" text="Cadastrar cliente" fx:id="mnitCadastrarCliente" />
-                <MenuItem mnemonicParsing="false" text="Cadastrar produto" fx:id="mnitCadastrarProduto" />
+                <MenuItem fx:id="mnitCadastrarCliente" mnemonicParsing="false" onAction="#cadastrarCliente" text="Cadastrar cliente" />
+                <MenuItem fx:id="mnitCadastrarProduto" mnemonicParsing="false" onAction="#cadastrarProduto" text="Cadastrar produto" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Alterar" fx:id="mnAlterar">
+            <Menu mnemonicParsing="false" text="Alterar">
               <items>
-                <MenuItem mnemonicParsing="false" text="Alterar cliente" fx:id="mnitALterarCliente" />
-                <MenuItem mnemonicParsing="false" text="Alterar produto" fx:id="mnitAlterarProduto" />
+                <MenuItem fx:id="mnitALterarCliente" mnemonicParsing="false" onAction="#alterarCliente" text="Alterar cliente" />
+                <MenuItem fx:id="mnitAlterarProduto" mnemonicParsing="false" onAction="#alterarProduto" text="Alterar produto" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Remover" fx:id="mnRemover">
+            <Menu mnemonicParsing="false" text="Remover">
               <items>
-                <MenuItem mnemonicParsing="false" text="Remover cliente" fx:id="mnitRemoverCliente" />
-                <MenuItem mnemonicParsing="false" text="Remover produto" fx:id="mnitRemoverProduto" />
+                <MenuItem fx:id="mnitRemoverCliente" mnemonicParsing="false" onAction="#removerCliente" text="Remover cliente" />
+                <MenuItem fx:id="mnitRemoverProduto" mnemonicParsing="false" onAction="#removerProduto" text="Remover produto" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Buscar" fx:id="mnBuscar">
+            <Menu mnemonicParsing="false" text="Buscar">
               <items>
-                <MenuItem mnemonicParsing="false" text="Buscar cliente" fx:id="mnitBuscarCliente" />
-                <MenuItem mnemonicParsing="false" text="Buscar produto" fx:id="mnitBuscarProduto" />
+                <MenuItem fx:id="mnitBuscarCliente" mnemonicParsing="false" onAction="#buscarCliente" text="Buscar cliente" />
+                <MenuItem fx:id="mnitBuscarProduto" mnemonicParsing="false" onAction="#buscarProduto" text="Buscar produto" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Sair" fx:id="mnSair" />
+            <Menu fx:id="mnSair" mnemonicParsing="false" onAction="#deslogar" text="Sair" />
           </menus>
         </MenuBar>
       </children>

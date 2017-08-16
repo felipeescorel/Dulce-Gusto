@@ -103,7 +103,7 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable {
 	private int obterIndice(String nome) {
 		int indice = -1;
 		for (int i = 0; i < produt.size(); i++) {
-			if (this.produt.get(i).equals(nome)) {
+			if (nome.equals(this.produt.get(i).getNome())) {
 				indice = i;
 			}
 		}

@@ -4,7 +4,7 @@ public class ItemException extends Exception {
 
 	private String str;
 	public ItemException(String str) {
-		super("str");
+		super("Erro de entrada");
 		this.str = str;
 	}
 

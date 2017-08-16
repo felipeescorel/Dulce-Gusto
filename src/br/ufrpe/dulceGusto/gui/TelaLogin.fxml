@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="br.ufrpe.dulceGusto.gui.TelaLoginController">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.dulceGusto.gui.TelaLoginController">
   <center>
     <AnchorPane prefHeight="400.0" prefWidth="600.0">
       <children>

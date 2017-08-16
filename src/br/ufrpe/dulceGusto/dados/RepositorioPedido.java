@@ -110,7 +110,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 	private int obterIndice(String numeroPedido) {
 		int indice = -1;
 		for (int i = 0; i < pedido.size(); i++) {
-			if (this.pedido.get(i).getNumeroPedido().equals(numeroPedido)) {
+			if (numeroPedido.equals(this.pedido.get(i).getNumeroPedido())) {
 				indice = i;
 			}
 		}

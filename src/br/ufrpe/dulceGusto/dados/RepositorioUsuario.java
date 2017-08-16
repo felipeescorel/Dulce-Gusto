@@ -53,11 +53,14 @@ public class RepositorioUsuario implements IRepositorioUsuario, Serializable{
 
 	private int obterIndice(String cpf) {
 		int indice = -1;
-		for (int i = 0; i < this.usuarios.size(); i++) {
-			if (this.usuarios.get(i).getCpf().equals(cpf)) {
-				indice = i;
-			}
+		for (int i = 0; i < this.usuarios.size(); i++) {			
+//			if(this.usuarios.get(i)!=null){
+				if (cpf.equals(this.usuarios.get(i).getCpf())) {
+					indice = i;
+				}
+//			}
 		}
+		
 		return indice;
 	}
 

@@ -3,10 +3,10 @@ package br.ufrpe.dulceGusto.negócio;
 import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
-import br.ufrpe.dulceGusto.exceptions.ItemException;
+import br.ufrpe.dulceGusto.exceptions.ClienteNaoExisteException;
+import br.ufrpe.dulceGusto.exceptions.DadosException;
 
 public class Fachada {
-
 
 	private ControladorProduto cadastroProduto;
 	private ControladorPedido cadastroPedido;
@@ -20,32 +20,38 @@ public class Fachada {
 		this.controleLogin = ControleDeLogin.getInstancia();
 		this.cadastroUsuario = ControladorUsuario.getInstancia();
 	}
+
 	public static Fachada getInstancia() {
 		if (instancia == null) {
 			instancia = new Fachada();
 		}
 		return instancia;
 	}
-	//USUARIO
-	public void cadastrarUsuario(Usuario user){
+
+	// USUARIO
+	public void cadastrarUsuario(Usuario user) {
 		this.cadastroUsuario.cadastrarUsuario(user);
 	}
-	public Usuario buscarUsuario(String cpf) throws ItemException{			 
+
+	public Usuario buscaPorCpf(String cpf) throws ClienteNaoExisteException, DadosException {
 		return this.cadastroUsuario.buscarUsuario(cpf);
 	}
-	public void removerUsuario(Usuario user){
-		this.cadastroUsuario.removerUsuario(user);
+
+	public void remover(String cpf) throws ClienteNaoExisteException, DadosException {
+		this.cadastroUsuario.removerUsuario(cpf);
 	}
-	public void alterarUSuario(Usuario user){
+
+	public void remover(Usuario felipe) {
+
+	}
+
+	public void alterarUSuario(Usuario user) {
 		this.cadastroUsuario.alterarUsuario(user);
 	}
-	public List<Usuario> exibirUsuarios(){
+
+	public List<Usuario> exibirUsuarios() {
 		return this.cadastroUsuario.mostrarUsuarios();
 	}
-	
-	
-
-
 
 	// PRODUTO
 	// TODO APENAS ADM
@@ -72,7 +78,6 @@ public class Fachada {
 		return this.cadastroProduto.listarProdutos();
 	}
 
-
 	// PEDIDO
 
 	public void cadastrarPedido(Pedido pedido) {
@@ -95,8 +100,8 @@ public class Fachada {
 		this.cadastroPedido.cadastrarPedido(pedido);
 	}
 
-	public List<Pedido> mostrarPedido() {
-		return this.cadastroPedido.mostrarPedido();
+	public List<Pedido> listarPedido() {
+		return this.cadastroPedido.listarPedido();
 	}
 
 	// LOGIN
@@ -104,4 +109,5 @@ public class Fachada {
 	public boolean autenticarLogin(String senha, String cpf) {
 		return this.controleLogin.autenticarLogin(senha, cpf);
 	}
+
 }

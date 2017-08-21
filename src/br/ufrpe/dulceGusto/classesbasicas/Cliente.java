@@ -16,9 +16,9 @@ public class Cliente extends Usuario implements Serializable {
 	public Cliente() {
 
 	}
-	
+
 	public Cliente(String nome, String cpf, String email, String telefone, Endereco endereco, String senha) {
-		super(nome, cpf, email, senha);		
+		super(nome, cpf, email, senha);
 	}
 
 	public void cadastrarNovaRestricao(String alimento) {
@@ -47,7 +47,7 @@ public class Cliente extends Usuario implements Serializable {
 			throw new DadosException();
 	}
 
-	public List<String> getRestricaoAlimentar() {
+	public ArrayList<String> getRestricaoAlimentar() {
 		return restricaoAlimentar;
 	}
 

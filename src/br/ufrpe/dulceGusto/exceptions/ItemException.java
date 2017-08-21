@@ -1,11 +1,21 @@
 package br.ufrpe.dulceGusto.exceptions;
 
+import java.util.ArrayList;
+
 public class ItemException extends Exception {
 
-	private String str;
-	public ItemException(String str) {
-		super("Erro de entrada");
-		this.str = str;
+	private ArrayList<String> ingredientes;
+
+	public ItemException(ArrayList<String> numeroPedido) {
+		super("O ingrdiente " + numeroPedido + "ja existe");
+		this.ingredientes = numeroPedido;
 	}
 
+	public ArrayList<String> getIngredientes() {
+		return ingredientes;
+	}
+
+	public void setIngredientes(ArrayList<String> ingredientes) {
+		this.ingredientes = ingredientes;
+	}
 }

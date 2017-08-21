@@ -4,15 +4,21 @@ import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
-import br.ufrpe.dulceGusto.exceptions.ItemException;
 
 public interface IRepositorioUsuario {
-	
+
 	void cadastrarUsuario(Usuario user);
-	Usuario buscarUsuario(String cpf) throws ItemException;
+
+	Usuario buscaPorCpf(String cpf);
+
 	void alterarUsuario(Usuario usuario) throws DadosException;
+
 	List<Usuario> mostrarUsuarios();
-	boolean autenticarLogin(String senha, String cpf) throws ItemException;
-	void removerUsuario(String cpf) throws ItemException;
+
+	boolean autenticarLogin(String senha, String cpf);
+
+	void remover(String cpf);
+
 	boolean existe(String cpf);
+
 }

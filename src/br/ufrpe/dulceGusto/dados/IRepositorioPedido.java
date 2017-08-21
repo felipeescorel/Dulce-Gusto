@@ -23,6 +23,6 @@ public interface IRepositorioPedido {
 	void alterarPedido(Pedido pedido) throws ItemException;
 
 	void novoProduto(Produto produto, Pedido pedido) throws ItemException;
-	
+
 	List<Pedido> buscarPedido(Cliente cliente) throws DadosException;
 }

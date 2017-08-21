@@ -12,7 +12,7 @@ public class ControladorProduto {
 	private IRepositorioProduto repositorio;
 	private static ControladorProduto instancia;
 
-	private ControladorProduto() {
+	ControladorProduto() {
 		this.repositorio = RepositorioProduto.getInstancia();
 	}
 
@@ -27,12 +27,12 @@ public class ControladorProduto {
 	public Produto buscarProduto(String nome) {
 		Produto produto = null;
 		try {
-			produto =  this.repositorio.buscarProduto(nome);
+			produto = this.repositorio.buscarProduto(nome);
 		} catch (ItemException e) {
 			// TODO tratar
 			e.printStackTrace();
 		}
-		
+
 		return produto;
 	}
 

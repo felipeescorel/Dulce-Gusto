@@ -47,26 +47,23 @@ public class Produto implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public void cadastrarIngrediente(String ingrediente) throws ItemException{
-		if(ingrediente==null || this.ingredientes.contains(ingrediente)){
+	public void cadastrarIngrediente(ArrayList<String> ingrediente) throws ItemException {
+		if (ingrediente == null || this.ingredientes.contains(ingrediente)) {
 			ItemException itemInvalido = new ItemException(ingrediente);
 			throw itemInvalido;
-		}
-		else{
-			this.ingredientes.add(ingrediente);
+		} else {
+			this.ingredientes.addAll(ingrediente);
 		}
 
 	}
 
-	public void removerIngrediente(String ingrediente) throws ItemException {
-//		
-		if(ingrediente != null || this.ingredientes.contains(ingrediente)){
+	public void removerIngrediente(ArrayList<String> ingrediente) throws ItemException {
+		if (ingrediente != null || this.ingredientes.contains(ingrediente)) {
 			this.ingredientes.remove(ingrediente);
-		}
-		else{
+		} else {
 			ItemException itemInvalido = new ItemException(ingrediente);
 			throw itemInvalido;
-			
+
 		}
 	}
 

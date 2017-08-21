@@ -16,11 +16,10 @@ import br.ufrpe.dulceGusto.classesbasicas.Produto;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
 import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class RepositorioPedido implements IRepositorioPedido , Serializable{
+public class RepositorioPedido implements IRepositorioPedido, Serializable {
 
 	private static RepositorioPedido instancia;
 	private ArrayList<Pedido> pedido = new ArrayList<Pedido>();
-	
 
 	public static RepositorioPedido getInstancia() {
 		if (instancia == null) {
@@ -28,63 +27,65 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 		}
 		return instancia;
 	}
-	
-	private static RepositorioPedido lerDoArquivo(){
+
+	private static RepositorioPedido lerDoArquivo() {
 		RepositorioPedido instanciaLocal = null;
-		
+
 		File in = new File("Pedidos.db");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
-		try{
+		try {
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
 			Object o = ois.readObject();
-			instanciaLocal	=	(RepositorioPedido) o;			
-		}catch (Exception e){
+			instanciaLocal = (RepositorioPedido) o;
+		} catch (Exception e) {
 			instanciaLocal = new RepositorioPedido();
-		}finally{
-			if(ois != null){
-				try{
+		} finally {
+			if (ois != null) {
+				try {
 					ois.close();
-				}catch(IOException e){					
+				} catch (IOException e) {
 				}
 			}
 		}
 		return instanciaLocal;
-		
+
 	}
-	private static void gravarArquivo(){
-		if(instancia ==null){
+
+	private static void gravarArquivo() {
+		if (instancia == null) {
 			return;
 		}
 		File out = new File("Pedidos.db");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
-		
-		try{
+
+		try {
 			fos = new FileOutputStream(out);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(instancia);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
-			if(oos!=null){
-				try{
+		} finally {
+			if (oos != null) {
+				try {
 					oos.close();
-				}catch(IOException e){					
+				} catch (IOException e) {
 				}
 			}
 		}
 	}
+
 	private RepositorioPedido() {
 
 	}
 
 	@Override
-	public void cadastrarPedido(Pedido ped){
+	public void cadastrarPedido(Pedido ped) {
 		this.pedido.add(ped);
 		RepositorioPedido.gravarArquivo();
-		
+
 	}
 
 	@Override
@@ -93,8 +94,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 		int indice = this.obterIndice(numeroPedido);
 		if (indice != -1) {
 			retorno = this.pedido.get(indice);
-		}
-		else{
+		} else {
 			ItemException produtoExc = new ItemException(numeroPedido);
 			throw produtoExc;
 		}
@@ -102,7 +102,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 	}
 
 	@Override
-	public void novoProduto(Produto produto, Pedido pedido) throws ItemException {		
+	public void novoProduto(Produto produto, Pedido pedido) throws ItemException {
 		pedido.novoProduto(produto);
 
 	}
@@ -133,8 +133,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 		if (indice != -1) {
 			this.pedido.remove(numeroPedido);
 			RepositorioPedido.gravarArquivo();
-		}
-		else{
+		} else {
 			ItemException itemExc = new ItemException(numeroPedido);
 			throw itemExc;
 		}
@@ -146,8 +145,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 		if (indice != -1) {
 			this.pedido.set(indice, pedido);
 			RepositorioPedido.gravarArquivo();
-		}
-		else {
+		} else {
 			ItemException itemExc = new ItemException(pedido.getNumeroPedido());
 			throw itemExc;
 		}
@@ -160,7 +158,7 @@ public class RepositorioPedido implements IRepositorioPedido , Serializable{
 
 	@Override
 	public List<Pedido> buscarPedido(Cliente cliente) throws DadosException {
-		if(cliente == null || cliente.getPedidos() == null){
+		if (cliente == null || cliente.getPedidos() == null) {
 			DadosException dadosExc = new DadosException();
 			throw dadosExc;
 		}

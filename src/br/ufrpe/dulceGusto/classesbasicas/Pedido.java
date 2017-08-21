@@ -18,13 +18,11 @@ public class Pedido implements Serializable {
 	private List<Produto> produto = new ArrayList<Produto>();
 	private String numeroPedido;
 	private int contador = 0;
-	
 
 	private LocalDateTime data = LocalDateTime.now();
 
-
 	public Pedido(Cliente cliente, LocalDateTime dataPedido) {
-		this.setCliente(cliente);	
+		this.setCliente(cliente);
 		this.gerarNumeroPedido(dataPedido);
 	}
 
@@ -36,18 +34,18 @@ public class Pedido implements Serializable {
 		return quantidadeProduto;
 	}
 
-	public void gerarNumeroPedido(LocalDateTime data) {	
+	public void gerarNumeroPedido(LocalDateTime data) {
 		DateTimeFormatter formatar = DateTimeFormatter.ofPattern("yyyyMMdd");
 		String numero = data.format(formatar);
-		setNumeroPedido(numero+"0"+Integer.toString(contador));	
+		setNumeroPedido(numero + "0" + Integer.toString(contador));
 		contador++;
 	}
-	
-	public void setNumeroPedido(String numeroPedido){
+
+	public void setNumeroPedido(String numeroPedido) {
 		this.numeroPedido = numeroPedido;
-		
+
 	}
-	
+
 	public LocalDateTime getData() {
 		return data;
 	}
@@ -87,6 +85,7 @@ public class Pedido implements Serializable {
 	public double getValorTotal() {
 		return valorTotal;
 	}
+
 	public double getValorDaCompra() {
 		for (int i = 0; i < this.produto.size(); i++) {
 			valorTotal += this.produto.get(i).getPreco() * this.getQuantidade();
@@ -99,7 +98,7 @@ public class Pedido implements Serializable {
 		for (int i = 0; i < this.produto.size(); i++) {
 			if (this.produto.get(i).getIngredientes().equals(cliente.getRestricaoAlimentar())) {
 				retorno = true;
-				// Verifica se o cliente é alérgico ao produto. 
+				// Verifica se o cliente é alérgico ao produto.
 				// Retorna verdadeiro se for alérgico.
 			}
 		}
@@ -127,7 +126,7 @@ public class Pedido implements Serializable {
 			for (int i = 0; i < this.produto.size(); i++) {
 				if (this.produto.get(i).getNome().equals(produto.getNome())) {
 					this.produto.remove(i);
-					
+
 				}
 			}
 		}

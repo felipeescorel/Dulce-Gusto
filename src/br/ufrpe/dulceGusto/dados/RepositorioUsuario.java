@@ -12,10 +12,10 @@ import java.util.List;
 
 import br.ufrpe.dulceGusto.classesbasicas.*;
 import br.ufrpe.dulceGusto.exceptions.DadosException;
-import br.ufrpe.dulceGusto.exceptions.ItemException;
 
-public class RepositorioUsuario implements IRepositorioUsuario, Serializable{
+public class RepositorioUsuario implements IRepositorioUsuario, Serializable {
 	private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+	private List<Usuario> listaUsuarios = null;
 	private Usuario user;
 
 	private static RepositorioUsuario instancia;
@@ -28,7 +28,7 @@ public class RepositorioUsuario implements IRepositorioUsuario, Serializable{
 	}
 
 	private RepositorioUsuario() {
-		
+
 	}
 
 	@Override
@@ -38,114 +38,100 @@ public class RepositorioUsuario implements IRepositorioUsuario, Serializable{
 	}
 
 	@Override
-	public Usuario buscarUsuario(String cpf) throws ItemException{
-		Usuario retorno = null;
-		int indice = this.obterIndice(cpf);
-		if (indice != -1) {
-			retorno = this.usuarios.get(indice);
+	public Usuario buscaPorCpf(String cpf) {
+		Usuario user = null;
+
+		for (Usuario usuario : getInstancia().listaUsuarios) {
+			if (usuario.getCpf().equals(cpf)) {
+				usuario = user;
+				break;
+			}
 		}
-		else{
-			ItemException cpfExc = new ItemException(cpf);
-			throw cpfExc;
-		}
-		return retorno;
+
+		return user;
 	}
 
-	private int obterIndice(String cpf) {
-		int indice = -1;
-		for (int i = 0; i < this.usuarios.size(); i++) {			
-//			if(this.usuarios.get(i)!=null){
-				if (cpf.equals(this.usuarios.get(i).getCpf())) {
-					indice = i;
+	private static RepositorioUsuario lerDoArquivo() {
+		RepositorioUsuario instanciaLocal = null;
+
+		File in = new File("Usuarios.db");
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+
+		try {
+			fis = new FileInputStream(in);
+			ois = new ObjectInputStream(fis);
+			Object o = ois.readObject();
+			instanciaLocal = (RepositorioUsuario) o;
+		} catch (Exception e) {
+			instanciaLocal = new RepositorioUsuario();
+		} finally {
+			if (ois != null) {
+				try {
+					ois.close();
+				} catch (IOException e) {
 				}
-//			}
+			}
 		}
-		
-		return indice;
+		return instanciaLocal;
 	}
 
-	 private static RepositorioUsuario lerDoArquivo(){
-	        RepositorioUsuario instanciaLocal = null;
-
-	        File in = new File("Usuarios.db");
-	        FileInputStream fis = null;
-	        ObjectInputStream ois = null;
-
-	        try{
-	            fis = new FileInputStream(in);
-	            ois = new ObjectInputStream(fis);
-	            Object o = ois.readObject();
-	            instanciaLocal = (RepositorioUsuario) o;
-	        }catch (Exception e){
-	            instanciaLocal = new RepositorioUsuario();
-	        } finally {
-	            if (ois != null){
-	                try{
-	                    ois.close();
-	                }catch (IOException e){
-	                }
-	            }
-	        }
-	        return instanciaLocal;
-	    }
-
-	    private static void gravarArquivo(){
-	        if (instancia==null){
-	            return;
-	        }
-	        File out = new File("Usuarios.db");
-	        FileOutputStream fos = null;
-	        ObjectOutputStream oos = null;
-
-	        try{
-	            fos = new FileOutputStream(out);
-	            oos = new ObjectOutputStream(fos);
-	            oos.writeObject(instancia);
-	        }catch (Exception e){
-	            e.printStackTrace();
-	        } finally{
-	            if(oos != null){
-	                try {
-	                    oos.close();
-	                }catch (IOException e){
-	                }
-	            }
-	        }
-	    }
-	@Override
-	public boolean existe(String cpf) {
-		boolean existe = false;
-		int indice = this.obterIndice(cpf);
-		if (indice != -1) {
-			existe = true;
+	private static void gravarArquivo() {
+		if (instancia == null) {
+			return;
 		}
-		return existe;
-	}
+		File out = new File("Usuarios.db");
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
 
-	@Override
-	public void removerUsuario(String cpf) throws ItemException{
-		int indice = this.obterIndice(cpf);
-		if (indice != -1) {
-			this.usuarios.remove(indice);
-			RepositorioUsuario.gravarArquivo();
-		}
-		else{
-			ItemException userExc = new ItemException (cpf);
-			throw userExc;
+		try {
+			fos = new FileOutputStream(out);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(instancia);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+				}
+			}
 		}
 	}
 
 	@Override
-	public void alterarUsuario(Usuario user) throws DadosException{
-		int indice = this.obterIndice(user.getCpf());
-		if (indice != -1) {
-			this.usuarios.set(indice, user);
-			RepositorioUsuario.gravarArquivo();
+	public boolean existe(Usuario user) {
+		for (Usuario usuario : getInstancia().listaUsuarios) {
+			if (user.equals(usuario)) {
+				return true;
+			}
 		}
-		else{
-			DadosException userExc = new DadosException();
-			throw userExc;
+
+		return false;
+	}
+
+	@Override
+	public void remover(String cpf) {
+		for (Usuario usuario : getInstancia().listaUsuarios) {
+			if (usuario.getCpf().equals(cpf)) {
+				getInstancia().listaUsuarios.remove(user);
+				this.gravarArquivo();
+				break;
+			}
 		}
+
+	}
+
+	@Override
+	public void alterarUsuario(Usuario usuario) throws DadosException {
+		List<Usuario> listaUsuarios = getInstancia().listaUsuarios;
+
+		if (getInstancia().existe(usuario)) {
+			listaUsuarios.set(listaUsuarios.indexOf(usuario), usuario);
+			this.gravarArquivo();
+		}
+
 	}
 
 	@Override
@@ -154,18 +140,15 @@ public class RepositorioUsuario implements IRepositorioUsuario, Serializable{
 	}
 
 	@Override
-	public boolean autenticarLogin(String senha, String cpf) throws ItemException {
+	public boolean autenticarLogin(String senha, String cpf) {
 		boolean retorno = false;
 		boolean equivale;
-		user = this.buscarUsuario(cpf);
-		equivale = user.getSenha().equals(senha);			
-			if (equivale != false) {
-				retorno = true;
-			}		
+		user = this.buscaPorCpf(cpf);
+		equivale = user.getSenha().equals(senha);
+		if (equivale != false) {
+			retorno = true;
+		}
 		return retorno;
 	}
 
 }
-
-
-

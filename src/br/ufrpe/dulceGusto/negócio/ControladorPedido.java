@@ -13,7 +13,7 @@ public class ControladorPedido {
 	private static ControladorPedido instancia;
 	private IRepositorioPedido repositorio;
 
-	private ControladorPedido() {
+	ControladorPedido() {
 		this.repositorio = RepositorioPedido.getInstancia();
 	}
 
@@ -26,21 +26,18 @@ public class ControladorPedido {
 	}
 
 	public void novoProduto(Produto produto, Pedido pedido) {
-		try{
-			if (produto != null && 
-				pedido!=null&& 
-				repositorio.existe(pedido.getNumeroPedido()) && 
-					!pedido.getProduto().contains(produto)){
-			
-				this.repositorio.novoProduto(produto,pedido);
-			
-				
+		try {
+			if (produto != null && pedido != null && repositorio.existe(pedido.getNumeroPedido())
+					&& !pedido.getProduto().contains(produto)) {
+
+				this.repositorio.novoProduto(produto, pedido);
+
 			}
-		}catch (ItemException e) {
+		} catch (ItemException e) {
 			// TODO Tratar
 			e.printStackTrace();
-		}				
-		
+		}
+
 	}
 
 	public Pedido buscarPedido(String numeroPedido) {
@@ -49,7 +46,7 @@ public class ControladorPedido {
 			try {
 				retorno = this.repositorio.buscarPedido(numeroPedido);
 			} catch (ItemException e) {
-				//TODO TRATAR
+				// TODO TRATAR
 				e.printStackTrace();
 			}
 		}
@@ -81,7 +78,7 @@ public class ControladorPedido {
 		}
 	}
 
-	public List<Pedido> mostrarPedido() {
+	public List<Pedido> listarPedido() {
 		return this.repositorio.listarPedido();
 	}
 

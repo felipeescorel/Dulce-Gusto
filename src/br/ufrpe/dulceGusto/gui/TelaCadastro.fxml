@@ -125,7 +125,7 @@
         <PasswordField fx:id="pfSenha" layoutX="148.0" layoutY="451.0" prefHeight="28.0" prefWidth="172.0" />
       </children>
     </AnchorPane>
-    <Button layoutX="667.0" layoutY="453.0" minHeight="28.999900000002526" mnemonicParsing="false" prefHeight="29.0" prefWidth="108.0" text="Cadastrar" textFill="WHITE" textOverrun="ELLIPSIS">
+    <Button fx:id="btCadastrar" layoutX="667.0" layoutY="453.0" minHeight="28.999900000002526" mnemonicParsing="false" prefHeight="29.0" prefWidth="108.0" text="Cadastrar" textFill="WHITE" textOverrun="ELLIPSIS">
       <font>
         <Font name="Comic Sans MS Bold" size="15.0" />
       </font>

@@ -39,7 +39,7 @@ public class BuscarProdutoController {
 		try {
 			Produto produt = svr.buscarProduto(nome);
 			lbNome.setText(produt.getNome().toString());
-	//		lbPreço.setText(produt.getPreco());
+			lbPreço.setText(Double.toString(produt.getPreco()));
 			lbDescrição.setText(produt.getDescricao());
 		} catch (ProdutoNaoExisteException e) {
 			Alert err = new Alert(AlertType.ERROR);

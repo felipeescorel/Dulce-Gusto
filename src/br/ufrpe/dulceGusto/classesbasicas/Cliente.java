@@ -9,7 +9,7 @@ import br.ufrpe.dulceGusto.exceptions.DadosException;
 public class Cliente extends Usuario implements Serializable {
 
 	private ArrayList<String> restricaoAlimentar = new ArrayList<String>();
-	private long telefone;
+	private String telefone;
 	private Endereco endereco = new Endereco();
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 
@@ -25,12 +25,12 @@ public class Cliente extends Usuario implements Serializable {
 		restricaoAlimentar.add(alimento);
 	}
 
-	public long getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(long telefone) throws DadosException {
-		if (telefone >= 10000000) {
+	public void setTelefone(String telefone) throws DadosException {
+		if (Long.parseLong(telefone) >= 10000000) {
 			this.telefone = telefone;
 		} else
 			throw new DadosException("Telefone inválido");
